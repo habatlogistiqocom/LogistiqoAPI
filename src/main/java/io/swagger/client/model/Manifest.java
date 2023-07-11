@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-11T22:27:13.531+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-03T09:36:55.937+02:00[Europe/Berlin]")
 public class Manifest {
   @SerializedName("createManifest")
   private Boolean createManifest = false;
@@ -38,9 +38,6 @@ public class Manifest {
 
   @SerializedName("description")
   private String description = null;
-
-  @SerializedName("hawb")
-  private String hawb = null;
 
   @SerializedName("mawb")
   private String mawb = null;
@@ -84,10 +81,10 @@ public class Manifest {
   }
 
    /**
-   * Get createManifest
+   * If you specifically want to create shipments without a manifest, please keep the field at its default value \&quot;false\&quot;. However, if you require a manifest that includes all shipments, please set the field to \&quot;true\&quot;.
    * @return createManifest
   **/
-  @Schema(description = "")
+  @Schema(description = "If you specifically want to create shipments without a manifest, please keep the field at its default value \"false\". However, if you require a manifest that includes all shipments, please set the field to \"true\".")
   public Boolean isCreateManifest() {
     return createManifest;
   }
@@ -102,10 +99,10 @@ public class Manifest {
   }
 
    /**
-   * This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate shipments
+   * This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests
    * @return reference
   **/
-  @Schema(example = "23672", description = "This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate shipments")
+  @Schema(example = "23672", description = "This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests")
   public String getReference() {
     return reference;
   }
@@ -130,24 +127,6 @@ public class Manifest {
 
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  public Manifest hawb(String hawb) {
-    this.hawb = hawb;
-    return this;
-  }
-
-   /**
-   * If this manifest represents a House Air Waybill, please enter the House Waybill number in the field using a free format.
-   * @return hawb
-  **/
-  @Schema(description = "If this manifest represents a House Air Waybill, please enter the House Waybill number in the field using a free format.")
-  public String getHawb() {
-    return hawb;
-  }
-
-  public void setHawb(String hawb) {
-    this.hawb = hawb;
   }
 
   public Manifest mawb(String mawb) {
@@ -192,10 +171,10 @@ public class Manifest {
   }
 
    /**
-   * Please indicate the desired start date, and optionally the time, for the execution of this manifest.
+   * Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
    * @return date
   **/
-  @Schema(example = "dd.MM.yyyy HH.mm or dd.MM.yyyy", description = "Please indicate the desired start date, and optionally the time, for the execution of this manifest.")
+  @Schema(example = "12.06.2023", description = "Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
   public String getDate() {
     return date;
   }
@@ -210,10 +189,10 @@ public class Manifest {
   }
 
    /**
-   * Please provide the desired completion date, and optionally the time, for the execution of this manifest.
+   * Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
    * @return dateto
   **/
-  @Schema(example = "dd.MM.yyyy HH.mm or dd.MM.yyyy", description = "Please provide the desired completion date, and optionally the time, for the execution of this manifest.")
+  @Schema(example = "dd.MM.yyyy HH.mm or dd.MM.yyyy", description = "Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
   public String getDateto() {
     return dateto;
   }
@@ -387,7 +366,6 @@ public class Manifest {
     return Objects.equals(this.createManifest, manifest.createManifest) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.description, manifest.description) &&
-        Objects.equals(this.hawb, manifest.hawb) &&
         Objects.equals(this.mawb, manifest.mawb) &&
         Objects.equals(this.airline, manifest.airline) &&
         Objects.equals(this.date, manifest.date) &&
@@ -404,7 +382,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, reference, description, hawb, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, reference, description, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
   }
 
 
@@ -416,7 +394,6 @@ public class Manifest {
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    mawb: ").append(toIndentedString(mawb)).append("\n");
     sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");

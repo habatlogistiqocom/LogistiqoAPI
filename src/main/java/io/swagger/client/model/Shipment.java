@@ -33,7 +33,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-11T22:27:13.531+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-03T09:36:55.937+02:00[Europe/Berlin]")
 public class Shipment {
   @SerializedName("idCustomer")
   private Integer idCustomer = null;
@@ -53,8 +53,8 @@ public class Shipment {
   @SerializedName("internalReference")
   private String internalReference = null;
 
-  @SerializedName("idScanningConfig")
-  private Integer idScanningConfig = 1;
+  @SerializedName("hawb")
+  private String hawb = null;
 
   @SerializedName("shipmentType")
   private String shipmentType = null;
@@ -76,6 +76,9 @@ public class Shipment {
 
   @SerializedName("ownCompanyCode")
   private String ownCompanyCode = null;
+
+  @SerializedName("idScanningConfig")
+  private Integer idScanningConfig = 1;
 
   @SerializedName("plantNumber")
   private String plantNumber = null;
@@ -135,13 +138,13 @@ public class Shipment {
   private List<Goods> goodss = new ArrayList<Goods>();
 
   @SerializedName("notifiedGoodss")
-  private List<NotifiedGoods> notifiedGoodss = new ArrayList<NotifiedGoods>();
+  private List<NotifiedGoods> notifiedGoodss = null;
 
   @SerializedName("calloffs")
-  private List<Calloff> calloffs = new ArrayList<Calloff>();
+  private List<Calloff> calloffs = null;
 
   @SerializedName("uploadedFiles")
-  private List<UploadedFile> uploadedFiles = new ArrayList<UploadedFile>();
+  private List<UploadedFile> uploadedFiles = null;
 
   @SerializedName("services")
   private List<Service> services = null;
@@ -206,10 +209,10 @@ public class Shipment {
   }
 
    /**
-   * Please note that this is a mandatory field and must contain a unique customer number that is available in the Logistiqo system.
+   * Please be aware that this field is mandatory and should include a unique customer number that is registered in the Logistiqo system. If the customerNumber is left empty, please provide  all the necessary company and address fields in the field customer.
    * @return customerNumber
   **/
-  @Schema(required = true, description = "Please note that this is a mandatory field and must contain a unique customer number that is available in the Logistiqo system.")
+  @Schema(required = true, description = "Please be aware that this field is mandatory and should include a unique customer number that is registered in the Logistiqo system. If the customerNumber is left empty, please provide  all the necessary company and address fields in the field customer.")
   public String getCustomerNumber() {
     return customerNumber;
   }
@@ -254,22 +257,22 @@ public class Shipment {
     this.internalReference = internalReference;
   }
 
-  public Shipment idScanningConfig(Integer idScanningConfig) {
-    this.idScanningConfig = idScanningConfig;
+  public Shipment hawb(String hawb) {
+    this.hawb = hawb;
     return this;
   }
 
    /**
-   * Internal field
-   * @return idScanningConfig
+   * If this shipment is part of a House Air Waybill, please enter the House Waybill number in the field using a free format.
+   * @return hawb
   **/
-  @Schema(example = "1", description = "Internal field")
-  public Integer getIdScanningConfig() {
-    return idScanningConfig;
+  @Schema(description = "If this shipment is part of a House Air Waybill, please enter the House Waybill number in the field using a free format.")
+  public String getHawb() {
+    return hawb;
   }
 
-  public void setIdScanningConfig(Integer idScanningConfig) {
-    this.idScanningConfig = idScanningConfig;
+  public void setHawb(String hawb) {
+    this.hawb = hawb;
   }
 
   public Shipment shipmentType(String shipmentType) {
@@ -278,10 +281,10 @@ public class Shipment {
   }
 
    /**
-   * Get shipmentType
+   * Please specify the shipment type according to the options defined in the Logistiqo application, such as IMPORT, EXPORT, DEPOT, or SAMMEL.
    * @return shipmentType
   **/
-  @Schema(example = "DIRECT", description = "")
+  @Schema(example = "DIRECT", description = "Please specify the shipment type according to the options defined in the Logistiqo application, such as IMPORT, EXPORT, DEPOT, or SAMMEL.")
   public String getShipmentType() {
     return shipmentType;
   }
@@ -296,10 +299,10 @@ public class Shipment {
   }
 
    /**
-   * Get paymentTerms
+   * This field should only be used if the payment term for this shipment differs from the customer&#x27;s default payment term as defined in the Logistiqo application.
    * @return paymentTerms
   **/
-  @Schema(description = "")
+  @Schema(description = "This field should only be used if the payment term for this shipment differs from the customer's default payment term as defined in the Logistiqo application.")
   public AllOfShipmentPaymentTerms getPaymentTerms() {
     return paymentTerms;
   }
@@ -314,10 +317,10 @@ public class Shipment {
   }
 
    /**
-   * Get branch
+   * free text
    * @return branch
   **/
-  @Schema(description = "")
+  @Schema(description = "free text")
   public String getBranch() {
     return branch;
   }
@@ -332,10 +335,10 @@ public class Shipment {
   }
 
    /**
-   * Get description
+   * free text
    * @return description
   **/
-  @Schema(description = "")
+  @Schema(description = "free text")
   public String getDescription() {
     return description;
   }
@@ -386,10 +389,10 @@ public class Shipment {
   }
 
    /**
-   * Get ownCompanyCode
+   * Internal field
    * @return ownCompanyCode
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getOwnCompanyCode() {
     return ownCompanyCode;
   }
@@ -398,16 +401,34 @@ public class Shipment {
     this.ownCompanyCode = ownCompanyCode;
   }
 
+  public Shipment idScanningConfig(Integer idScanningConfig) {
+    this.idScanningConfig = idScanningConfig;
+    return this;
+  }
+
+   /**
+   * Internal field
+   * @return idScanningConfig
+  **/
+  @Schema(example = "1", description = "Internal field")
+  public Integer getIdScanningConfig() {
+    return idScanningConfig;
+  }
+
+  public void setIdScanningConfig(Integer idScanningConfig) {
+    this.idScanningConfig = idScanningConfig;
+  }
+
   public Shipment plantNumber(String plantNumber) {
     this.plantNumber = plantNumber;
     return this;
   }
 
    /**
-   * Get plantNumber
+   * Internal field
    * @return plantNumber
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getPlantNumber() {
     return plantNumber;
   }
@@ -422,10 +443,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffNumber
+   * Internal field
    * @return callOffNumber
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffNumber() {
     return callOffNumber;
   }
@@ -440,10 +461,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffDate
+   * Internal field
    * @return callOffDate
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffDate() {
     return callOffDate;
   }
@@ -458,10 +479,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffArticle
+   * Internal field
    * @return callOffArticle
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffArticle() {
     return callOffArticle;
   }
@@ -476,10 +497,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffCumulativeQuantity
+   * Internal field
    * @return callOffCumulativeQuantity
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffCumulativeQuantity() {
     return callOffCumulativeQuantity;
   }
@@ -494,10 +515,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffLastDeliveryDate
+   * Internal field
    * @return callOffLastDeliveryDate
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffLastDeliveryDate() {
     return callOffLastDeliveryDate;
   }
@@ -512,10 +533,10 @@ public class Shipment {
   }
 
    /**
-   * Get callOffLastDeliveryNote
+   * Internal field
    * @return callOffLastDeliveryNote
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCallOffLastDeliveryNote() {
     return callOffLastDeliveryNote;
   }
@@ -530,10 +551,10 @@ public class Shipment {
   }
 
    /**
-   * Get unloadingPoint
+   * Internal field
    * @return unloadingPoint
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getUnloadingPoint() {
     return unloadingPoint;
   }
@@ -548,10 +569,10 @@ public class Shipment {
   }
 
    /**
-   * Get customerMark
+   * Internal field
    * @return customerMark
   **/
-  @Schema(description = "")
+  @Schema(description = "Internal field")
   public String getCustomerMark() {
     return customerMark;
   }
@@ -870,7 +891,7 @@ public class Shipment {
         Objects.equals(this.customerNumber, shipment.customerNumber) &&
         Objects.equals(this.customerReference, shipment.customerReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
-        Objects.equals(this.idScanningConfig, shipment.idScanningConfig) &&
+        Objects.equals(this.hawb, shipment.hawb) &&
         Objects.equals(this.shipmentType, shipment.shipmentType) &&
         Objects.equals(this.paymentTerms, shipment.paymentTerms) &&
         Objects.equals(this.branch, shipment.branch) &&
@@ -878,6 +899,7 @@ public class Shipment {
         Objects.equals(this.dropofByCompany, shipment.dropofByCompany) &&
         Objects.equals(this.dropofByVehicle, shipment.dropofByVehicle) &&
         Objects.equals(this.ownCompanyCode, shipment.ownCompanyCode) &&
+        Objects.equals(this.idScanningConfig, shipment.idScanningConfig) &&
         Objects.equals(this.plantNumber, shipment.plantNumber) &&
         Objects.equals(this.callOffNumber, shipment.callOffNumber) &&
         Objects.equals(this.callOffDate, shipment.callOffDate) &&
@@ -905,7 +927,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, customerReference, internalReference, idScanningConfig, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, customerReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
   }
 
 
@@ -920,7 +942,7 @@ public class Shipment {
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
-    sb.append("    idScanningConfig: ").append(toIndentedString(idScanningConfig)).append("\n");
+    sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
@@ -928,6 +950,7 @@ public class Shipment {
     sb.append("    dropofByCompany: ").append(toIndentedString(dropofByCompany)).append("\n");
     sb.append("    dropofByVehicle: ").append(toIndentedString(dropofByVehicle)).append("\n");
     sb.append("    ownCompanyCode: ").append(toIndentedString(ownCompanyCode)).append("\n");
+    sb.append("    idScanningConfig: ").append(toIndentedString(idScanningConfig)).append("\n");
     sb.append("    plantNumber: ").append(toIndentedString(plantNumber)).append("\n");
     sb.append("    callOffNumber: ").append(toIndentedString(callOffNumber)).append("\n");
     sb.append("    callOffDate: ").append(toIndentedString(callOffDate)).append("\n");
