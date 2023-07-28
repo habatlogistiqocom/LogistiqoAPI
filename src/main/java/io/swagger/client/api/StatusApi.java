@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -54,14 +54,14 @@ public class StatusApi {
     }
 
     /**
-     * Build call for statusPost
+     * Build call for postStatus
      * @param body  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call statusPostCall(Status body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postStatusCall(Status body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -98,18 +98,18 @@ public class StatusApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "BasicAuth" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call statusPostValidateBeforeCall(Status body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postStatusValidateBeforeCall(Status body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling statusPost(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling postStatus(Async)");
         }
         
-        com.squareup.okhttp.Call call = statusPostCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postStatusCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -119,36 +119,36 @@ public class StatusApi {
     }
 
     /**
-     * 
-     * 
+     * postStatusEndpoint
+     *   # Status     
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void statusPost(Status body) throws ApiException {
-        statusPostWithHttpInfo(body);
+    public void postStatus(Status body) throws ApiException {
+        postStatusWithHttpInfo(body);
     }
 
     /**
-     * 
-     * 
+     * postStatusEndpoint
+     *   # Status     
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> statusPostWithHttpInfo(Status body) throws ApiException {
-        com.squareup.okhttp.Call call = statusPostValidateBeforeCall(body, null, null);
+    public ApiResponse<Void> postStatusWithHttpInfo(Status body) throws ApiException {
+        com.squareup.okhttp.Call call = postStatusValidateBeforeCall(body, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     *  (asynchronously)
-     * 
+     * postStatusEndpoint (asynchronously)
+     *   # Status     
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call statusPostAsync(Status body, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postStatusAsync(Status body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +169,7 @@ public class StatusApi {
             };
         }
 
-        com.squareup.okhttp.Call call = statusPostValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postStatusValidateBeforeCall(body, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

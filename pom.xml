@@ -63,7 +63,7 @@
         </dependency>
     </dependencies>
 
- <!-- test dependencies
+<!--
     <build>
         <plugins>
             <plugin>
@@ -76,7 +76,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>d:/swagger/Swagger.yaml</inputSpec>
+                            <inputSpec>d:/swagger/logistiqoSwaggerYaml.yaml</inputSpec>
                             <language>java</language>
                         </configuration>
                     </execution>
@@ -84,6 +84,6 @@
             </plugin>
         </plugins>
     </build>
- -->
+    -->
 
 </project>

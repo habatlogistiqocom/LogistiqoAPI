@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -21,12 +21,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 /**
  * Barcode
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-11T22:27:13.531+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
 public class Barcode {
   @SerializedName("id")
   private Integer id = null;
@@ -93,15 +92,6 @@ public class Barcode {
 
   @SerializedName("scannedinon")
   private String scannedinon = null;
-
-  @SerializedName("scannedouton")
-  private String scannedouton = null;
-
-  @SerializedName("lat")
-  private BigDecimal lat = null;
-
-  @SerializedName("lng")
-  private BigDecimal lng = null;
 
   public Barcode id(Integer id) {
     this.id = id;
@@ -499,60 +489,6 @@ public class Barcode {
     this.scannedinon = scannedinon;
   }
 
-  public Barcode scannedouton(String scannedouton) {
-    this.scannedouton = scannedouton;
-    return this;
-  }
-
-   /**
-   * Get scannedouton
-   * @return scannedouton
-  **/
-  @Schema(description = "")
-  public String getScannedouton() {
-    return scannedouton;
-  }
-
-  public void setScannedouton(String scannedouton) {
-    this.scannedouton = scannedouton;
-  }
-
-  public Barcode lat(BigDecimal lat) {
-    this.lat = lat;
-    return this;
-  }
-
-   /**
-   * Get lat
-   * @return lat
-  **/
-  @Schema(description = "")
-  public BigDecimal getLat() {
-    return lat;
-  }
-
-  public void setLat(BigDecimal lat) {
-    this.lat = lat;
-  }
-
-  public Barcode lng(BigDecimal lng) {
-    this.lng = lng;
-    return this;
-  }
-
-   /**
-   * Get lng
-   * @return lng
-  **/
-  @Schema(description = "")
-  public BigDecimal getLng() {
-    return lng;
-  }
-
-  public void setLng(BigDecimal lng) {
-    this.lng = lng;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -584,15 +520,12 @@ public class Barcode {
         Objects.equals(this.complete, barcode.complete) &&
         Objects.equals(this.changestatus, barcode.changestatus) &&
         Objects.equals(this.scannedby, barcode.scannedby) &&
-        Objects.equals(this.scannedinon, barcode.scannedinon) &&
-        Objects.equals(this.scannedouton, barcode.scannedouton) &&
-        Objects.equals(this.lat, barcode.lat) &&
-        Objects.equals(this.lng, barcode.lng);
+        Objects.equals(this.scannedinon, barcode.scannedinon);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, barcode, customerref, manifestref, reference, storage, loadcarrier, constructionindex, serialnumber, quantity, slc, llc, qpu, unit, action, barcodetype, createnew, deleted, complete, changestatus, scannedby, scannedinon, scannedouton, lat, lng);
+    return Objects.hash(id, barcode, customerref, manifestref, reference, storage, loadcarrier, constructionindex, serialnumber, quantity, slc, llc, qpu, unit, action, barcodetype, createnew, deleted, complete, changestatus, scannedby, scannedinon);
   }
 
 
@@ -623,9 +556,6 @@ public class Barcode {
     sb.append("    changestatus: ").append(toIndentedString(changestatus)).append("\n");
     sb.append("    scannedby: ").append(toIndentedString(scannedby)).append("\n");
     sb.append("    scannedinon: ").append(toIndentedString(scannedinon)).append("\n");
-    sb.append("    scannedouton: ").append(toIndentedString(scannedouton)).append("\n");
-    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
-    sb.append("    lng: ").append(toIndentedString(lng)).append("\n");
     sb.append("}");
     return sb.toString();
   }

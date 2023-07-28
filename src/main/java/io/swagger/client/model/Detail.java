@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -25,7 +25,7 @@ import java.io.IOException;
  * Detail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-11T22:27:13.531+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
 public class Detail {
   @SerializedName("type")
   private String type = null;
@@ -117,10 +117,10 @@ public class Detail {
   }
 
    /**
-   * Get dateType
+   * 0&#x3D;default, 1&#x3D;FromTo, 2&#x3D;From, 3&#x3D;To, 4&#x3D;Fix, 5&#x3D;None
    * @return dateType
   **/
-  @Schema(example = "1", description = "")
+  @Schema(example = "1", description = "0=default, 1=FromTo, 2=From, 3=To, 4=Fix, 5=None")
   public Integer getDateType() {
     return dateType;
   }
@@ -138,7 +138,7 @@ public class Detail {
    * The parameters &#x27;dateFrom&#x27; and &#x27;dateTo&#x27; specify the time frame during which the goods are scheduled to be picked up and/or delivered.
    * @return dateFrom
   **/
-  @Schema(example = "dd.MM.yyyy HH.mm", description = "The parameters 'dateFrom' and 'dateTo' specify the time frame during which the goods are scheduled to be picked up and/or delivered.")
+  @Schema(example = "12.06.2023 10:00", description = "The parameters 'dateFrom' and 'dateTo' specify the time frame during which the goods are scheduled to be picked up and/or delivered.")
   public String getDateFrom() {
     return dateFrom;
   }
@@ -156,7 +156,7 @@ public class Detail {
    * Get dateTo
    * @return dateTo
   **/
-  @Schema(example = "dd.MM.yyyy HH.mm", description = "")
+  @Schema(example = "12.06.2023 15:00", description = "")
   public String getDateTo() {
     return dateTo;
   }

@@ -22,72 +22,51 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Calloff
+ * ResponseStatus
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
-public class Calloff {
-  @SerializedName("callOffDate")
-  private String callOffDate = null;
+public class ResponseStatus {
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("quantity")
-  private Integer quantity = null;
+  @SerializedName("message")
+  private String message = null;
 
-  @SerializedName("description")
-  private String description = null;
-
-  public Calloff callOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public ResponseStatus status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item
-   * @return callOffDate
+   * :&gt;- Status as in Response Header.
+   * @return status
   **/
-  @Schema(example = "yyMMdd", description = "When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item")
-  public String getCallOffDate() {
-    return callOffDate;
+  @Schema(example = "200", description = ":>- Status as in Response Header.")
+  public String getStatus() {
+    return status;
   }
 
-  public void setCallOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public Calloff quantity(Integer quantity) {
-    this.quantity = quantity;
+  public ResponseStatus message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * Provide a call-off quantity of the goods.
-   * @return quantity
+   * :&gt;- This field contains free text that provides information about the outcome of the import process. If the import is successful, it will describe the result of the process. However, in case of errors, it will provide details about the issues encountered. Common Errors - Missing Fields, Some required fields were not provided in the API request, which caused the import process to fail. - Incorrect Fields, The data provided for certain fields in the API request was not in the expected format or did not meet the validation requirements, resulting in an error during import.
+   * @return message
   **/
-  @Schema(description = "Provide a call-off quantity of the goods.")
-  public Integer getQuantity() {
-    return quantity;
+  @Schema(example = "The Manifest 1234567 was created successfully", description = ":>- This field contains free text that provides information about the outcome of the import process. If the import is successful, it will describe the result of the process. However, in case of errors, it will provide details about the issues encountered. Common Errors - Missing Fields, Some required fields were not provided in the API request, which caused the import process to fail. - Incorrect Fields, The data provided for certain fields in the API request was not in the expected format or did not meet the validation requirements, resulting in an error during import.")
+  public String getMessage() {
+    return message;
   }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
-  }
-
-  public Calloff description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Provide a reference of the goods.
-   * @return description
-  **/
-  @Schema(description = "Provide a reference of the goods.")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -99,26 +78,24 @@ public class Calloff {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Calloff calloff = (Calloff) o;
-    return Objects.equals(this.callOffDate, calloff.callOffDate) &&
-        Objects.equals(this.quantity, calloff.quantity) &&
-        Objects.equals(this.description, calloff.description);
+    ResponseStatus responseStatus = (ResponseStatus) o;
+    return Objects.equals(this.status, responseStatus.status) &&
+        Objects.equals(this.message, responseStatus.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callOffDate, quantity, description);
+    return Objects.hash(status, message);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Calloff {\n");
+    sb.append("class ResponseStatus {\n");
     
-    sb.append("    callOffDate: ").append(toIndentedString(callOffDate)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

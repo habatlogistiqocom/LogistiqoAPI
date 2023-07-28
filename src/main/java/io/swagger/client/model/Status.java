@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -21,12 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 /**
  * Status
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-11T22:27:13.531+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-27T18:09:32.068928025Z[GMT]")
+
 public class Status {
   @SerializedName("reference")
   private String reference = null;
@@ -46,6 +46,9 @@ public class Status {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("idProblemType")
+  private Integer idProblemType = null;
+
   @SerializedName("statusDescription")
   private String statusDescription = null;
 
@@ -59,10 +62,10 @@ public class Status {
   private String timeStamp = null;
 
   @SerializedName("lat")
-  private BigDecimal lat = null;
+  private Double lat = null;
 
   @SerializedName("lng")
-  private BigDecimal lng = null;
+  private Double lng = null;
 
   public Status reference(String reference) {
     this.reference = reference;
@@ -142,10 +145,10 @@ public class Status {
   }
 
    /**
-   * :&gt;- Only used by Logtistiqo
+   * :&gt;- Only for internal use by Logtistiqo
    * @return statusId
   **/
-  @Schema(example = "1", description = ":>- Only used by Logtistiqo")
+  @Schema(example = "1", description = ":>- Only for internal use by Logtistiqo")
   public Integer getStatusId() {
     return statusId;
   }
@@ -172,16 +175,34 @@ public class Status {
     this.status = status;
   }
 
+  public Status idProblemType(Integer idProblemType) {
+    this.idProblemType = idProblemType;
+    return this;
+  }
+
+   /**
+   * :&gt;- This optional field allows users to set a problem status from the problem type table, providing flexibility and customization within the Logistiqo system. Users have the freedom to define their own problem types. To create and find the available IDs, you can refer to the &#x27;Settings/Shipment/Problem Type&#x27; function in Logistiqo.
+   * @return idProblemType
+  **/
+  @Schema(example = "2", description = ":>- This optional field allows users to set a problem status from the problem type table, providing flexibility and customization within the Logistiqo system. Users have the freedom to define their own problem types. To create and find the available IDs, you can refer to the 'Settings/Shipment/Problem Type' function in Logistiqo.")
+  public Integer getIdProblemType() {
+    return idProblemType;
+  }
+
+  public void setIdProblemType(Integer idProblemType) {
+    this.idProblemType = idProblemType;
+  }
+
   public Status statusDescription(String statusDescription) {
     this.statusDescription = statusDescription;
     return this;
   }
 
    /**
-   * :&gt;- Translated status
+   * :&gt;- A translated status, this field is not used by add status
    * @return statusDescription
   **/
-  @Schema(example = "At Gate Pickup", description = ":>- Translated status")
+  @Schema(example = "Abholung", description = ":>- A translated status, this field is not used by add status")
   public String getStatusDescription() {
     return statusDescription;
   }
@@ -235,7 +256,7 @@ public class Status {
    * :&gt;- Time of the status change, Use Dateformat &#x27;dd.MM.yyyy HH:mm&#x27;
    * @return timeStamp
   **/
-  @Schema(example = "23-03-2023 19:01", description = ":>- Time of the status change, Use Dateformat 'dd.MM.yyyy HH:mm'")
+  @Schema(example = "23.03.2023 19:01", description = ":>- Time of the status change, Use Dateformat 'dd.MM.yyyy HH:mm'")
   public String getTimeStamp() {
     return timeStamp;
   }
@@ -244,7 +265,7 @@ public class Status {
     this.timeStamp = timeStamp;
   }
 
-  public Status lat(BigDecimal lat) {
+  public Status lat(Double lat) {
     this.lat = lat;
     return this;
   }
@@ -255,16 +276,16 @@ public class Status {
    * maximum: 90
    * @return lat
   **/
-  @Schema(description = "")
-  public BigDecimal getLat() {
+  @Schema(example = "47.7968048", description = "")
+  public Double getLat() {
     return lat;
   }
 
-  public void setLat(BigDecimal lat) {
+  public void setLat(Double lat) {
     this.lat = lat;
   }
 
-  public Status lng(BigDecimal lng) {
+  public Status lng(Double lng) {
     this.lng = lng;
     return this;
   }
@@ -275,12 +296,12 @@ public class Status {
    * maximum: 180
    * @return lng
   **/
-  @Schema(description = "")
-  public BigDecimal getLng() {
+  @Schema(example = "11.973085", description = "")
+  public Double getLng() {
     return lng;
   }
 
-  public void setLng(BigDecimal lng) {
+  public void setLng(Double lng) {
     this.lng = lng;
   }
 
@@ -300,6 +321,7 @@ public class Status {
         Objects.equals(this.customerReference, status.customerReference) &&
         Objects.equals(this.statusId, status.statusId) &&
         Objects.equals(this.status, status.status) &&
+        Objects.equals(this.idProblemType, status.idProblemType) &&
         Objects.equals(this.statusDescription, status.statusDescription) &&
         Objects.equals(this.description, status.description) &&
         Objects.equals(this.user, status.user) &&
@@ -310,7 +332,7 @@ public class Status {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reference, idShipment, shipmentNumber, customerReference, statusId, status, statusDescription, description, user, timeStamp, lat, lng);
+    return Objects.hash(reference, idShipment, shipmentNumber, customerReference, statusId, status, idProblemType, statusDescription, description, user, timeStamp, lat, lng);
   }
 
 
@@ -325,6 +347,7 @@ public class Status {
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
     sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    idProblemType: ").append(toIndentedString(idProblemType)).append("\n");
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-03T09:36:55.937+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
 public class Manifest {
   @SerializedName("createManifest")
   private Boolean createManifest = false;
@@ -38,6 +38,9 @@ public class Manifest {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("mrn")
+  private String mrn = null;
 
   @SerializedName("mawb")
   private String mawb = null;
@@ -129,6 +132,24 @@ public class Manifest {
     this.description = description;
   }
 
+  public Manifest mrn(String mrn) {
+    this.mrn = mrn;
+    return this;
+  }
+
+   /**
+   * If this manifest represents a Master Reference Number, the field should contain a valid Master Reference Number.
+   * @return mrn
+  **/
+  @Schema(example = "22AT100000TV0D2MD6", description = "If this manifest represents a Master Reference Number, the field should contain a valid Master Reference Number.")
+  public String getMrn() {
+    return mrn;
+  }
+
+  public void setMrn(String mrn) {
+    this.mrn = mrn;
+  }
+
   public Manifest mawb(String mawb) {
     this.mawb = mawb;
     return this;
@@ -156,7 +177,7 @@ public class Manifest {
    * If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.
    * @return airline
   **/
-  @Schema(example = "Korean Air Lines", description = "If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.")
+  @Schema(example = "180 Korean Air Lines", description = "If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.")
   public String getAirline() {
     return airline;
   }
@@ -171,10 +192,10 @@ public class Manifest {
   }
 
    /**
-   * Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+   * Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
    * @return date
   **/
-  @Schema(example = "12.06.2023", description = "Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
+  @Schema(example = "12.06.2023 12:00", description = "Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
   public String getDate() {
     return date;
   }
@@ -189,10 +210,10 @@ public class Manifest {
   }
 
    /**
-   * Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+   * Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
    * @return dateto
   **/
-  @Schema(example = "dd.MM.yyyy HH.mm or dd.MM.yyyy", description = "Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
+  @Schema(example = "12.06.2023 16:00", description = "Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.")
   public String getDateto() {
     return dateto;
   }
@@ -246,7 +267,7 @@ public class Manifest {
    * This field is solely utilized when the manifest includes warehouse issues, warehouse receipts, or relocation shipments. In such scenarios, the acceptable values are limited to SCAN_IN, SCAN_OUT, and SCAN_RELOCATE.
    * @return action
   **/
-  @Schema(example = "SCAN_IN", description = "This field is solely utilized when the manifest includes warehouse issues, warehouse receipts, or relocation shipments. In such scenarios, the acceptable values are limited to SCAN_IN, SCAN_OUT, and SCAN_RELOCATE.")
+  @Schema(description = "This field is solely utilized when the manifest includes warehouse issues, warehouse receipts, or relocation shipments. In such scenarios, the acceptable values are limited to SCAN_IN, SCAN_OUT, and SCAN_RELOCATE.")
   public String getAction() {
     return action;
   }
@@ -366,6 +387,7 @@ public class Manifest {
     return Objects.equals(this.createManifest, manifest.createManifest) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.description, manifest.description) &&
+        Objects.equals(this.mrn, manifest.mrn) &&
         Objects.equals(this.mawb, manifest.mawb) &&
         Objects.equals(this.airline, manifest.airline) &&
         Objects.equals(this.date, manifest.date) &&
@@ -382,7 +404,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, reference, description, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
   }
 
 
@@ -394,6 +416,7 @@ public class Manifest {
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
     sb.append("    mawb: ").append(toIndentedString(mawb)).append("\n");
     sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");

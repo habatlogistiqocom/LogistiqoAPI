@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -54,14 +54,14 @@ public class CompaniesApi {
     }
 
     /**
-     * Build call for companiesPost
+     * Build call for postCompanies
      * @param body  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call companiesPostCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postCompaniesCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -98,18 +98,18 @@ public class CompaniesApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "BasicAuth" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call companiesPostValidateBeforeCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postCompaniesValidateBeforeCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling companiesPost(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling postCompanies(Async)");
         }
         
-        com.squareup.okhttp.Call call = companiesPostCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postCompaniesCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -119,36 +119,36 @@ public class CompaniesApi {
     }
 
     /**
-     * 
-     * 
+     * postCompaniesEndpoint
+     *  # Companies     
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void companiesPost(List<CompanyObject> body) throws ApiException {
-        companiesPostWithHttpInfo(body);
+    public void postCompanies(List<CompanyObject> body) throws ApiException {
+        postCompaniesWithHttpInfo(body);
     }
 
     /**
-     * 
-     * 
+     * postCompaniesEndpoint
+     *  # Companies     
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> companiesPostWithHttpInfo(List<CompanyObject> body) throws ApiException {
-        com.squareup.okhttp.Call call = companiesPostValidateBeforeCall(body, null, null);
+    public ApiResponse<Void> postCompaniesWithHttpInfo(List<CompanyObject> body) throws ApiException {
+        com.squareup.okhttp.Call call = postCompaniesValidateBeforeCall(body, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     *  (asynchronously)
-     * 
+     * postCompaniesEndpoint (asynchronously)
+     *  # Companies     
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call companiesPostAsync(List<CompanyObject> body, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postCompaniesAsync(List<CompanyObject> body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +169,7 @@ public class CompaniesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = companiesPostValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postCompaniesValidateBeforeCall(body, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
