@@ -21,7 +21,8 @@ import java.util.List;
  * Companies
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+
 public class Companies extends ArrayList<CompanyObject> {
 
   @Override

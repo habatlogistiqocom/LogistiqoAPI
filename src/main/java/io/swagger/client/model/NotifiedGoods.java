@@ -25,7 +25,8 @@ import java.io.IOException;
  * NotifiedGoods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+
 public class NotifiedGoods {
   @SerializedName("pos")
   private Integer pos = null;
@@ -52,10 +53,10 @@ public class NotifiedGoods {
   private Integer pieces = 1;
 
   @SerializedName("weight")
-  private Double weight = 0.0d;
+  private Double weight = 0d;
 
   @SerializedName("volume")
-  private Double volume = 0.0d;
+  private Double volume = 0d;
 
   @SerializedName("length")
   private Integer length = 0;

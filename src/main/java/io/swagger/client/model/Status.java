@@ -25,7 +25,7 @@ import java.io.IOException;
  * Status
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-27T18:09:32.068928025Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
 
 public class Status {
   @SerializedName("reference")

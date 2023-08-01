@@ -25,7 +25,8 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+
 public class Goods {
   @SerializedName("pos")
   private Integer pos = null;
@@ -88,10 +89,10 @@ public class Goods {
   private Boolean setpoint = false;
 
   @SerializedName("codAmount")
-  private Double codAmount = 0.0d;
+  private Double codAmount = 0d;
 
   @SerializedName("goodsValue")
-  private Double goodsValue = 0.0d;
+  private Double goodsValue = 0d;
 
   @SerializedName("supplier")
   private String supplier = null;

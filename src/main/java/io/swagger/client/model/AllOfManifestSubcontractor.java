@@ -20,7 +20,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.
  */
 @Schema(description = "If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+
 public class AllOfManifestSubcontractor extends CompanyObject {
 
   @Override

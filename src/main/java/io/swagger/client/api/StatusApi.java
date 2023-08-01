@@ -65,7 +65,7 @@ public class StatusApi {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/status";
+        String localVarPath = "/logistiqo/rest/status/add/json";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -120,7 +120,7 @@ public class StatusApi {
 
     /**
      * postStatusEndpoint
-     *   # Status     
+     *   # Status 
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -130,7 +130,7 @@ public class StatusApi {
 
     /**
      * postStatusEndpoint
-     *   # Status     
+     *   # Status 
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -142,7 +142,7 @@ public class StatusApi {
 
     /**
      * postStatusEndpoint (asynchronously)
-     *   # Status     
+     *   # Status 
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

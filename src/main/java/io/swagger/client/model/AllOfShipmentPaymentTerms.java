@@ -20,7 +20,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * This field should only be used if the payment term for this shipment differs from the customer&#x27;s default payment term as defined in the Logistiqo application.
  */
 @Schema(description = "This field should only be used if the payment term for this shipment differs from the customer's default payment term as defined in the Logistiqo application.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-24T17:13:13.106+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+
 public class AllOfShipmentPaymentTerms extends PaymentTerms {
 
   @Override

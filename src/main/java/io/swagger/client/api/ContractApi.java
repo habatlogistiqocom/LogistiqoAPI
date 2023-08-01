@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.Shipment;
+import io.swagger.client.model.Contract;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -34,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ShipmentApi {
+public class ContractApi {
     private ApiClient apiClient;
 
-    public ShipmentApi() {
+    public ContractApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ShipmentApi(ApiClient apiClient) {
+    public ContractApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -54,19 +54,17 @@ public class ShipmentApi {
     }
 
     /**
-     * Build call for getShipment
-     * @param id The ID of the shipment to get. (required)
+     * Build call for getContract
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getShipmentCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getContractCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/shipment/get/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/contract";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -104,13 +102,9 @@ public class ShipmentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getShipmentValidateBeforeCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getShipment(Async)");
-        }
+    private com.squareup.okhttp.Call getContractValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = getShipmentCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getContractCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -120,39 +114,36 @@ public class ShipmentApi {
     }
 
     /**
-     * Get a shipment by ID
-     *  # Shipment       
-     * @param id The ID of the shipment to get. (required)
-     * @return Shipment
+     * GetContractEndpoint
+     *  #Contract 
+     * @return List&lt;Contract&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Shipment getShipment(Integer id) throws ApiException {
-        ApiResponse<Shipment> resp = getShipmentWithHttpInfo(id);
+    public List<Contract> getContract() throws ApiException {
+        ApiResponse<List<Contract>> resp = getContractWithHttpInfo();
         return resp.getData();
     }
 
     /**
-     * Get a shipment by ID
-     *  # Shipment       
-     * @param id The ID of the shipment to get. (required)
-     * @return ApiResponse&lt;Shipment&gt;
+     * GetContractEndpoint
+     *  #Contract 
+     * @return ApiResponse&lt;List&lt;Contract&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Shipment> getShipmentWithHttpInfo(Integer id) throws ApiException {
-        com.squareup.okhttp.Call call = getShipmentValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<Shipment>(){}.getType();
+    public ApiResponse<List<Contract>> getContractWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getContractValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<List<Contract>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get a shipment by ID (asynchronously)
-     *  # Shipment       
-     * @param id The ID of the shipment to get. (required)
+     * GetContractEndpoint (asynchronously)
+     *  #Contract 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getShipmentAsync(Integer id, final ApiCallback<Shipment> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContractAsync(final ApiCallback<List<Contract>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,8 +164,8 @@ public class ShipmentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getShipmentValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Shipment>(){}.getType();
+        com.squareup.okhttp.Call call = getContractValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<Contract>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

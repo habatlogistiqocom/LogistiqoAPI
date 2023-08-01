@@ -66,7 +66,7 @@ public class ManifestApi {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/manifest/json";
+        String localVarPath = "/logistiqo/rest/manifest/add/json";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
