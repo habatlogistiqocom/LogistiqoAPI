@@ -16,12 +16,12 @@ import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.client.model.AddressObject;
 /**
- * AllOfInvoiceContactPerson
+ * AllOfInvoicePersonOwrRef
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
 
-public class AllOfInvoiceContactPerson extends AddressObject {
+public class AllOfInvoicePersonOwrRef extends AddressObject {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -43,7 +43,7 @@ public class AllOfInvoiceContactPerson extends AddressObject {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfInvoiceContactPerson {\n");
+    sb.append("class AllOfInvoicePersonOwrRef {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

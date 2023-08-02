@@ -31,14 +31,11 @@ import org.threeten.bp.OffsetDateTime;
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:42:11.807009033Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")
   private Integer id = null;
-
-  @SerializedName("idInvoiceType")
-  private Integer idInvoiceType = null;
 
   @SerializedName("number")
   private String number = null;
@@ -79,44 +76,11 @@ public class Invoice {
   @SerializedName("paidOn")
   private OffsetDateTime paidOn = null;
 
-  @SerializedName("taxExempt")
-  private Boolean taxExempt = null;
+  @SerializedName("addressYourRef")
+  private AllOfInvoiceAddressYourRef addressYourRef = null;
 
-  @SerializedName("taxCase")
-  private Integer taxCase = null;
-
-  @SerializedName("overrideTaxCase")
-  private Boolean overrideTaxCase = null;
-
-  @SerializedName("canceled")
-  private Boolean canceled = null;
-
-  @SerializedName("creditAllocation")
-  private Boolean creditAllocation = null;
-
-  @SerializedName("correctiveInvoice")
-  private Boolean correctiveInvoice = null;
-
-  @SerializedName("noDiscount")
-  private Boolean noDiscount = null;
-
-  @SerializedName("allocatedCreditNote")
-  private String allocatedCreditNote = null;
-
-  @SerializedName("createdOn")
-  private OffsetDateTime createdOn = null;
-
-  @SerializedName("createdBy")
-  private String createdBy = null;
-
-  @SerializedName("modifiedOn")
-  private OffsetDateTime modifiedOn = null;
-
-  @SerializedName("modifiedBy")
-  private String modifiedBy = null;
-
-  @SerializedName("contactPerson")
-  private AllOfInvoiceContactPerson contactPerson = null;
+  @SerializedName("personOwrRef")
+  private AllOfInvoicePersonOwrRef personOwrRef = null;
 
   @SerializedName("paymentTerms")
   private AllOfInvoicePaymentTerms paymentTerms = null;
@@ -152,24 +116,6 @@ public class Invoice {
 
   public void setId(Integer id) {
     this.id = id;
-  }
-
-  public Invoice idInvoiceType(Integer idInvoiceType) {
-    this.idInvoiceType = idInvoiceType;
-    return this;
-  }
-
-   /**
-   * Get idInvoiceType
-   * @return idInvoiceType
-  **/
-  @Schema(description = "")
-  public Integer getIdInvoiceType() {
-    return idInvoiceType;
-  }
-
-  public void setIdInvoiceType(Integer idInvoiceType) {
-    this.idInvoiceType = idInvoiceType;
   }
 
   public Invoice number(String number) {
@@ -406,238 +352,40 @@ public class Invoice {
     this.paidOn = paidOn;
   }
 
-  public Invoice taxExempt(Boolean taxExempt) {
-    this.taxExempt = taxExempt;
+  public Invoice addressYourRef(AllOfInvoiceAddressYourRef addressYourRef) {
+    this.addressYourRef = addressYourRef;
     return this;
   }
 
    /**
-   * Get taxExempt
-   * @return taxExempt
+   * Get addressYourRef
+   * @return addressYourRef
   **/
   @Schema(description = "")
-  public Boolean isTaxExempt() {
-    return taxExempt;
+  public AllOfInvoiceAddressYourRef getAddressYourRef() {
+    return addressYourRef;
   }
 
-  public void setTaxExempt(Boolean taxExempt) {
-    this.taxExempt = taxExempt;
+  public void setAddressYourRef(AllOfInvoiceAddressYourRef addressYourRef) {
+    this.addressYourRef = addressYourRef;
   }
 
-  public Invoice taxCase(Integer taxCase) {
-    this.taxCase = taxCase;
+  public Invoice personOwrRef(AllOfInvoicePersonOwrRef personOwrRef) {
+    this.personOwrRef = personOwrRef;
     return this;
   }
 
    /**
-   * Get taxCase
-   * @return taxCase
+   * Get personOwrRef
+   * @return personOwrRef
   **/
   @Schema(description = "")
-  public Integer getTaxCase() {
-    return taxCase;
+  public AllOfInvoicePersonOwrRef getPersonOwrRef() {
+    return personOwrRef;
   }
 
-  public void setTaxCase(Integer taxCase) {
-    this.taxCase = taxCase;
-  }
-
-  public Invoice overrideTaxCase(Boolean overrideTaxCase) {
-    this.overrideTaxCase = overrideTaxCase;
-    return this;
-  }
-
-   /**
-   * Get overrideTaxCase
-   * @return overrideTaxCase
-  **/
-  @Schema(description = "")
-  public Boolean isOverrideTaxCase() {
-    return overrideTaxCase;
-  }
-
-  public void setOverrideTaxCase(Boolean overrideTaxCase) {
-    this.overrideTaxCase = overrideTaxCase;
-  }
-
-  public Invoice canceled(Boolean canceled) {
-    this.canceled = canceled;
-    return this;
-  }
-
-   /**
-   * Get canceled
-   * @return canceled
-  **/
-  @Schema(description = "")
-  public Boolean isCanceled() {
-    return canceled;
-  }
-
-  public void setCanceled(Boolean canceled) {
-    this.canceled = canceled;
-  }
-
-  public Invoice creditAllocation(Boolean creditAllocation) {
-    this.creditAllocation = creditAllocation;
-    return this;
-  }
-
-   /**
-   * Get creditAllocation
-   * @return creditAllocation
-  **/
-  @Schema(description = "")
-  public Boolean isCreditAllocation() {
-    return creditAllocation;
-  }
-
-  public void setCreditAllocation(Boolean creditAllocation) {
-    this.creditAllocation = creditAllocation;
-  }
-
-  public Invoice correctiveInvoice(Boolean correctiveInvoice) {
-    this.correctiveInvoice = correctiveInvoice;
-    return this;
-  }
-
-   /**
-   * Get correctiveInvoice
-   * @return correctiveInvoice
-  **/
-  @Schema(description = "")
-  public Boolean isCorrectiveInvoice() {
-    return correctiveInvoice;
-  }
-
-  public void setCorrectiveInvoice(Boolean correctiveInvoice) {
-    this.correctiveInvoice = correctiveInvoice;
-  }
-
-  public Invoice noDiscount(Boolean noDiscount) {
-    this.noDiscount = noDiscount;
-    return this;
-  }
-
-   /**
-   * Get noDiscount
-   * @return noDiscount
-  **/
-  @Schema(description = "")
-  public Boolean isNoDiscount() {
-    return noDiscount;
-  }
-
-  public void setNoDiscount(Boolean noDiscount) {
-    this.noDiscount = noDiscount;
-  }
-
-  public Invoice allocatedCreditNote(String allocatedCreditNote) {
-    this.allocatedCreditNote = allocatedCreditNote;
-    return this;
-  }
-
-   /**
-   * Get allocatedCreditNote
-   * @return allocatedCreditNote
-  **/
-  @Schema(description = "")
-  public String getAllocatedCreditNote() {
-    return allocatedCreditNote;
-  }
-
-  public void setAllocatedCreditNote(String allocatedCreditNote) {
-    this.allocatedCreditNote = allocatedCreditNote;
-  }
-
-  public Invoice createdOn(OffsetDateTime createdOn) {
-    this.createdOn = createdOn;
-    return this;
-  }
-
-   /**
-   * Get createdOn
-   * @return createdOn
-  **/
-  @Schema(description = "")
-  public OffsetDateTime getCreatedOn() {
-    return createdOn;
-  }
-
-  public void setCreatedOn(OffsetDateTime createdOn) {
-    this.createdOn = createdOn;
-  }
-
-  public Invoice createdBy(String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-
-   /**
-   * Get createdBy
-   * @return createdBy
-  **/
-  @Schema(description = "")
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-  public void setCreatedBy(String createdBy) {
-    this.createdBy = createdBy;
-  }
-
-  public Invoice modifiedOn(OffsetDateTime modifiedOn) {
-    this.modifiedOn = modifiedOn;
-    return this;
-  }
-
-   /**
-   * Get modifiedOn
-   * @return modifiedOn
-  **/
-  @Schema(description = "")
-  public OffsetDateTime getModifiedOn() {
-    return modifiedOn;
-  }
-
-  public void setModifiedOn(OffsetDateTime modifiedOn) {
-    this.modifiedOn = modifiedOn;
-  }
-
-  public Invoice modifiedBy(String modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-
-   /**
-   * Get modifiedBy
-   * @return modifiedBy
-  **/
-  @Schema(description = "")
-  public String getModifiedBy() {
-    return modifiedBy;
-  }
-
-  public void setModifiedBy(String modifiedBy) {
-    this.modifiedBy = modifiedBy;
-  }
-
-  public Invoice contactPerson(AllOfInvoiceContactPerson contactPerson) {
-    this.contactPerson = contactPerson;
-    return this;
-  }
-
-   /**
-   * Get contactPerson
-   * @return contactPerson
-  **/
-  @Schema(description = "")
-  public AllOfInvoiceContactPerson getContactPerson() {
-    return contactPerson;
-  }
-
-  public void setContactPerson(AllOfInvoiceContactPerson contactPerson) {
-    this.contactPerson = contactPerson;
+  public void setPersonOwrRef(AllOfInvoicePersonOwrRef personOwrRef) {
+    this.personOwrRef = personOwrRef;
   }
 
   public Invoice paymentTerms(AllOfInvoicePaymentTerms paymentTerms) {
@@ -783,7 +531,6 @@ public class Invoice {
     }
     Invoice invoice = (Invoice) o;
     return Objects.equals(this.id, invoice.id) &&
-        Objects.equals(this.idInvoiceType, invoice.idInvoiceType) &&
         Objects.equals(this.number, invoice.number) &&
         Objects.equals(this.invoiceDate, invoice.invoiceDate) &&
         Objects.equals(this.postingDate, invoice.postingDate) &&
@@ -797,19 +544,8 @@ public class Invoice {
         Objects.equals(this.mailed, invoice.mailed) &&
         Objects.equals(this.paid, invoice.paid) &&
         Objects.equals(this.paidOn, invoice.paidOn) &&
-        Objects.equals(this.taxExempt, invoice.taxExempt) &&
-        Objects.equals(this.taxCase, invoice.taxCase) &&
-        Objects.equals(this.overrideTaxCase, invoice.overrideTaxCase) &&
-        Objects.equals(this.canceled, invoice.canceled) &&
-        Objects.equals(this.creditAllocation, invoice.creditAllocation) &&
-        Objects.equals(this.correctiveInvoice, invoice.correctiveInvoice) &&
-        Objects.equals(this.noDiscount, invoice.noDiscount) &&
-        Objects.equals(this.allocatedCreditNote, invoice.allocatedCreditNote) &&
-        Objects.equals(this.createdOn, invoice.createdOn) &&
-        Objects.equals(this.createdBy, invoice.createdBy) &&
-        Objects.equals(this.modifiedOn, invoice.modifiedOn) &&
-        Objects.equals(this.modifiedBy, invoice.modifiedBy) &&
-        Objects.equals(this.contactPerson, invoice.contactPerson) &&
+        Objects.equals(this.addressYourRef, invoice.addressYourRef) &&
+        Objects.equals(this.personOwrRef, invoice.personOwrRef) &&
         Objects.equals(this.paymentTerms, invoice.paymentTerms) &&
         Objects.equals(this.customer, invoice.customer) &&
         Objects.equals(this.invoiceReceiver, invoice.invoiceReceiver) &&
@@ -820,7 +556,7 @@ public class Invoice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, idInvoiceType, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, taxExempt, taxCase, overrideTaxCase, canceled, creditAllocation, correctiveInvoice, noDiscount, allocatedCreditNote, createdOn, createdBy, modifiedOn, modifiedBy, contactPerson, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment);
+    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, addressYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment);
   }
 
 
@@ -830,7 +566,6 @@ public class Invoice {
     sb.append("class Invoice {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    idInvoiceType: ").append(toIndentedString(idInvoiceType)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
     sb.append("    postingDate: ").append(toIndentedString(postingDate)).append("\n");
@@ -844,19 +579,8 @@ public class Invoice {
     sb.append("    mailed: ").append(toIndentedString(mailed)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    paidOn: ").append(toIndentedString(paidOn)).append("\n");
-    sb.append("    taxExempt: ").append(toIndentedString(taxExempt)).append("\n");
-    sb.append("    taxCase: ").append(toIndentedString(taxCase)).append("\n");
-    sb.append("    overrideTaxCase: ").append(toIndentedString(overrideTaxCase)).append("\n");
-    sb.append("    canceled: ").append(toIndentedString(canceled)).append("\n");
-    sb.append("    creditAllocation: ").append(toIndentedString(creditAllocation)).append("\n");
-    sb.append("    correctiveInvoice: ").append(toIndentedString(correctiveInvoice)).append("\n");
-    sb.append("    noDiscount: ").append(toIndentedString(noDiscount)).append("\n");
-    sb.append("    allocatedCreditNote: ").append(toIndentedString(allocatedCreditNote)).append("\n");
-    sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    modifiedOn: ").append(toIndentedString(modifiedOn)).append("\n");
-    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
-    sb.append("    contactPerson: ").append(toIndentedString(contactPerson)).append("\n");
+    sb.append("    addressYourRef: ").append(toIndentedString(addressYourRef)).append("\n");
+    sb.append("    personOwrRef: ").append(toIndentedString(personOwrRef)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    invoiceReceiver: ").append(toIndentedString(invoiceReceiver)).append("\n");

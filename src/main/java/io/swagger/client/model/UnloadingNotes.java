@@ -25,20 +25,20 @@ import java.io.IOException;
  * UnloadingNotes
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-01T15:47:51.687737219Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
 
 public class UnloadingNotes {
   @SerializedName("mrn")
   private String mrn = null;
 
-  @SerializedName("anmeldeID")
-  private Integer anmeldeID = null;
+  @SerializedName("loginID")
+  private Integer loginID = null;
 
-  @SerializedName("statusCode")
-  private Integer statusCode = null;
+  @SerializedName("status")
+  private Integer status = null;
 
-  @SerializedName("errorMessage")
-  private String errorMessage = null;
+  @SerializedName("errorText")
+  private String errorText = null;
 
   public UnloadingNotes mrn(String mrn) {
     this.mrn = mrn;
@@ -58,58 +58,58 @@ public class UnloadingNotes {
     this.mrn = mrn;
   }
 
-  public UnloadingNotes anmeldeID(Integer anmeldeID) {
-    this.anmeldeID = anmeldeID;
+  public UnloadingNotes loginID(Integer loginID) {
+    this.loginID = loginID;
     return this;
   }
 
    /**
    * :&gt;- LoginID (AnmeldeId) for the manifest for which the unload notes were requested.
-   * @return anmeldeID
+   * @return loginID
   **/
   @Schema(example = "263532", description = ":>- LoginID (AnmeldeId) for the manifest for which the unload notes were requested.")
-  public Integer getAnmeldeID() {
-    return anmeldeID;
+  public Integer getLoginID() {
+    return loginID;
   }
 
-  public void setAnmeldeID(Integer anmeldeID) {
-    this.anmeldeID = anmeldeID;
+  public void setLoginID(Integer loginID) {
+    this.loginID = loginID;
   }
 
-  public UnloadingNotes statusCode(Integer statusCode) {
-    this.statusCode = statusCode;
+  public UnloadingNotes status(Integer status) {
+    this.status = status;
     return this;
   }
 
    /**
    * :&gt;- Status code
-   * @return statusCode
+   * @return status
   **/
   @Schema(example = "0", description = ":>- Status code")
-  public Integer getStatusCode() {
-    return statusCode;
+  public Integer getStatus() {
+    return status;
   }
 
-  public void setStatusCode(Integer statusCode) {
-    this.statusCode = statusCode;
+  public void setStatus(Integer status) {
+    this.status = status;
   }
 
-  public UnloadingNotes errorMessage(String errorMessage) {
-    this.errorMessage = errorMessage;
+  public UnloadingNotes errorText(String errorText) {
+    this.errorText = errorText;
     return this;
   }
 
    /**
    * :&gt;- Error text
-   * @return errorMessage
+   * @return errorText
   **/
   @Schema(description = ":>- Error text")
-  public String getErrorMessage() {
-    return errorMessage;
+  public String getErrorText() {
+    return errorText;
   }
 
-  public void setErrorMessage(String errorMessage) {
-    this.errorMessage = errorMessage;
+  public void setErrorText(String errorText) {
+    this.errorText = errorText;
   }
 
 
@@ -123,14 +123,14 @@ public class UnloadingNotes {
     }
     UnloadingNotes unloadingNotes = (UnloadingNotes) o;
     return Objects.equals(this.mrn, unloadingNotes.mrn) &&
-        Objects.equals(this.anmeldeID, unloadingNotes.anmeldeID) &&
-        Objects.equals(this.statusCode, unloadingNotes.statusCode) &&
-        Objects.equals(this.errorMessage, unloadingNotes.errorMessage);
+        Objects.equals(this.loginID, unloadingNotes.loginID) &&
+        Objects.equals(this.status, unloadingNotes.status) &&
+        Objects.equals(this.errorText, unloadingNotes.errorText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mrn, anmeldeID, statusCode, errorMessage);
+    return Objects.hash(mrn, loginID, status, errorText);
   }
 
 
@@ -140,9 +140,9 @@ public class UnloadingNotes {
     sb.append("class UnloadingNotes {\n");
     
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
-    sb.append("    anmeldeID: ").append(toIndentedString(anmeldeID)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    loginID: ").append(toIndentedString(loginID)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    errorText: ").append(toIndentedString(errorText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
