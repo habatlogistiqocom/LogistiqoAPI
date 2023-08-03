@@ -21,7 +21,7 @@ import org.threeten.bp.LocalDate;
  * The unique identifier for the associated ContractDetail.
  */
 @Schema(description = "The unique identifier for the associated ContractDetail.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T12:45:05.403669596Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T14:55:28.320760885Z[GMT]")
 
 public class AllOfInvoiceContractsContractDetail extends ContractDetails {
 
