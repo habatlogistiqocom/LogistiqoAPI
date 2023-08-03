@@ -19,7 +19,7 @@ import io.swagger.client.model.AddressObject;
  * AllOfInvoicePersonYourRef
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T10:35:47.578844334Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T12:45:05.403669596Z[GMT]")
 
 public class AllOfInvoicePersonYourRef extends AddressObject {
 
