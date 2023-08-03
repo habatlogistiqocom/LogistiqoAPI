@@ -25,7 +25,7 @@ import java.io.IOException;
  * AddressObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T10:35:47.578844334Z[GMT]")
 
 public class AddressObject {
   @SerializedName("id")
@@ -34,17 +34,11 @@ public class AddressObject {
   @SerializedName("number")
   private String number = null;
 
-  @SerializedName("idAddress")
-  private Integer idAddress = 0;
-
   @SerializedName("city")
   private String city = null;
 
   @SerializedName("countryCode")
   private String countryCode = null;
-
-  @SerializedName("email")
-  private String email = null;
 
   @SerializedName("greeting")
   private String greeting = null;
@@ -67,53 +61,23 @@ public class AddressObject {
   @SerializedName("name2")
   private String name2 = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   @SerializedName("phone")
   private String phone = null;
 
   @SerializedName("mobile")
   private String mobile = null;
 
+  @SerializedName("fax")
+  private String fax = null;
+
   @SerializedName("street")
   private String street = null;
 
   @SerializedName("addressrow")
   private String addressrow = null;
-
-  @SerializedName("zipcode")
-  private String zipcode = null;
-
-  @SerializedName("state")
-  private String state = null;
-
-  @SerializedName("plantNumber")
-  private String plantNumber = null;
-
-  @SerializedName("instructions")
-  private String instructions = null;
-
-  @SerializedName("openingHoursMonToThuFrom")
-  private Integer openingHoursMonToThuFrom = null;
-
-  @SerializedName("openingHoursMonToThuTo")
-  private Integer openingHoursMonToThuTo = null;
-
-  @SerializedName("openingHoursFriFrom")
-  private Integer openingHoursFriFrom = null;
-
-  @SerializedName("openingHoursFriTo")
-  private Integer openingHoursFriTo = null;
-
-  @SerializedName("idTimeslot")
-  private Integer idTimeslot = null;
-
-  @SerializedName("withDurationGrid")
-  private Boolean withDurationGrid = false;
-
-  @SerializedName("idDuration")
-  private Integer idDuration = null;
-
-  @SerializedName("temporary")
-  private Boolean temporary = false;
 
   public AddressObject id(Integer id) {
     this.id = id;
@@ -151,24 +115,6 @@ public class AddressObject {
     this.number = number;
   }
 
-  public AddressObject idAddress(Integer idAddress) {
-    this.idAddress = idAddress;
-    return this;
-  }
-
-   /**
-   * This field contains the ID of the address within the Logistiqo Application. It is exclusively utilized by Logistiqo&#x27;s internal functions.
-   * @return idAddress
-  **/
-  @Schema(description = "This field contains the ID of the address within the Logistiqo Application. It is exclusively utilized by Logistiqo's internal functions.")
-  public Integer getIdAddress() {
-    return idAddress;
-  }
-
-  public void setIdAddress(Integer idAddress) {
-    this.idAddress = idAddress;
-  }
-
   public AddressObject city(String city) {
     this.city = city;
     return this;
@@ -203,24 +149,6 @@ public class AddressObject {
 
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
-  }
-
-  public AddressObject email(String email) {
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Get email
-   * @return email
-  **/
-  @Schema(example = "r.sterling@universalexport.net", description = "")
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
   }
 
   public AddressObject greeting(String greeting) {
@@ -349,6 +277,24 @@ public class AddressObject {
     this.name2 = name2;
   }
 
+  public AddressObject email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Get email
+   * @return email
+  **/
+  @Schema(example = "r.sterling@universalexport.net", description = "")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public AddressObject phone(String phone) {
     this.phone = phone;
     return this;
@@ -383,6 +329,24 @@ public class AddressObject {
 
   public void setMobile(String mobile) {
     this.mobile = mobile;
+  }
+
+  public AddressObject fax(String fax) {
+    this.fax = fax;
+    return this;
+  }
+
+   /**
+   * Get fax
+   * @return fax
+  **/
+  @Schema(description = "")
+  public String getFax() {
+    return fax;
+  }
+
+  public void setFax(String fax) {
+    this.fax = fax;
   }
 
   public AddressObject street(String street) {
@@ -421,222 +385,6 @@ public class AddressObject {
     this.addressrow = addressrow;
   }
 
-  public AddressObject zipcode(String zipcode) {
-    this.zipcode = zipcode;
-    return this;
-  }
-
-   /**
-   * Get zipcode
-   * @return zipcode
-  **/
-  @Schema(example = "SE1 7TP", description = "")
-  public String getZipcode() {
-    return zipcode;
-  }
-
-  public void setZipcode(String zipcode) {
-    this.zipcode = zipcode;
-  }
-
-  public AddressObject state(String state) {
-    this.state = state;
-    return this;
-  }
-
-   /**
-   * Get state
-   * @return state
-  **/
-  @Schema(example = "Bayern", description = "")
-  public String getState() {
-    return state;
-  }
-
-  public void setState(String state) {
-    this.state = state;
-  }
-
-  public AddressObject plantNumber(String plantNumber) {
-    this.plantNumber = plantNumber;
-    return this;
-  }
-
-   /**
-   * Internal field
-   * @return plantNumber
-  **/
-  @Schema(description = "Internal field")
-  public String getPlantNumber() {
-    return plantNumber;
-  }
-
-  public void setPlantNumber(String plantNumber) {
-    this.plantNumber = plantNumber;
-  }
-
-  public AddressObject instructions(String instructions) {
-    this.instructions = instructions;
-    return this;
-  }
-
-   /**
-   * Get instructions
-   * @return instructions
-  **/
-  @Schema(description = "")
-  public String getInstructions() {
-    return instructions;
-  }
-
-  public void setInstructions(String instructions) {
-    this.instructions = instructions;
-  }
-
-  public AddressObject openingHoursMonToThuFrom(Integer openingHoursMonToThuFrom) {
-    this.openingHoursMonToThuFrom = openingHoursMonToThuFrom;
-    return this;
-  }
-
-   /**
-   * open as of in minutes from start of day on monday to thursday
-   * @return openingHoursMonToThuFrom
-  **/
-  @Schema(description = "open as of in minutes from start of day on monday to thursday")
-  public Integer getOpeningHoursMonToThuFrom() {
-    return openingHoursMonToThuFrom;
-  }
-
-  public void setOpeningHoursMonToThuFrom(Integer openingHoursMonToThuFrom) {
-    this.openingHoursMonToThuFrom = openingHoursMonToThuFrom;
-  }
-
-  public AddressObject openingHoursMonToThuTo(Integer openingHoursMonToThuTo) {
-    this.openingHoursMonToThuTo = openingHoursMonToThuTo;
-    return this;
-  }
-
-   /**
-   * close as of in minutes from start of day on monday to thursday
-   * @return openingHoursMonToThuTo
-  **/
-  @Schema(description = "close as of in minutes from start of day on monday to thursday")
-  public Integer getOpeningHoursMonToThuTo() {
-    return openingHoursMonToThuTo;
-  }
-
-  public void setOpeningHoursMonToThuTo(Integer openingHoursMonToThuTo) {
-    this.openingHoursMonToThuTo = openingHoursMonToThuTo;
-  }
-
-  public AddressObject openingHoursFriFrom(Integer openingHoursFriFrom) {
-    this.openingHoursFriFrom = openingHoursFriFrom;
-    return this;
-  }
-
-   /**
-   * open as of in minutes from start of day on friday
-   * @return openingHoursFriFrom
-  **/
-  @Schema(description = "open as of in minutes from start of day on friday")
-  public Integer getOpeningHoursFriFrom() {
-    return openingHoursFriFrom;
-  }
-
-  public void setOpeningHoursFriFrom(Integer openingHoursFriFrom) {
-    this.openingHoursFriFrom = openingHoursFriFrom;
-  }
-
-  public AddressObject openingHoursFriTo(Integer openingHoursFriTo) {
-    this.openingHoursFriTo = openingHoursFriTo;
-    return this;
-  }
-
-   /**
-   * close as of in minutes from start of day on friday
-   * @return openingHoursFriTo
-  **/
-  @Schema(description = "close as of in minutes from start of day on friday")
-  public Integer getOpeningHoursFriTo() {
-    return openingHoursFriTo;
-  }
-
-  public void setOpeningHoursFriTo(Integer openingHoursFriTo) {
-    this.openingHoursFriTo = openingHoursFriTo;
-  }
-
-  public AddressObject idTimeslot(Integer idTimeslot) {
-    this.idTimeslot = idTimeslot;
-    return this;
-  }
-
-   /**
-   * Internal field
-   * @return idTimeslot
-  **/
-  @Schema(description = "Internal field")
-  public Integer getIdTimeslot() {
-    return idTimeslot;
-  }
-
-  public void setIdTimeslot(Integer idTimeslot) {
-    this.idTimeslot = idTimeslot;
-  }
-
-  public AddressObject withDurationGrid(Boolean withDurationGrid) {
-    this.withDurationGrid = withDurationGrid;
-    return this;
-  }
-
-   /**
-   * Internal field
-   * @return withDurationGrid
-  **/
-  @Schema(description = "Internal field")
-  public Boolean isWithDurationGrid() {
-    return withDurationGrid;
-  }
-
-  public void setWithDurationGrid(Boolean withDurationGrid) {
-    this.withDurationGrid = withDurationGrid;
-  }
-
-  public AddressObject idDuration(Integer idDuration) {
-    this.idDuration = idDuration;
-    return this;
-  }
-
-   /**
-   * Internal field
-   * @return idDuration
-  **/
-  @Schema(description = "Internal field")
-  public Integer getIdDuration() {
-    return idDuration;
-  }
-
-  public void setIdDuration(Integer idDuration) {
-    this.idDuration = idDuration;
-  }
-
-  public AddressObject temporary(Boolean temporary) {
-    this.temporary = temporary;
-    return this;
-  }
-
-   /**
-   * Get temporary
-   * @return temporary
-  **/
-  @Schema(example = "false", description = "")
-  public Boolean isTemporary() {
-    return temporary;
-  }
-
-  public void setTemporary(Boolean temporary) {
-    this.temporary = temporary;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -649,10 +397,8 @@ public class AddressObject {
     AddressObject addressObject = (AddressObject) o;
     return Objects.equals(this.id, addressObject.id) &&
         Objects.equals(this.number, addressObject.number) &&
-        Objects.equals(this.idAddress, addressObject.idAddress) &&
         Objects.equals(this.city, addressObject.city) &&
         Objects.equals(this.countryCode, addressObject.countryCode) &&
-        Objects.equals(this.email, addressObject.email) &&
         Objects.equals(this.greeting, addressObject.greeting) &&
         Objects.equals(this.title, addressObject.title) &&
         Objects.equals(this.firstName, addressObject.firstName) &&
@@ -660,27 +406,17 @@ public class AddressObject {
         Objects.equals(this.lastName, addressObject.lastName) &&
         Objects.equals(this.name, addressObject.name) &&
         Objects.equals(this.name2, addressObject.name2) &&
+        Objects.equals(this.email, addressObject.email) &&
         Objects.equals(this.phone, addressObject.phone) &&
         Objects.equals(this.mobile, addressObject.mobile) &&
+        Objects.equals(this.fax, addressObject.fax) &&
         Objects.equals(this.street, addressObject.street) &&
-        Objects.equals(this.addressrow, addressObject.addressrow) &&
-        Objects.equals(this.zipcode, addressObject.zipcode) &&
-        Objects.equals(this.state, addressObject.state) &&
-        Objects.equals(this.plantNumber, addressObject.plantNumber) &&
-        Objects.equals(this.instructions, addressObject.instructions) &&
-        Objects.equals(this.openingHoursMonToThuFrom, addressObject.openingHoursMonToThuFrom) &&
-        Objects.equals(this.openingHoursMonToThuTo, addressObject.openingHoursMonToThuTo) &&
-        Objects.equals(this.openingHoursFriFrom, addressObject.openingHoursFriFrom) &&
-        Objects.equals(this.openingHoursFriTo, addressObject.openingHoursFriTo) &&
-        Objects.equals(this.idTimeslot, addressObject.idTimeslot) &&
-        Objects.equals(this.withDurationGrid, addressObject.withDurationGrid) &&
-        Objects.equals(this.idDuration, addressObject.idDuration) &&
-        Objects.equals(this.temporary, addressObject.temporary);
+        Objects.equals(this.addressrow, addressObject.addressrow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, idAddress, city, countryCode, email, greeting, title, firstName, houseNo, lastName, name, name2, phone, mobile, street, addressrow, zipcode, state, plantNumber, instructions, openingHoursMonToThuFrom, openingHoursMonToThuTo, openingHoursFriFrom, openingHoursFriTo, idTimeslot, withDurationGrid, idDuration, temporary);
+    return Objects.hash(id, number, city, countryCode, greeting, title, firstName, houseNo, lastName, name, name2, email, phone, mobile, fax, street, addressrow);
   }
 
 
@@ -691,10 +427,8 @@ public class AddressObject {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    idAddress: ").append(toIndentedString(idAddress)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    greeting: ").append(toIndentedString(greeting)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
@@ -702,22 +436,12 @@ public class AddressObject {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    name2: ").append(toIndentedString(name2)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    mobile: ").append(toIndentedString(mobile)).append("\n");
+    sb.append("    fax: ").append(toIndentedString(fax)).append("\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    addressrow: ").append(toIndentedString(addressrow)).append("\n");
-    sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    plantNumber: ").append(toIndentedString(plantNumber)).append("\n");
-    sb.append("    instructions: ").append(toIndentedString(instructions)).append("\n");
-    sb.append("    openingHoursMonToThuFrom: ").append(toIndentedString(openingHoursMonToThuFrom)).append("\n");
-    sb.append("    openingHoursMonToThuTo: ").append(toIndentedString(openingHoursMonToThuTo)).append("\n");
-    sb.append("    openingHoursFriFrom: ").append(toIndentedString(openingHoursFriFrom)).append("\n");
-    sb.append("    openingHoursFriTo: ").append(toIndentedString(openingHoursFriTo)).append("\n");
-    sb.append("    idTimeslot: ").append(toIndentedString(idTimeslot)).append("\n");
-    sb.append("    withDurationGrid: ").append(toIndentedString(withDurationGrid)).append("\n");
-    sb.append("    idDuration: ").append(toIndentedString(idDuration)).append("\n");
-    sb.append("    temporary: ").append(toIndentedString(temporary)).append("\n");
     sb.append("}");
     return sb.toString();
   }

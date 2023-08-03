@@ -19,7 +19,7 @@ import io.swagger.client.model.PaymentTerms;
  * AllOfInvoicePaymentTerms
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T10:35:47.578844334Z[GMT]")
 
 public class AllOfInvoicePaymentTerms extends PaymentTerms {
 

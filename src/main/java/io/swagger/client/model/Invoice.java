@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T10:35:47.578844334Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")
@@ -76,8 +76,8 @@ public class Invoice {
   @SerializedName("paidOn")
   private OffsetDateTime paidOn = null;
 
-  @SerializedName("addressYourRef")
-  private AllOfInvoiceAddressYourRef addressYourRef = null;
+  @SerializedName("personYourRef")
+  private AllOfInvoicePersonYourRef personYourRef = null;
 
   @SerializedName("personOwrRef")
   private AllOfInvoicePersonOwrRef personOwrRef = null;
@@ -352,22 +352,22 @@ public class Invoice {
     this.paidOn = paidOn;
   }
 
-  public Invoice addressYourRef(AllOfInvoiceAddressYourRef addressYourRef) {
-    this.addressYourRef = addressYourRef;
+  public Invoice personYourRef(AllOfInvoicePersonYourRef personYourRef) {
+    this.personYourRef = personYourRef;
     return this;
   }
 
    /**
-   * Get addressYourRef
-   * @return addressYourRef
+   * Get personYourRef
+   * @return personYourRef
   **/
   @Schema(description = "")
-  public AllOfInvoiceAddressYourRef getAddressYourRef() {
-    return addressYourRef;
+  public AllOfInvoicePersonYourRef getPersonYourRef() {
+    return personYourRef;
   }
 
-  public void setAddressYourRef(AllOfInvoiceAddressYourRef addressYourRef) {
-    this.addressYourRef = addressYourRef;
+  public void setPersonYourRef(AllOfInvoicePersonYourRef personYourRef) {
+    this.personYourRef = personYourRef;
   }
 
   public Invoice personOwrRef(AllOfInvoicePersonOwrRef personOwrRef) {
@@ -544,7 +544,7 @@ public class Invoice {
         Objects.equals(this.mailed, invoice.mailed) &&
         Objects.equals(this.paid, invoice.paid) &&
         Objects.equals(this.paidOn, invoice.paidOn) &&
-        Objects.equals(this.addressYourRef, invoice.addressYourRef) &&
+        Objects.equals(this.personYourRef, invoice.personYourRef) &&
         Objects.equals(this.personOwrRef, invoice.personOwrRef) &&
         Objects.equals(this.paymentTerms, invoice.paymentTerms) &&
         Objects.equals(this.customer, invoice.customer) &&
@@ -556,7 +556,7 @@ public class Invoice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, addressYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment);
+    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, personYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment);
   }
 
 
@@ -579,7 +579,7 @@ public class Invoice {
     sb.append("    mailed: ").append(toIndentedString(mailed)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    paidOn: ").append(toIndentedString(paidOn)).append("\n");
-    sb.append("    addressYourRef: ").append(toIndentedString(addressYourRef)).append("\n");
+    sb.append("    personYourRef: ").append(toIndentedString(personYourRef)).append("\n");
     sb.append("    personOwrRef: ").append(toIndentedString(personOwrRef)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");

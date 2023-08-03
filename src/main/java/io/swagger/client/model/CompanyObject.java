@@ -25,7 +25,7 @@ import java.io.IOException;
  * CompanyObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-02T12:11:02.656322855Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T10:35:47.578844334Z[GMT]")
 
 public class CompanyObject {
   @SerializedName("id")
@@ -39,15 +39,6 @@ public class CompanyObject {
 
   @SerializedName("code")
   private String code = null;
-
-  @SerializedName("edifactId")
-  private String edifactId = null;
-
-  @SerializedName("networkId")
-  private Integer networkId = null;
-
-  @SerializedName("vatId")
-  private String vatId = null;
 
   @SerializedName("address")
   private AllOfCompanyObjectAddress address = null;
@@ -124,60 +115,6 @@ public class CompanyObject {
     this.code = code;
   }
 
-  public CompanyObject edifactId(String edifactId) {
-    this.edifactId = edifactId;
-    return this;
-  }
-
-   /**
-   * Get edifactId
-   * @return edifactId
-  **/
-  @Schema(description = "")
-  public String getEdifactId() {
-    return edifactId;
-  }
-
-  public void setEdifactId(String edifactId) {
-    this.edifactId = edifactId;
-  }
-
-  public CompanyObject networkId(Integer networkId) {
-    this.networkId = networkId;
-    return this;
-  }
-
-   /**
-   * Get networkId
-   * @return networkId
-  **/
-  @Schema(description = "")
-  public Integer getNetworkId() {
-    return networkId;
-  }
-
-  public void setNetworkId(Integer networkId) {
-    this.networkId = networkId;
-  }
-
-  public CompanyObject vatId(String vatId) {
-    this.vatId = vatId;
-    return this;
-  }
-
-   /**
-   * Get vatId
-   * @return vatId
-  **/
-  @Schema(example = "DE64987444", description = "")
-  public String getVatId() {
-    return vatId;
-  }
-
-  public void setVatId(String vatId) {
-    this.vatId = vatId;
-  }
-
   public CompanyObject address(AllOfCompanyObjectAddress address) {
     this.address = address;
     return this;
@@ -210,15 +147,12 @@ public class CompanyObject {
         Objects.equals(this.number, companyObject.number) &&
         Objects.equals(this.companyType, companyObject.companyType) &&
         Objects.equals(this.code, companyObject.code) &&
-        Objects.equals(this.edifactId, companyObject.edifactId) &&
-        Objects.equals(this.networkId, companyObject.networkId) &&
-        Objects.equals(this.vatId, companyObject.vatId) &&
         Objects.equals(this.address, companyObject.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, address);
+    return Objects.hash(id, number, companyType, code, address);
   }
 
 
@@ -231,9 +165,6 @@ public class CompanyObject {
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    companyType: ").append(toIndentedString(companyType)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    edifactId: ").append(toIndentedString(edifactId)).append("\n");
-    sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
-    sb.append("    vatId: ").append(toIndentedString(vatId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
