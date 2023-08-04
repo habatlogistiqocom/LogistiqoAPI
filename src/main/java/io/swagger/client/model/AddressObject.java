@@ -25,7 +25,7 @@ import java.io.IOException;
  * AddressObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-03T14:55:28.320760885Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-04T11:54:15.108943123Z[GMT]")
 
 public class AddressObject {
   @SerializedName("id")
