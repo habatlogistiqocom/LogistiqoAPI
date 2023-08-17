@@ -21,12 +21,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import org.threeten.bp.LocalDate;
 /**
  * Contract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
 
 public class Contract {
   @SerializedName("id")
@@ -63,13 +62,13 @@ public class Contract {
   private String clientId = null;
 
   @SerializedName("contractStartOn")
-  private LocalDate contractStartOn = null;
+  private String contractStartOn = null;
 
   @SerializedName("contractEndOn")
-  private LocalDate contractEndOn = null;
+  private String contractEndOn = null;
 
   @SerializedName("terminationOn")
-  private LocalDate terminationOn = null;
+  private String terminationOn = null;
 
   @SerializedName("contractDetails")
   private AllOfContractContractDetails contractDetails = null;
@@ -275,7 +274,7 @@ public class Contract {
     this.clientId = clientId;
   }
 
-  public Contract contractStartOn(LocalDate contractStartOn) {
+  public Contract contractStartOn(String contractStartOn) {
     this.contractStartOn = contractStartOn;
     return this;
   }
@@ -285,15 +284,15 @@ public class Contract {
    * @return contractStartOn
   **/
   @Schema(description = "")
-  public LocalDate getContractStartOn() {
+  public String getContractStartOn() {
     return contractStartOn;
   }
 
-  public void setContractStartOn(LocalDate contractStartOn) {
+  public void setContractStartOn(String contractStartOn) {
     this.contractStartOn = contractStartOn;
   }
 
-  public Contract contractEndOn(LocalDate contractEndOn) {
+  public Contract contractEndOn(String contractEndOn) {
     this.contractEndOn = contractEndOn;
     return this;
   }
@@ -303,15 +302,15 @@ public class Contract {
    * @return contractEndOn
   **/
   @Schema(description = "")
-  public LocalDate getContractEndOn() {
+  public String getContractEndOn() {
     return contractEndOn;
   }
 
-  public void setContractEndOn(LocalDate contractEndOn) {
+  public void setContractEndOn(String contractEndOn) {
     this.contractEndOn = contractEndOn;
   }
 
-  public Contract terminationOn(LocalDate terminationOn) {
+  public Contract terminationOn(String terminationOn) {
     this.terminationOn = terminationOn;
     return this;
   }
@@ -321,11 +320,11 @@ public class Contract {
    * @return terminationOn
   **/
   @Schema(description = "")
-  public LocalDate getTerminationOn() {
+  public String getTerminationOn() {
     return terminationOn;
   }
 
-  public void setTerminationOn(LocalDate terminationOn) {
+  public void setTerminationOn(String terminationOn) {
     this.terminationOn = terminationOn;
   }
 

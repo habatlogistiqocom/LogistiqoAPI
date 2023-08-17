@@ -27,12 +27,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")
@@ -42,10 +41,10 @@ public class Invoice {
   private String number = null;
 
   @SerializedName("invoiceDate")
-  private OffsetDateTime invoiceDate = null;
+  private String invoiceDate = null;
 
   @SerializedName("postingDate")
-  private OffsetDateTime postingDate = null;
+  private String postingDate = null;
 
   @SerializedName("invoiceText")
   private String invoiceText = null;
@@ -57,7 +56,7 @@ public class Invoice {
   private String period = null;
 
   @SerializedName("dueDate")
-  private OffsetDateTime dueDate = null;
+  private String dueDate = null;
 
   @SerializedName("invoiceAmount")
   private Double invoiceAmount = null;
@@ -75,7 +74,7 @@ public class Invoice {
   private Boolean paid = null;
 
   @SerializedName("paidOn")
-  private OffsetDateTime paidOn = null;
+  private String paidOn = null;
 
   @SerializedName("personYourRef")
   private AllOfInvoicePersonYourRef personYourRef = null;
@@ -140,7 +139,7 @@ public class Invoice {
     this.number = number;
   }
 
-  public Invoice invoiceDate(OffsetDateTime invoiceDate) {
+  public Invoice invoiceDate(String invoiceDate) {
     this.invoiceDate = invoiceDate;
     return this;
   }
@@ -150,15 +149,15 @@ public class Invoice {
    * @return invoiceDate
   **/
   @Schema(description = "")
-  public OffsetDateTime getInvoiceDate() {
+  public String getInvoiceDate() {
     return invoiceDate;
   }
 
-  public void setInvoiceDate(OffsetDateTime invoiceDate) {
+  public void setInvoiceDate(String invoiceDate) {
     this.invoiceDate = invoiceDate;
   }
 
-  public Invoice postingDate(OffsetDateTime postingDate) {
+  public Invoice postingDate(String postingDate) {
     this.postingDate = postingDate;
     return this;
   }
@@ -168,11 +167,11 @@ public class Invoice {
    * @return postingDate
   **/
   @Schema(description = "")
-  public OffsetDateTime getPostingDate() {
+  public String getPostingDate() {
     return postingDate;
   }
 
-  public void setPostingDate(OffsetDateTime postingDate) {
+  public void setPostingDate(String postingDate) {
     this.postingDate = postingDate;
   }
 
@@ -230,7 +229,7 @@ public class Invoice {
     this.period = period;
   }
 
-  public Invoice dueDate(OffsetDateTime dueDate) {
+  public Invoice dueDate(String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -240,11 +239,11 @@ public class Invoice {
    * @return dueDate
   **/
   @Schema(description = "")
-  public OffsetDateTime getDueDate() {
+  public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(OffsetDateTime dueDate) {
+  public void setDueDate(String dueDate) {
     this.dueDate = dueDate;
   }
 
@@ -338,7 +337,7 @@ public class Invoice {
     this.paid = paid;
   }
 
-  public Invoice paidOn(OffsetDateTime paidOn) {
+  public Invoice paidOn(String paidOn) {
     this.paidOn = paidOn;
     return this;
   }
@@ -348,11 +347,11 @@ public class Invoice {
    * @return paidOn
   **/
   @Schema(description = "")
-  public OffsetDateTime getPaidOn() {
+  public String getPaidOn() {
     return paidOn;
   }
 
-  public void setPaidOn(OffsetDateTime paidOn) {
+  public void setPaidOn(String paidOn) {
     this.paidOn = paidOn;
   }
 

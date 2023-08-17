@@ -15,12 +15,11 @@ package io.swagger.client.model;
 import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.client.model.ContractDetails;
-import org.threeten.bp.LocalDate;
 /**
  * AllOfContractContractDetails
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
 
 public class AllOfContractContractDetails extends ContractDetails {
 

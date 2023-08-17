@@ -16,12 +16,11 @@ import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.client.model.ContractDetails;
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.threeten.bp.LocalDate;
 /**
  * The unique identifier for the associated ContractDetail.
  */
 @Schema(description = "The unique identifier for the associated ContractDetail.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
 
 public class AllOfInvoiceContractsContractDetail extends ContractDetails {
 
