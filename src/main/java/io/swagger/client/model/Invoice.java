@@ -22,15 +22,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.DirectDetails;
 import io.swagger.client.model.InvoiceContracts;
 import io.swagger.client.model.InvoiceShipments;
+import io.swagger.client.model.UploadedFile;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.threeten.bp.OffsetDateTime;
 /**
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-04T11:54:15.108943123Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")
@@ -40,10 +42,10 @@ public class Invoice {
   private String number = null;
 
   @SerializedName("invoiceDate")
-  private String invoiceDate = null;
+  private OffsetDateTime invoiceDate = null;
 
   @SerializedName("postingDate")
-  private String postingDate = null;
+  private OffsetDateTime postingDate = null;
 
   @SerializedName("invoiceText")
   private String invoiceText = null;
@@ -55,7 +57,7 @@ public class Invoice {
   private String period = null;
 
   @SerializedName("dueDate")
-  private String dueDate = null;
+  private OffsetDateTime dueDate = null;
 
   @SerializedName("invoiceAmount")
   private Double invoiceAmount = null;
@@ -73,7 +75,7 @@ public class Invoice {
   private Boolean paid = null;
 
   @SerializedName("paidOn")
-  private String paidOn = null;
+  private OffsetDateTime paidOn = null;
 
   @SerializedName("personYourRef")
   private AllOfInvoicePersonYourRef personYourRef = null;
@@ -98,6 +100,9 @@ public class Invoice {
 
   @SerializedName("invoiceShipment")
   private List<InvoiceShipments> invoiceShipment = null;
+
+  @SerializedName("pdf")
+  private List<UploadedFile> pdf = null;
 
   public Invoice id(Integer id) {
     this.id = id;
@@ -135,7 +140,7 @@ public class Invoice {
     this.number = number;
   }
 
-  public Invoice invoiceDate(String invoiceDate) {
+  public Invoice invoiceDate(OffsetDateTime invoiceDate) {
     this.invoiceDate = invoiceDate;
     return this;
   }
@@ -145,15 +150,15 @@ public class Invoice {
    * @return invoiceDate
   **/
   @Schema(description = "")
-  public String getInvoiceDate() {
+  public OffsetDateTime getInvoiceDate() {
     return invoiceDate;
   }
 
-  public void setInvoiceDate(String invoiceDate) {
+  public void setInvoiceDate(OffsetDateTime invoiceDate) {
     this.invoiceDate = invoiceDate;
   }
 
-  public Invoice postingDate(String postingDate) {
+  public Invoice postingDate(OffsetDateTime postingDate) {
     this.postingDate = postingDate;
     return this;
   }
@@ -163,11 +168,11 @@ public class Invoice {
    * @return postingDate
   **/
   @Schema(description = "")
-  public String getPostingDate() {
+  public OffsetDateTime getPostingDate() {
     return postingDate;
   }
 
-  public void setPostingDate(String postingDate) {
+  public void setPostingDate(OffsetDateTime postingDate) {
     this.postingDate = postingDate;
   }
 
@@ -225,7 +230,7 @@ public class Invoice {
     this.period = period;
   }
 
-  public Invoice dueDate(String dueDate) {
+  public Invoice dueDate(OffsetDateTime dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -235,11 +240,11 @@ public class Invoice {
    * @return dueDate
   **/
   @Schema(description = "")
-  public String getDueDate() {
+  public OffsetDateTime getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(String dueDate) {
+  public void setDueDate(OffsetDateTime dueDate) {
     this.dueDate = dueDate;
   }
 
@@ -333,7 +338,7 @@ public class Invoice {
     this.paid = paid;
   }
 
-  public Invoice paidOn(String paidOn) {
+  public Invoice paidOn(OffsetDateTime paidOn) {
     this.paidOn = paidOn;
     return this;
   }
@@ -343,11 +348,11 @@ public class Invoice {
    * @return paidOn
   **/
   @Schema(description = "")
-  public String getPaidOn() {
+  public OffsetDateTime getPaidOn() {
     return paidOn;
   }
 
-  public void setPaidOn(String paidOn) {
+  public void setPaidOn(OffsetDateTime paidOn) {
     this.paidOn = paidOn;
   }
 
@@ -519,6 +524,32 @@ public class Invoice {
     this.invoiceShipment = invoiceShipment;
   }
 
+  public Invoice pdf(List<UploadedFile> pdf) {
+    this.pdf = pdf;
+    return this;
+  }
+
+  public Invoice addPdfItem(UploadedFile pdfItem) {
+    if (this.pdf == null) {
+      this.pdf = new ArrayList<UploadedFile>();
+    }
+    this.pdf.add(pdfItem);
+    return this;
+  }
+
+   /**
+   * Get pdf
+   * @return pdf
+  **/
+  @Schema(description = "")
+  public List<UploadedFile> getPdf() {
+    return pdf;
+  }
+
+  public void setPdf(List<UploadedFile> pdf) {
+    this.pdf = pdf;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -550,12 +581,13 @@ public class Invoice {
         Objects.equals(this.invoiceReceiver, invoice.invoiceReceiver) &&
         Objects.equals(this.directDetails, invoice.directDetails) &&
         Objects.equals(this.invoiceContract, invoice.invoiceContract) &&
-        Objects.equals(this.invoiceShipment, invoice.invoiceShipment);
+        Objects.equals(this.invoiceShipment, invoice.invoiceShipment) &&
+        Objects.equals(this.pdf, invoice.pdf);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, personYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment);
+    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, personYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment, pdf);
   }
 
 
@@ -586,6 +618,7 @@ public class Invoice {
     sb.append("    directDetails: ").append(toIndentedString(directDetails)).append("\n");
     sb.append("    invoiceContract: ").append(toIndentedString(invoiceContract)).append("\n");
     sb.append("    invoiceShipment: ").append(toIndentedString(invoiceShipment)).append("\n");
+    sb.append("    pdf: ").append(toIndentedString(pdf)).append("\n");
     sb.append("}");
     return sb.toString();
   }

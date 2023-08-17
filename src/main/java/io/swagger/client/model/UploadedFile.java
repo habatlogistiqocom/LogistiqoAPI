@@ -25,7 +25,7 @@ import java.io.IOException;
  * UploadedFile
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-04T11:54:15.108943123Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
 
 public class UploadedFile {
   @SerializedName("fileName")

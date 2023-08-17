@@ -21,11 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import org.threeten.bp.LocalDate;
 /**
  * ContractDetails
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-04T11:54:15.108943123Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
 
 public class ContractDetails {
   @SerializedName("id")
@@ -41,10 +42,10 @@ public class ContractDetails {
   private Integer position = null;
 
   @SerializedName("startDate")
-  private String startDate = null;
+  private LocalDate startDate = null;
 
   @SerializedName("endDate")
-  private String endDate = null;
+  private LocalDate endDate = null;
 
   @SerializedName("inactive")
   private Boolean inactive = null;
@@ -139,7 +140,7 @@ public class ContractDetails {
     this.position = position;
   }
 
-  public ContractDetails startDate(String startDate) {
+  public ContractDetails startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -149,15 +150,15 @@ public class ContractDetails {
    * @return startDate
   **/
   @Schema(description = "")
-  public String getStartDate() {
+  public LocalDate getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(String startDate) {
+  public void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
   }
 
-  public ContractDetails endDate(String endDate) {
+  public ContractDetails endDate(LocalDate endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -167,11 +168,11 @@ public class ContractDetails {
    * @return endDate
   **/
   @Schema(description = "")
-  public String getEndDate() {
+  public LocalDate getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(String endDate) {
+  public void setEndDate(LocalDate endDate) {
     this.endDate = endDate;
   }
 

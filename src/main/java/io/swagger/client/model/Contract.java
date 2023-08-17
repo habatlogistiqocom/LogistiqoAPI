@@ -21,11 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import org.threeten.bp.LocalDate;
 /**
  * Contract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-04T11:54:15.108943123Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T08:51:00.465501368Z[GMT]")
 
 public class Contract {
   @SerializedName("id")
@@ -62,16 +63,19 @@ public class Contract {
   private String clientId = null;
 
   @SerializedName("contractStartOn")
-  private String contractStartOn = null;
+  private LocalDate contractStartOn = null;
 
   @SerializedName("contractEndOn")
-  private String contractEndOn = null;
+  private LocalDate contractEndOn = null;
 
   @SerializedName("terminationOn")
-  private String terminationOn = null;
+  private LocalDate terminationOn = null;
 
   @SerializedName("contractDetails")
   private AllOfContractContractDetails contractDetails = null;
+
+  @SerializedName("customer")
+  private AllOfContractCustomer customer = null;
 
   public Contract id(Integer id) {
     this.id = id;
@@ -271,7 +275,7 @@ public class Contract {
     this.clientId = clientId;
   }
 
-  public Contract contractStartOn(String contractStartOn) {
+  public Contract contractStartOn(LocalDate contractStartOn) {
     this.contractStartOn = contractStartOn;
     return this;
   }
@@ -281,15 +285,15 @@ public class Contract {
    * @return contractStartOn
   **/
   @Schema(description = "")
-  public String getContractStartOn() {
+  public LocalDate getContractStartOn() {
     return contractStartOn;
   }
 
-  public void setContractStartOn(String contractStartOn) {
+  public void setContractStartOn(LocalDate contractStartOn) {
     this.contractStartOn = contractStartOn;
   }
 
-  public Contract contractEndOn(String contractEndOn) {
+  public Contract contractEndOn(LocalDate contractEndOn) {
     this.contractEndOn = contractEndOn;
     return this;
   }
@@ -299,15 +303,15 @@ public class Contract {
    * @return contractEndOn
   **/
   @Schema(description = "")
-  public String getContractEndOn() {
+  public LocalDate getContractEndOn() {
     return contractEndOn;
   }
 
-  public void setContractEndOn(String contractEndOn) {
+  public void setContractEndOn(LocalDate contractEndOn) {
     this.contractEndOn = contractEndOn;
   }
 
-  public Contract terminationOn(String terminationOn) {
+  public Contract terminationOn(LocalDate terminationOn) {
     this.terminationOn = terminationOn;
     return this;
   }
@@ -317,11 +321,11 @@ public class Contract {
    * @return terminationOn
   **/
   @Schema(description = "")
-  public String getTerminationOn() {
+  public LocalDate getTerminationOn() {
     return terminationOn;
   }
 
-  public void setTerminationOn(String terminationOn) {
+  public void setTerminationOn(LocalDate terminationOn) {
     this.terminationOn = terminationOn;
   }
 
@@ -341,6 +345,24 @@ public class Contract {
 
   public void setContractDetails(AllOfContractContractDetails contractDetails) {
     this.contractDetails = contractDetails;
+  }
+
+  public Contract customer(AllOfContractCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Get customer
+   * @return customer
+  **/
+  @Schema(description = "")
+  public AllOfContractCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(AllOfContractCustomer customer) {
+    this.customer = customer;
   }
 
 
@@ -367,12 +389,13 @@ public class Contract {
         Objects.equals(this.contractStartOn, contract.contractStartOn) &&
         Objects.equals(this.contractEndOn, contract.contractEndOn) &&
         Objects.equals(this.terminationOn, contract.terminationOn) &&
-        Objects.equals(this.contractDetails, contract.contractDetails);
+        Objects.equals(this.contractDetails, contract.contractDetails) &&
+        Objects.equals(this.customer, contract.customer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, active, partnerContract, remove, code, name, description, logistiqoDatabase, logistiqoSubdomain, note, clientId, contractStartOn, contractEndOn, terminationOn, contractDetails);
+    return Objects.hash(id, active, partnerContract, remove, code, name, description, logistiqoDatabase, logistiqoSubdomain, note, clientId, contractStartOn, contractEndOn, terminationOn, contractDetails, customer);
   }
 
 
@@ -396,6 +419,7 @@ public class Contract {
     sb.append("    contractEndOn: ").append(toIndentedString(contractEndOn)).append("\n");
     sb.append("    terminationOn: ").append(toIndentedString(terminationOn)).append("\n");
     sb.append("    contractDetails: ").append(toIndentedString(contractDetails)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
