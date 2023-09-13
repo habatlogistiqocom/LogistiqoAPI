@@ -28,11 +28,14 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-13T07:30:39.802748897Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
   private Boolean createManifest = false;
+
+  @SerializedName("modifyManifest")
+  private Boolean modifyManifest = false;
 
   @SerializedName("reference")
   private String reference = null;
@@ -97,16 +100,34 @@ public class Manifest {
     this.createManifest = createManifest;
   }
 
+  public Manifest modifyManifest(Boolean modifyManifest) {
+    this.modifyManifest = modifyManifest;
+    return this;
+  }
+
+   /**
+   * If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.
+   * @return modifyManifest
+  **/
+  @Schema(description = "If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.")
+  public Boolean isModifyManifest() {
+    return modifyManifest;
+  }
+
+  public void setModifyManifest(Boolean modifyManifest) {
+    this.modifyManifest = modifyManifest;
+  }
+
   public Manifest reference(String reference) {
     this.reference = reference;
     return this;
   }
 
    /**
-   * This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests
+   * This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \&quot;modifyManifest\&quot; parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
    * @return reference
   **/
-  @Schema(example = "23672", description = "This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests")
+  @Schema(example = "23672", description = "This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \"modifyManifest\" parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.")
   public String getReference() {
     return reference;
   }
@@ -386,6 +407,7 @@ public class Manifest {
     }
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.createManifest, manifest.createManifest) &&
+        Objects.equals(this.modifyManifest, manifest.modifyManifest) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.description, manifest.description) &&
         Objects.equals(this.mrn, manifest.mrn) &&
@@ -405,7 +427,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, modifyManifest, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
   }
 
 
@@ -415,6 +437,7 @@ public class Manifest {
     sb.append("class Manifest {\n");
     
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
+    sb.append("    modifyManifest: ").append(toIndentedString(modifyManifest)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
