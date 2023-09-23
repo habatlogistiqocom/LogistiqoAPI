@@ -25,9 +25,24 @@ import java.io.IOException;
  * UploadedFile
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-18T19:48:08.980573147Z[GMT]")
 
 public class UploadedFile {
+  @SerializedName("reference")
+  private String reference = null;
+
+  @SerializedName("idShipment")
+  private Integer idShipment = null;
+
+  @SerializedName("shipmentNumber")
+  private String shipmentNumber = null;
+
+  @SerializedName("customerReference")
+  private String customerReference = null;
+
+  @SerializedName("networkId")
+  private Integer networkId = null;
+
   @SerializedName("fileName")
   private String fileName = null;
 
@@ -35,7 +50,7 @@ public class UploadedFile {
   private String fileContent = null;
 
   @SerializedName("fileSize")
-  private String fileSize = null;
+  private Integer fileSize = null;
 
   @SerializedName("temporary")
   private Boolean temporary = false;
@@ -54,6 +69,96 @@ public class UploadedFile {
 
   @SerializedName("deleted")
   private Boolean deleted = false;
+
+  public UploadedFile reference(String reference) {
+    this.reference = reference;
+    return this;
+  }
+
+   /**
+   * :&gt;- This unique identification is essential to ensure that the transaction is not mistakenly imported more than once. By using this identifier, we can accurately track and manage the transaction, preventing any errors or discrepancies that could arise from duplicate imports. Please ensure that this unique identifier is included in the transaction. In case of a get method the id of the transaction is shown in this field.
+   * @return reference
+  **/
+  @Schema(example = "541641", description = ":>- This unique identification is essential to ensure that the transaction is not mistakenly imported more than once. By using this identifier, we can accurately track and manage the transaction, preventing any errors or discrepancies that could arise from duplicate imports. Please ensure that this unique identifier is included in the transaction. In case of a get method the id of the transaction is shown in this field.")
+  public String getReference() {
+    return reference;
+  }
+
+  public void setReference(String reference) {
+    this.reference = reference;
+  }
+
+  public UploadedFile idShipment(Integer idShipment) {
+    this.idShipment = idShipment;
+    return this;
+  }
+
+   /**
+   * :&gt;- Only if the id of the shipment is known
+   * @return idShipment
+  **/
+  @Schema(example = "61664", description = ":>- Only if the id of the shipment is known")
+  public Integer getIdShipment() {
+    return idShipment;
+  }
+
+  public void setIdShipment(Integer idShipment) {
+    this.idShipment = idShipment;
+  }
+
+  public UploadedFile shipmentNumber(String shipmentNumber) {
+    this.shipmentNumber = shipmentNumber;
+    return this;
+  }
+
+   /**
+   * :&gt;- To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.
+   * @return shipmentNumber
+  **/
+  @Schema(example = "23 00050", description = ":>- To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.")
+  public String getShipmentNumber() {
+    return shipmentNumber;
+  }
+
+  public void setShipmentNumber(String shipmentNumber) {
+    this.shipmentNumber = shipmentNumber;
+  }
+
+  public UploadedFile customerReference(String customerReference) {
+    this.customerReference = customerReference;
+    return this;
+  }
+
+   /**
+   * :&gt;- To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.
+   * @return customerReference
+  **/
+  @Schema(example = "07049162454161", description = ":>- To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.")
+  public String getCustomerReference() {
+    return customerReference;
+  }
+
+  public void setCustomerReference(String customerReference) {
+    this.customerReference = customerReference;
+  }
+
+  public UploadedFile networkId(Integer networkId) {
+    this.networkId = networkId;
+    return this;
+  }
+
+   /**
+   * :&gt;- In this context, the NetworkId represents the identifier of the specific customer involved within the network, which is exclusively employed for the exchange of status information among multiple Logistiqo domains.
+   * @return networkId
+  **/
+  @Schema(example = "7", description = ":>- In this context, the NetworkId represents the identifier of the specific customer involved within the network, which is exclusively employed for the exchange of status information among multiple Logistiqo domains.")
+  public Integer getNetworkId() {
+    return networkId;
+  }
+
+  public void setNetworkId(Integer networkId) {
+    this.networkId = networkId;
+  }
 
   public UploadedFile fileName(String fileName) {
     this.fileName = fileName;
@@ -91,7 +196,7 @@ public class UploadedFile {
     this.fileContent = fileContent;
   }
 
-  public UploadedFile fileSize(String fileSize) {
+  public UploadedFile fileSize(Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -100,12 +205,12 @@ public class UploadedFile {
    * Size in KB of the uploaded file
    * @return fileSize
   **/
-  @Schema(example = "deliveryNote001.pdf", description = "Size in KB of the uploaded file")
-  public String getFileSize() {
+  @Schema(example = "12345", description = "Size in KB of the uploaded file")
+  public Integer getFileSize() {
     return fileSize;
   }
 
-  public void setFileSize(String fileSize) {
+  public void setFileSize(Integer fileSize) {
     this.fileSize = fileSize;
   }
 
@@ -227,7 +332,12 @@ public class UploadedFile {
       return false;
     }
     UploadedFile uploadedFile = (UploadedFile) o;
-    return Objects.equals(this.fileName, uploadedFile.fileName) &&
+    return Objects.equals(this.reference, uploadedFile.reference) &&
+        Objects.equals(this.idShipment, uploadedFile.idShipment) &&
+        Objects.equals(this.shipmentNumber, uploadedFile.shipmentNumber) &&
+        Objects.equals(this.customerReference, uploadedFile.customerReference) &&
+        Objects.equals(this.networkId, uploadedFile.networkId) &&
+        Objects.equals(this.fileName, uploadedFile.fileName) &&
         Objects.equals(this.fileContent, uploadedFile.fileContent) &&
         Objects.equals(this.fileSize, uploadedFile.fileSize) &&
         Objects.equals(this.temporary, uploadedFile.temporary) &&
@@ -240,7 +350,7 @@ public class UploadedFile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileName, fileContent, fileSize, temporary, createdBy, createdOn, modifiedBy, modifiedOn, deleted);
+    return Objects.hash(reference, idShipment, shipmentNumber, customerReference, networkId, fileName, fileContent, fileSize, temporary, createdBy, createdOn, modifiedBy, modifiedOn, deleted);
   }
 
 
@@ -249,6 +359,11 @@ public class UploadedFile {
     StringBuilder sb = new StringBuilder();
     sb.append("class UploadedFile {\n");
     
+    sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+    sb.append("    idShipment: ").append(toIndentedString(idShipment)).append("\n");
+    sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
+    sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
+    sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    fileContent: ").append(toIndentedString(fileContent)).append("\n");
     sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");

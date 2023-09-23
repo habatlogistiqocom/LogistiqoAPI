@@ -33,7 +33,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-23T08:41:23.479875161Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -47,6 +47,9 @@ public class Shipment {
 
   @SerializedName("customerNumber")
   private String customerNumber = null;
+
+  @SerializedName("shipmentNumber")
+  private String shipmentNumber = null;
 
   @SerializedName("customerReference")
   private String customerReference = null;
@@ -220,6 +223,24 @@ public class Shipment {
 
   public void setCustomerNumber(String customerNumber) {
     this.customerNumber = customerNumber;
+  }
+
+  public Shipment shipmentNumber(String shipmentNumber) {
+    this.shipmentNumber = shipmentNumber;
+    return this;
+  }
+
+   /**
+   * This field exclusively holds the Shipment Number and is exclusively utilized by the GET method; in contrast, the POST method disregards this field entirely.
+   * @return shipmentNumber
+  **/
+  @Schema(description = "This field exclusively holds the Shipment Number and is exclusively utilized by the GET method; in contrast, the POST method disregards this field entirely.")
+  public String getShipmentNumber() {
+    return shipmentNumber;
+  }
+
+  public void setShipmentNumber(String shipmentNumber) {
+    this.shipmentNumber = shipmentNumber;
   }
 
   public Shipment customerReference(String customerReference) {
@@ -890,6 +911,7 @@ public class Shipment {
         Objects.equals(this.networkId, shipment.networkId) &&
         Objects.equals(this.edifactId, shipment.edifactId) &&
         Objects.equals(this.customerNumber, shipment.customerNumber) &&
+        Objects.equals(this.shipmentNumber, shipment.shipmentNumber) &&
         Objects.equals(this.customerReference, shipment.customerReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
         Objects.equals(this.hawb, shipment.hawb) &&
@@ -928,7 +950,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, customerReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
   }
 
 
@@ -941,6 +963,7 @@ public class Shipment {
     sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
     sb.append("    edifactId: ").append(toIndentedString(edifactId)).append("\n");
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
+    sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");

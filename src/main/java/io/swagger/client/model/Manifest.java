@@ -28,14 +28,14 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-13T07:30:39.802748897Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-13T08:27:18.096387350Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
   private Boolean createManifest = false;
 
-  @SerializedName("modifyManifest")
-  private Boolean modifyManifest = false;
+  @SerializedName("consolidate")
+  private Boolean consolidate = false;
 
   @SerializedName("reference")
   private String reference = null;
@@ -100,22 +100,22 @@ public class Manifest {
     this.createManifest = createManifest;
   }
 
-  public Manifest modifyManifest(Boolean modifyManifest) {
-    this.modifyManifest = modifyManifest;
+  public Manifest consolidate(Boolean consolidate) {
+    this.consolidate = consolidate;
     return this;
   }
 
    /**
-   * If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.
-   * @return modifyManifest
+   * If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.
+   * @return consolidate
   **/
-  @Schema(description = "If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.")
-  public Boolean isModifyManifest() {
-    return modifyManifest;
+  @Schema(description = "If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.")
+  public Boolean isConsolidate() {
+    return consolidate;
   }
 
-  public void setModifyManifest(Boolean modifyManifest) {
-    this.modifyManifest = modifyManifest;
+  public void setConsolidate(Boolean consolidate) {
+    this.consolidate = consolidate;
   }
 
   public Manifest reference(String reference) {
@@ -407,7 +407,7 @@ public class Manifest {
     }
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.createManifest, manifest.createManifest) &&
-        Objects.equals(this.modifyManifest, manifest.modifyManifest) &&
+        Objects.equals(this.consolidate, manifest.consolidate) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.description, manifest.description) &&
         Objects.equals(this.mrn, manifest.mrn) &&
@@ -427,7 +427,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, modifyManifest, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, consolidate, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
   }
 
 
@@ -437,7 +437,7 @@ public class Manifest {
     sb.append("class Manifest {\n");
     
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
-    sb.append("    modifyManifest: ").append(toIndentedString(modifyManifest)).append("\n");
+    sb.append("    consolidate: ").append(toIndentedString(consolidate)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");

@@ -25,7 +25,7 @@ import java.io.IOException;
  * Status
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-18T13:01:52.642513652Z[GMT]")
 
 public class Status {
   @SerializedName("reference")
@@ -57,6 +57,18 @@ public class Status {
 
   @SerializedName("user")
   private String user = null;
+
+  @SerializedName("idDepot")
+  private Integer idDepot = null;
+
+  @SerializedName("networkId")
+  private Integer networkId = null;
+
+  @SerializedName("article")
+  private String article = null;
+
+  @SerializedName("serialNumber")
+  private String serialNumber = null;
 
   @SerializedName("timeStamp")
   private String timeStamp = null;
@@ -247,6 +259,78 @@ public class Status {
     this.user = user;
   }
 
+  public Status idDepot(Integer idDepot) {
+    this.idDepot = idDepot;
+    return this;
+  }
+
+   /**
+   * :&gt;- Please provide the depot ID within Logistiqo where the status change occurred.
+   * @return idDepot
+  **/
+  @Schema(example = "7", description = ":>- Please provide the depot ID within Logistiqo where the status change occurred.")
+  public Integer getIdDepot() {
+    return idDepot;
+  }
+
+  public void setIdDepot(Integer idDepot) {
+    this.idDepot = idDepot;
+  }
+
+  public Status networkId(Integer networkId) {
+    this.networkId = networkId;
+    return this;
+  }
+
+   /**
+   * :&gt;- In this context, the NetworkId represents the identifier of the specific customer involved within the network, which is exclusively employed for the exchange of status information among multiple Logistiqo domains.
+   * @return networkId
+  **/
+  @Schema(example = "7", description = ":>- In this context, the NetworkId represents the identifier of the specific customer involved within the network, which is exclusively employed for the exchange of status information among multiple Logistiqo domains.")
+  public Integer getNetworkId() {
+    return networkId;
+  }
+
+  public void setNetworkId(Integer networkId) {
+    this.networkId = networkId;
+  }
+
+  public Status article(String article) {
+    this.article = article;
+    return this;
+  }
+
+   /**
+   * :&gt;- This field is applicable in cases where the status change pertains to a single specific article within the shipment.
+   * @return article
+  **/
+  @Schema(example = "ABC1237", description = ":>- This field is applicable in cases where the status change pertains to a single specific article within the shipment.")
+  public String getArticle() {
+    return article;
+  }
+
+  public void setArticle(String article) {
+    this.article = article;
+  }
+
+  public Status serialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+    return this;
+  }
+
+   /**
+   * :&gt;- This field is applicable in cases where the status change pertains to a single specific serialNumber within the shipment.
+   * @return serialNumber
+  **/
+  @Schema(example = "321456987", description = ":>- This field is applicable in cases where the status change pertains to a single specific serialNumber within the shipment.")
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
   public Status timeStamp(String timeStamp) {
     this.timeStamp = timeStamp;
     return this;
@@ -325,6 +409,10 @@ public class Status {
         Objects.equals(this.statusDescription, status.statusDescription) &&
         Objects.equals(this.description, status.description) &&
         Objects.equals(this.user, status.user) &&
+        Objects.equals(this.idDepot, status.idDepot) &&
+        Objects.equals(this.networkId, status.networkId) &&
+        Objects.equals(this.article, status.article) &&
+        Objects.equals(this.serialNumber, status.serialNumber) &&
         Objects.equals(this.timeStamp, status.timeStamp) &&
         Objects.equals(this.lat, status.lat) &&
         Objects.equals(this.lng, status.lng);
@@ -332,7 +420,7 @@ public class Status {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reference, idShipment, shipmentNumber, customerReference, statusId, status, idProblemType, statusDescription, description, user, timeStamp, lat, lng);
+    return Objects.hash(reference, idShipment, shipmentNumber, customerReference, statusId, status, idProblemType, statusDescription, description, user, idDepot, networkId, article, serialNumber, timeStamp, lat, lng);
   }
 
 
@@ -351,6 +439,10 @@ public class Status {
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    idDepot: ").append(toIndentedString(idDepot)).append("\n");
+    sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    timeStamp: ").append(toIndentedString(timeStamp)).append("\n");
     sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
     sb.append("    lng: ").append(toIndentedString(lng)).append("\n");

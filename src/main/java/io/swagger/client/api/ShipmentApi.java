@@ -65,7 +65,7 @@ public class ShipmentApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/shipment/get/{id}"
+        String localVarPath = "/logistiqo/rest/api/v-1/shipment/{id}"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -120,7 +120,7 @@ public class ShipmentApi {
     }
 
     /**
-     * Get a shipment by ID
+     * This API allows you to retrieve a shipment by its unique ID.
      *  # Shipment       
      * @param id The ID of the shipment to get. (required)
      * @return Shipment
@@ -132,7 +132,7 @@ public class ShipmentApi {
     }
 
     /**
-     * Get a shipment by ID
+     * This API allows you to retrieve a shipment by its unique ID.
      *  # Shipment       
      * @param id The ID of the shipment to get. (required)
      * @return ApiResponse&lt;Shipment&gt;
@@ -145,7 +145,7 @@ public class ShipmentApi {
     }
 
     /**
-     * Get a shipment by ID (asynchronously)
+     * This API allows you to retrieve a shipment by its unique ID. (asynchronously)
      *  # Shipment       
      * @param id The ID of the shipment to get. (required)
      * @param callback The callback to be executed when the API call finishes
