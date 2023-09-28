@@ -19,13 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ContractDetail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Contract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
 public class Contract {
   @SerializedName("id")
@@ -71,7 +74,7 @@ public class Contract {
   private String terminationOn = null;
 
   @SerializedName("contractDetails")
-  private AllOfContractContractDetails contractDetails = null;
+  private List<ContractDetail> contractDetails = null;
 
   @SerializedName("customer")
   private AllOfContractCustomer customer = null;
@@ -328,8 +331,16 @@ public class Contract {
     this.terminationOn = terminationOn;
   }
 
-  public Contract contractDetails(AllOfContractContractDetails contractDetails) {
+  public Contract contractDetails(List<ContractDetail> contractDetails) {
     this.contractDetails = contractDetails;
+    return this;
+  }
+
+  public Contract addContractDetailsItem(ContractDetail contractDetailsItem) {
+    if (this.contractDetails == null) {
+      this.contractDetails = new ArrayList<ContractDetail>();
+    }
+    this.contractDetails.add(contractDetailsItem);
     return this;
   }
 
@@ -338,11 +349,11 @@ public class Contract {
    * @return contractDetails
   **/
   @Schema(description = "")
-  public AllOfContractContractDetails getContractDetails() {
+  public List<ContractDetail> getContractDetails() {
     return contractDetails;
   }
 
-  public void setContractDetails(AllOfContractContractDetails contractDetails) {
+  public void setContractDetails(List<ContractDetail> contractDetails) {
     this.contractDetails = contractDetails;
   }
 

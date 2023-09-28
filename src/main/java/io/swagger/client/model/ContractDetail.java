@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ContractDetails
+ * ContractDetail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
-public class ContractDetails {
+public class ContractDetail {
   @SerializedName("id")
   private Integer id = null;
 
@@ -67,7 +67,7 @@ public class ContractDetails {
   @SerializedName("description")
   private String description = null;
 
-  public ContractDetails id(Integer id) {
+  public ContractDetail id(Integer id) {
     this.id = id;
     return this;
   }
@@ -85,7 +85,7 @@ public class ContractDetails {
     this.id = id;
   }
 
-  public ContractDetails idContract(Integer idContract) {
+  public ContractDetail idContract(Integer idContract) {
     this.idContract = idContract;
     return this;
   }
@@ -103,7 +103,7 @@ public class ContractDetails {
     this.idContract = idContract;
   }
 
-  public ContractDetails overrideRevenueAccount(Boolean overrideRevenueAccount) {
+  public ContractDetail overrideRevenueAccount(Boolean overrideRevenueAccount) {
     this.overrideRevenueAccount = overrideRevenueAccount;
     return this;
   }
@@ -121,7 +121,7 @@ public class ContractDetails {
     this.overrideRevenueAccount = overrideRevenueAccount;
   }
 
-  public ContractDetails position(Integer position) {
+  public ContractDetail position(Integer position) {
     this.position = position;
     return this;
   }
@@ -139,7 +139,7 @@ public class ContractDetails {
     this.position = position;
   }
 
-  public ContractDetails startDate(String startDate) {
+  public ContractDetail startDate(String startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -157,7 +157,7 @@ public class ContractDetails {
     this.startDate = startDate;
   }
 
-  public ContractDetails endDate(String endDate) {
+  public ContractDetail endDate(String endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -175,7 +175,7 @@ public class ContractDetails {
     this.endDate = endDate;
   }
 
-  public ContractDetails inactive(Boolean inactive) {
+  public ContractDetail inactive(Boolean inactive) {
     this.inactive = inactive;
     return this;
   }
@@ -193,7 +193,7 @@ public class ContractDetails {
     this.inactive = inactive;
   }
 
-  public ContractDetails quantity(Integer quantity) {
+  public ContractDetail quantity(Integer quantity) {
     this.quantity = quantity;
     return this;
   }
@@ -211,7 +211,7 @@ public class ContractDetails {
     this.quantity = quantity;
   }
 
-  public ContractDetails unit(String unit) {
+  public ContractDetail unit(String unit) {
     this.unit = unit;
     return this;
   }
@@ -229,7 +229,7 @@ public class ContractDetails {
     this.unit = unit;
   }
 
-  public ContractDetails amount(Double amount) {
+  public ContractDetail amount(Double amount) {
     this.amount = amount;
     return this;
   }
@@ -247,7 +247,7 @@ public class ContractDetails {
     this.amount = amount;
   }
 
-  public ContractDetails code(String code) {
+  public ContractDetail code(String code) {
     this.code = code;
     return this;
   }
@@ -265,7 +265,7 @@ public class ContractDetails {
     this.code = code;
   }
 
-  public ContractDetails name(String name) {
+  public ContractDetail name(String name) {
     this.name = name;
     return this;
   }
@@ -283,7 +283,7 @@ public class ContractDetails {
     this.name = name;
   }
 
-  public ContractDetails description(String description) {
+  public ContractDetail description(String description) {
     this.description = description;
     return this;
   }
@@ -310,20 +310,20 @@ public class ContractDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ContractDetails contractDetails = (ContractDetails) o;
-    return Objects.equals(this.id, contractDetails.id) &&
-        Objects.equals(this.idContract, contractDetails.idContract) &&
-        Objects.equals(this.overrideRevenueAccount, contractDetails.overrideRevenueAccount) &&
-        Objects.equals(this.position, contractDetails.position) &&
-        Objects.equals(this.startDate, contractDetails.startDate) &&
-        Objects.equals(this.endDate, contractDetails.endDate) &&
-        Objects.equals(this.inactive, contractDetails.inactive) &&
-        Objects.equals(this.quantity, contractDetails.quantity) &&
-        Objects.equals(this.unit, contractDetails.unit) &&
-        Objects.equals(this.amount, contractDetails.amount) &&
-        Objects.equals(this.code, contractDetails.code) &&
-        Objects.equals(this.name, contractDetails.name) &&
-        Objects.equals(this.description, contractDetails.description);
+    ContractDetail contractDetail = (ContractDetail) o;
+    return Objects.equals(this.id, contractDetail.id) &&
+        Objects.equals(this.idContract, contractDetail.idContract) &&
+        Objects.equals(this.overrideRevenueAccount, contractDetail.overrideRevenueAccount) &&
+        Objects.equals(this.position, contractDetail.position) &&
+        Objects.equals(this.startDate, contractDetail.startDate) &&
+        Objects.equals(this.endDate, contractDetail.endDate) &&
+        Objects.equals(this.inactive, contractDetail.inactive) &&
+        Objects.equals(this.quantity, contractDetail.quantity) &&
+        Objects.equals(this.unit, contractDetail.unit) &&
+        Objects.equals(this.amount, contractDetail.amount) &&
+        Objects.equals(this.code, contractDetail.code) &&
+        Objects.equals(this.name, contractDetail.name) &&
+        Objects.equals(this.description, contractDetail.description);
   }
 
   @Override
@@ -335,7 +335,7 @@ public class ContractDetails {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ContractDetails {\n");
+    sb.append("class ContractDetail {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    idContract: ").append(toIndentedString(idContract)).append("\n");

@@ -19,20 +19,29 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ContractDetail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
- * InvoiceContracts
+ * InvoiceContract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
-public class InvoiceContracts {
+public class InvoiceContract {
   @SerializedName("id")
   private Integer id = null;
 
-  @SerializedName("contractDetail")
-  private AllOfInvoiceContractsContractDetail contractDetail = null;
+  @SerializedName("name")
+  private String name = null;
+
+  @SerializedName("description")
+  private String description = null;
+
+  @SerializedName("contractDetails")
+  private List<ContractDetail> contractDetails = null;
 
   @SerializedName("startDate")
   private String startDate = null;
@@ -43,16 +52,16 @@ public class InvoiceContracts {
   @SerializedName("position")
   private Integer position = null;
 
-  public InvoiceContracts id(Integer id) {
+  public InvoiceContract id(Integer id) {
     this.id = id;
     return this;
   }
 
    /**
-   * The unique identifier for the ContractDetail.
+   * The unique identifier for the InvoiceContract.
    * @return id
   **/
-  @Schema(description = "The unique identifier for the ContractDetail.")
+  @Schema(description = "The unique identifier for the InvoiceContract.")
   public Integer getId() {
     return id;
   }
@@ -61,25 +70,69 @@ public class InvoiceContracts {
     this.id = id;
   }
 
-  public InvoiceContracts contractDetail(AllOfInvoiceContractsContractDetail contractDetail) {
-    this.contractDetail = contractDetail;
+  public InvoiceContract name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * The unique identifier for the associated ContractDetail.
-   * @return contractDetail
+   * Name of the contrect.
+   * @return name
   **/
-  @Schema(description = "The unique identifier for the associated ContractDetail.")
-  public AllOfInvoiceContractsContractDetail getContractDetail() {
-    return contractDetail;
+  @Schema(description = "Name of the contrect.")
+  public String getName() {
+    return name;
   }
 
-  public void setContractDetail(AllOfInvoiceContractsContractDetail contractDetail) {
-    this.contractDetail = contractDetail;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public InvoiceContracts startDate(String startDate) {
+  public InvoiceContract description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * TDescription of the contract.
+   * @return description
+  **/
+  @Schema(description = "TDescription of the contract.")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public InvoiceContract contractDetails(List<ContractDetail> contractDetails) {
+    this.contractDetails = contractDetails;
+    return this;
+  }
+
+  public InvoiceContract addContractDetailsItem(ContractDetail contractDetailsItem) {
+    if (this.contractDetails == null) {
+      this.contractDetails = new ArrayList<ContractDetail>();
+    }
+    this.contractDetails.add(contractDetailsItem);
+    return this;
+  }
+
+   /**
+   * Get contractDetails
+   * @return contractDetails
+  **/
+  @Schema(description = "")
+  public List<ContractDetail> getContractDetails() {
+    return contractDetails;
+  }
+
+  public void setContractDetails(List<ContractDetail> contractDetails) {
+    this.contractDetails = contractDetails;
+  }
+
+  public InvoiceContract startDate(String startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -97,7 +150,7 @@ public class InvoiceContracts {
     this.startDate = startDate;
   }
 
-  public InvoiceContracts endDate(String endDate) {
+  public InvoiceContract endDate(String endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -115,7 +168,7 @@ public class InvoiceContracts {
     this.endDate = endDate;
   }
 
-  public InvoiceContracts position(Integer position) {
+  public InvoiceContract position(Integer position) {
     this.position = position;
     return this;
   }
@@ -142,27 +195,31 @@ public class InvoiceContracts {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvoiceContracts invoiceContracts = (InvoiceContracts) o;
-    return Objects.equals(this.id, invoiceContracts.id) &&
-        Objects.equals(this.contractDetail, invoiceContracts.contractDetail) &&
-        Objects.equals(this.startDate, invoiceContracts.startDate) &&
-        Objects.equals(this.endDate, invoiceContracts.endDate) &&
-        Objects.equals(this.position, invoiceContracts.position);
+    InvoiceContract invoiceContract = (InvoiceContract) o;
+    return Objects.equals(this.id, invoiceContract.id) &&
+        Objects.equals(this.name, invoiceContract.name) &&
+        Objects.equals(this.description, invoiceContract.description) &&
+        Objects.equals(this.contractDetails, invoiceContract.contractDetails) &&
+        Objects.equals(this.startDate, invoiceContract.startDate) &&
+        Objects.equals(this.endDate, invoiceContract.endDate) &&
+        Objects.equals(this.position, invoiceContract.position);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contractDetail, startDate, endDate, position);
+    return Objects.hash(id, name, description, contractDetails, startDate, endDate, position);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvoiceContracts {\n");
+    sb.append("class InvoiceContract {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    contractDetail: ").append(toIndentedString(contractDetail)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    contractDetails: ").append(toIndentedString(contractDetails)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");

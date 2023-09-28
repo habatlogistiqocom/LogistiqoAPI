@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-13T08:27:18.096387350Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -124,10 +124,10 @@ public class Manifest {
   }
 
    /**
-   * This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \&quot;modifyManifest\&quot; parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
+   * This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \&quot;consolidate\&quot; field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
    * @return reference
   **/
-  @Schema(example = "23672", description = "This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \"modifyManifest\" parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.")
+  @Schema(example = "23672", description = "This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \"consolidate\" field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.")
   public String getReference() {
     return reference;
   }

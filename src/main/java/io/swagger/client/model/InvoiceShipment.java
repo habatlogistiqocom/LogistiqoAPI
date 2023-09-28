@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * InvoiceShipments
+ * InvoiceShipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
-public class InvoiceShipments {
+public class InvoiceShipment {
   @SerializedName("id")
   private Integer id = null;
 
@@ -37,7 +37,7 @@ public class InvoiceShipments {
   @SerializedName("description")
   private String description = null;
 
-  public InvoiceShipments id(Integer id) {
+  public InvoiceShipment id(Integer id) {
     this.id = id;
     return this;
   }
@@ -55,7 +55,7 @@ public class InvoiceShipments {
     this.id = id;
   }
 
-  public InvoiceShipments position(Integer position) {
+  public InvoiceShipment position(Integer position) {
     this.position = position;
     return this;
   }
@@ -73,7 +73,7 @@ public class InvoiceShipments {
     this.position = position;
   }
 
-  public InvoiceShipments description(String description) {
+  public InvoiceShipment description(String description) {
     this.description = description;
     return this;
   }
@@ -100,10 +100,10 @@ public class InvoiceShipments {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvoiceShipments invoiceShipments = (InvoiceShipments) o;
-    return Objects.equals(this.id, invoiceShipments.id) &&
-        Objects.equals(this.position, invoiceShipments.position) &&
-        Objects.equals(this.description, invoiceShipments.description);
+    InvoiceShipment invoiceShipment = (InvoiceShipment) o;
+    return Objects.equals(this.id, invoiceShipment.id) &&
+        Objects.equals(this.position, invoiceShipment.position) &&
+        Objects.equals(this.description, invoiceShipment.description);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class InvoiceShipments {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvoiceShipments {\n");
+    sb.append("class InvoiceShipment {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");

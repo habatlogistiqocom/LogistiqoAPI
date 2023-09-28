@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * DirectDetails
+ * DirectDetail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
-public class DirectDetails {
+public class DirectDetail {
   @SerializedName("id")
   private Integer id = null;
 
@@ -55,7 +55,7 @@ public class DirectDetails {
   @SerializedName("deliveryDate")
   private String deliveryDate = null;
 
-  public DirectDetails id(Integer id) {
+  public DirectDetail id(Integer id) {
     this.id = id;
     return this;
   }
@@ -73,7 +73,7 @@ public class DirectDetails {
     this.id = id;
   }
 
-  public DirectDetails code(String code) {
+  public DirectDetail code(String code) {
     this.code = code;
     return this;
   }
@@ -91,7 +91,7 @@ public class DirectDetails {
     this.code = code;
   }
 
-  public DirectDetails name(String name) {
+  public DirectDetail name(String name) {
     this.name = name;
     return this;
   }
@@ -109,7 +109,7 @@ public class DirectDetails {
     this.name = name;
   }
 
-  public DirectDetails description(String description) {
+  public DirectDetail description(String description) {
     this.description = description;
     return this;
   }
@@ -127,7 +127,7 @@ public class DirectDetails {
     this.description = description;
   }
 
-  public DirectDetails price(Double price) {
+  public DirectDetail price(Double price) {
     this.price = price;
     return this;
   }
@@ -145,7 +145,7 @@ public class DirectDetails {
     this.price = price;
   }
 
-  public DirectDetails unit(String unit) {
+  public DirectDetail unit(String unit) {
     this.unit = unit;
     return this;
   }
@@ -163,7 +163,7 @@ public class DirectDetails {
     this.unit = unit;
   }
 
-  public DirectDetails quantity(Integer quantity) {
+  public DirectDetail quantity(Integer quantity) {
     this.quantity = quantity;
     return this;
   }
@@ -181,7 +181,7 @@ public class DirectDetails {
     this.quantity = quantity;
   }
 
-  public DirectDetails amount(Double amount) {
+  public DirectDetail amount(Double amount) {
     this.amount = amount;
     return this;
   }
@@ -199,7 +199,7 @@ public class DirectDetails {
     this.amount = amount;
   }
 
-  public DirectDetails deliveryDate(String deliveryDate) {
+  public DirectDetail deliveryDate(String deliveryDate) {
     this.deliveryDate = deliveryDate;
     return this;
   }
@@ -226,16 +226,16 @@ public class DirectDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DirectDetails directDetails = (DirectDetails) o;
-    return Objects.equals(this.id, directDetails.id) &&
-        Objects.equals(this.code, directDetails.code) &&
-        Objects.equals(this.name, directDetails.name) &&
-        Objects.equals(this.description, directDetails.description) &&
-        Objects.equals(this.price, directDetails.price) &&
-        Objects.equals(this.unit, directDetails.unit) &&
-        Objects.equals(this.quantity, directDetails.quantity) &&
-        Objects.equals(this.amount, directDetails.amount) &&
-        Objects.equals(this.deliveryDate, directDetails.deliveryDate);
+    DirectDetail directDetail = (DirectDetail) o;
+    return Objects.equals(this.id, directDetail.id) &&
+        Objects.equals(this.code, directDetail.code) &&
+        Objects.equals(this.name, directDetail.name) &&
+        Objects.equals(this.description, directDetail.description) &&
+        Objects.equals(this.price, directDetail.price) &&
+        Objects.equals(this.unit, directDetail.unit) &&
+        Objects.equals(this.quantity, directDetail.quantity) &&
+        Objects.equals(this.amount, directDetail.amount) &&
+        Objects.equals(this.deliveryDate, directDetail.deliveryDate);
   }
 
   @Override
@@ -247,7 +247,7 @@ public class DirectDetails {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DirectDetails {\n");
+    sb.append("class DirectDetail {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

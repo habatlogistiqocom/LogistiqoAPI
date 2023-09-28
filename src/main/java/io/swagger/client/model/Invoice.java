@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.DirectDetails;
-import io.swagger.client.model.InvoiceContracts;
-import io.swagger.client.model.InvoiceShipments;
+import io.swagger.client.model.DirectDetail;
+import io.swagger.client.model.InvoiceContract;
+import io.swagger.client.model.InvoiceShipment;
 import io.swagger.client.model.UploadedFile;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -31,7 +31,7 @@ import java.util.List;
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-17T10:06:38.163246815Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")
@@ -92,13 +92,13 @@ public class Invoice {
   private AllOfInvoiceInvoiceReceiver invoiceReceiver = null;
 
   @SerializedName("directDetails")
-  private List<DirectDetails> directDetails = null;
+  private List<DirectDetail> directDetails = null;
 
-  @SerializedName("invoiceContract")
-  private List<InvoiceContracts> invoiceContract = null;
+  @SerializedName("invoiceContracts")
+  private List<InvoiceContract> invoiceContracts = null;
 
-  @SerializedName("invoiceShipment")
-  private List<InvoiceShipments> invoiceShipment = null;
+  @SerializedName("invoiceShipments")
+  private List<InvoiceShipment> invoiceShipments = null;
 
   @SerializedName("pdf")
   private List<UploadedFile> pdf = null;
@@ -445,14 +445,14 @@ public class Invoice {
     this.invoiceReceiver = invoiceReceiver;
   }
 
-  public Invoice directDetails(List<DirectDetails> directDetails) {
+  public Invoice directDetails(List<DirectDetail> directDetails) {
     this.directDetails = directDetails;
     return this;
   }
 
-  public Invoice addDirectDetailsItem(DirectDetails directDetailsItem) {
+  public Invoice addDirectDetailsItem(DirectDetail directDetailsItem) {
     if (this.directDetails == null) {
-      this.directDetails = new ArrayList<DirectDetails>();
+      this.directDetails = new ArrayList<DirectDetail>();
     }
     this.directDetails.add(directDetailsItem);
     return this;
@@ -463,64 +463,64 @@ public class Invoice {
    * @return directDetails
   **/
   @Schema(description = "")
-  public List<DirectDetails> getDirectDetails() {
+  public List<DirectDetail> getDirectDetails() {
     return directDetails;
   }
 
-  public void setDirectDetails(List<DirectDetails> directDetails) {
+  public void setDirectDetails(List<DirectDetail> directDetails) {
     this.directDetails = directDetails;
   }
 
-  public Invoice invoiceContract(List<InvoiceContracts> invoiceContract) {
-    this.invoiceContract = invoiceContract;
+  public Invoice invoiceContracts(List<InvoiceContract> invoiceContracts) {
+    this.invoiceContracts = invoiceContracts;
     return this;
   }
 
-  public Invoice addInvoiceContractItem(InvoiceContracts invoiceContractItem) {
-    if (this.invoiceContract == null) {
-      this.invoiceContract = new ArrayList<InvoiceContracts>();
+  public Invoice addInvoiceContractsItem(InvoiceContract invoiceContractsItem) {
+    if (this.invoiceContracts == null) {
+      this.invoiceContracts = new ArrayList<InvoiceContract>();
     }
-    this.invoiceContract.add(invoiceContractItem);
+    this.invoiceContracts.add(invoiceContractsItem);
     return this;
   }
 
    /**
-   * Get invoiceContract
-   * @return invoiceContract
+   * Get invoiceContracts
+   * @return invoiceContracts
   **/
   @Schema(description = "")
-  public List<InvoiceContracts> getInvoiceContract() {
-    return invoiceContract;
+  public List<InvoiceContract> getInvoiceContracts() {
+    return invoiceContracts;
   }
 
-  public void setInvoiceContract(List<InvoiceContracts> invoiceContract) {
-    this.invoiceContract = invoiceContract;
+  public void setInvoiceContracts(List<InvoiceContract> invoiceContracts) {
+    this.invoiceContracts = invoiceContracts;
   }
 
-  public Invoice invoiceShipment(List<InvoiceShipments> invoiceShipment) {
-    this.invoiceShipment = invoiceShipment;
+  public Invoice invoiceShipments(List<InvoiceShipment> invoiceShipments) {
+    this.invoiceShipments = invoiceShipments;
     return this;
   }
 
-  public Invoice addInvoiceShipmentItem(InvoiceShipments invoiceShipmentItem) {
-    if (this.invoiceShipment == null) {
-      this.invoiceShipment = new ArrayList<InvoiceShipments>();
+  public Invoice addInvoiceShipmentsItem(InvoiceShipment invoiceShipmentsItem) {
+    if (this.invoiceShipments == null) {
+      this.invoiceShipments = new ArrayList<InvoiceShipment>();
     }
-    this.invoiceShipment.add(invoiceShipmentItem);
+    this.invoiceShipments.add(invoiceShipmentsItem);
     return this;
   }
 
    /**
-   * Get invoiceShipment
-   * @return invoiceShipment
+   * Get invoiceShipments
+   * @return invoiceShipments
   **/
   @Schema(description = "")
-  public List<InvoiceShipments> getInvoiceShipment() {
-    return invoiceShipment;
+  public List<InvoiceShipment> getInvoiceShipments() {
+    return invoiceShipments;
   }
 
-  public void setInvoiceShipment(List<InvoiceShipments> invoiceShipment) {
-    this.invoiceShipment = invoiceShipment;
+  public void setInvoiceShipments(List<InvoiceShipment> invoiceShipments) {
+    this.invoiceShipments = invoiceShipments;
   }
 
   public Invoice pdf(List<UploadedFile> pdf) {
@@ -579,14 +579,14 @@ public class Invoice {
         Objects.equals(this.customer, invoice.customer) &&
         Objects.equals(this.invoiceReceiver, invoice.invoiceReceiver) &&
         Objects.equals(this.directDetails, invoice.directDetails) &&
-        Objects.equals(this.invoiceContract, invoice.invoiceContract) &&
-        Objects.equals(this.invoiceShipment, invoice.invoiceShipment) &&
+        Objects.equals(this.invoiceContracts, invoice.invoiceContracts) &&
+        Objects.equals(this.invoiceShipments, invoice.invoiceShipments) &&
         Objects.equals(this.pdf, invoice.pdf);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, personYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContract, invoiceShipment, pdf);
+    return Objects.hash(id, number, invoiceDate, postingDate, invoiceText, companyNote, period, dueDate, invoiceAmount, vatAmount, printed, mailed, paid, paidOn, personYourRef, personOwrRef, paymentTerms, customer, invoiceReceiver, directDetails, invoiceContracts, invoiceShipments, pdf);
   }
 
 
@@ -615,8 +615,8 @@ public class Invoice {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    invoiceReceiver: ").append(toIndentedString(invoiceReceiver)).append("\n");
     sb.append("    directDetails: ").append(toIndentedString(directDetails)).append("\n");
-    sb.append("    invoiceContract: ").append(toIndentedString(invoiceContract)).append("\n");
-    sb.append("    invoiceShipment: ").append(toIndentedString(invoiceShipment)).append("\n");
+    sb.append("    invoiceContracts: ").append(toIndentedString(invoiceContracts)).append("\n");
+    sb.append("    invoiceShipments: ").append(toIndentedString(invoiceShipments)).append("\n");
     sb.append("    pdf: ").append(toIndentedString(pdf)).append("\n");
     sb.append("}");
     return sb.toString();
