@@ -55,6 +55,131 @@ public class ManifestApi {
     }
 
     /**
+     * Build call for getManifest
+     * @param id Choose a single manifest ID for retrieval. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getManifestCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/logistiqo/rest/api/v-1/manifest/get{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getManifestValidateBeforeCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getManifest(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = getManifestCall(id, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system.
+     *  # Manifest   
+     * @param id Choose a single manifest ID for retrieval. (required)
+     * @return Manifest
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Manifest getManifest(Integer id) throws ApiException {
+        ApiResponse<Manifest> resp = getManifestWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system.
+     *  # Manifest   
+     * @param id Choose a single manifest ID for retrieval. (required)
+     * @return ApiResponse&lt;Manifest&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Manifest> getManifestWithHttpInfo(Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = getManifestValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<Manifest>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system. (asynchronously)
+     *  # Manifest   
+     * @param id Choose a single manifest ID for retrieval. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getManifestAsync(Integer id, final ApiCallback<Manifest> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getManifestValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Manifest>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postManifest
      * @param body  (required)
      * @param progressListener Progress listener
@@ -66,7 +191,7 @@ public class ManifestApi {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/manifest/add/json";
+        String localVarPath = "/logistiqo/rest/api/v-1/manifest/add";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -120,7 +245,7 @@ public class ManifestApi {
     }
 
     /**
-     * postManifestEndpoint
+     * This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments.
      *  # Manifest     This API provides a comprehensive set of functionalities to export unplanned, planned, and optimized tours or bundles of shipments, regardless of whether they are transported by your own vehicles or contractors.   While importing shipments may be your primary objective, it is crucial to bundle them within a manifest. To prevent the creation of manifests, simply set the &#x27;createManifest&#x27; field to false. It is also important to use a unique reference for each manifest to ensure data integrity within the system.    Moreover, this API empowers you to effortlessly create Master and House Air Waybills (MAWB and HAWB). You can leverage the manifest fields for the MAWB and the shipment fields for the HAWB. By designating the manifest as a MAWB, you establish a seamless link between the shipment and the MAWB. Similarly, including a HAWB within the shipment establishes a clear connection between the shipment and the HAWB. In the event that either the MAWB or the HAWB does not exist, this API will automatically generate both to maintain consistency.    With these powerful capabilities, this API simplifies and enhances the management of shipments, manifests, and Air Waybills, ensuring efficient and accurate logistics operations.     
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -130,7 +255,7 @@ public class ManifestApi {
     }
 
     /**
-     * postManifestEndpoint
+     * This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments.
      *  # Manifest     This API provides a comprehensive set of functionalities to export unplanned, planned, and optimized tours or bundles of shipments, regardless of whether they are transported by your own vehicles or contractors.   While importing shipments may be your primary objective, it is crucial to bundle them within a manifest. To prevent the creation of manifests, simply set the &#x27;createManifest&#x27; field to false. It is also important to use a unique reference for each manifest to ensure data integrity within the system.    Moreover, this API empowers you to effortlessly create Master and House Air Waybills (MAWB and HAWB). You can leverage the manifest fields for the MAWB and the shipment fields for the HAWB. By designating the manifest as a MAWB, you establish a seamless link between the shipment and the MAWB. Similarly, including a HAWB within the shipment establishes a clear connection between the shipment and the HAWB. In the event that either the MAWB or the HAWB does not exist, this API will automatically generate both to maintain consistency.    With these powerful capabilities, this API simplifies and enhances the management of shipments, manifests, and Air Waybills, ensuring efficient and accurate logistics operations.     
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -142,7 +267,7 @@ public class ManifestApi {
     }
 
     /**
-     * postManifestEndpoint (asynchronously)
+     * This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments. (asynchronously)
      *  # Manifest     This API provides a comprehensive set of functionalities to export unplanned, planned, and optimized tours or bundles of shipments, regardless of whether they are transported by your own vehicles or contractors.   While importing shipments may be your primary objective, it is crucial to bundle them within a manifest. To prevent the creation of manifests, simply set the &#x27;createManifest&#x27; field to false. It is also important to use a unique reference for each manifest to ensure data integrity within the system.    Moreover, this API empowers you to effortlessly create Master and House Air Waybills (MAWB and HAWB). You can leverage the manifest fields for the MAWB and the shipment fields for the HAWB. By designating the manifest as a MAWB, you establish a seamless link between the shipment and the MAWB. Similarly, including a HAWB within the shipment establishes a clear connection between the shipment and the HAWB. In the event that either the MAWB or the HAWB does not exist, this API will automatically generate both to maintain consistency.    With these powerful capabilities, this API simplifies and enhances the management of shipments, manifests, and Air Waybills, ensuring efficient and accurate logistics operations.     
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes

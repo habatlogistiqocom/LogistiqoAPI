@@ -25,7 +25,7 @@ import java.io.IOException;
  * InvoiceShipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
 
 public class InvoiceShipment {
   @SerializedName("id")
@@ -43,10 +43,10 @@ public class InvoiceShipment {
   }
 
    /**
-   * The unique identifier for the TransportManifest.
+   * The unique identifier for the InvoiceShipment.
    * @return id
   **/
-  @Schema(description = "The unique identifier for the TransportManifest.")
+  @Schema(description = "The unique identifier for the InvoiceShipment.")
   public Integer getId() {
     return id;
   }
@@ -61,10 +61,10 @@ public class InvoiceShipment {
   }
 
    /**
-   * The position of the TransportManifest.
+   * The position of the InvoiceShipment.
    * @return position
   **/
-  @Schema(description = "The position of the TransportManifest.")
+  @Schema(description = "The position of the InvoiceShipment.")
   public Integer getPosition() {
     return position;
   }
@@ -79,10 +79,10 @@ public class InvoiceShipment {
   }
 
    /**
-   * The description of the TransportManifest.
+   * The description of the InvoiceShipment.
    * @return description
   **/
-  @Schema(description = "The description of the TransportManifest.")
+  @Schema(description = "The description of the InvoiceShipment.")
   public String getDescription() {
     return description;
   }

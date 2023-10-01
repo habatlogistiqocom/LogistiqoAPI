@@ -14,14 +14,14 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.CompanyObject;
+import io.swagger.client.model.ContractDetail;
 /**
- * AllOfContractCustomer
+ * AllOfInvoiceContractContractDetail
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
 
-public class AllOfContractCustomer extends CompanyObject {
+public class AllOfInvoiceContractContractDetail extends ContractDetail {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -43,7 +43,7 @@ public class AllOfContractCustomer extends CompanyObject {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfContractCustomer {\n");
+    sb.append("class AllOfInvoiceContractContractDetail {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

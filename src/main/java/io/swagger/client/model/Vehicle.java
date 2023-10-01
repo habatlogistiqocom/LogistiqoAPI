@@ -22,67 +22,67 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Calloff
+ * Vehicle
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
 
-public class Calloff {
-  @SerializedName("callOffDate")
-  private String callOffDate = null;
+public class Vehicle {
+  @SerializedName("licenseplate")
+  private String licenseplate = null;
 
-  @SerializedName("quantity")
-  private Integer quantity = null;
+  @SerializedName("vehicleType")
+  private String vehicleType = null;
 
   @SerializedName("description")
   private String description = null;
 
-  public Calloff callOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public Vehicle licenseplate(String licenseplate) {
+    this.licenseplate = licenseplate;
     return this;
   }
 
    /**
-   * When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item
-   * @return callOffDate
+   * The unique license plate of the vehicle.
+   * @return licenseplate
   **/
-  @Schema(example = "yyMMdd", description = "When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item")
-  public String getCallOffDate() {
-    return callOffDate;
+  @Schema(description = "The unique license plate of the vehicle.")
+  public String getLicenseplate() {
+    return licenseplate;
   }
 
-  public void setCallOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public void setLicenseplate(String licenseplate) {
+    this.licenseplate = licenseplate;
   }
 
-  public Calloff quantity(Integer quantity) {
-    this.quantity = quantity;
+  public Vehicle vehicleType(String vehicleType) {
+    this.vehicleType = vehicleType;
     return this;
   }
 
    /**
-   * Provide a call-off quantity of the goods.
-   * @return quantity
+   * The vehicle type of the vehicle. Possible values are TRUCK, CAR, SMALL_TRUCK
+   * @return vehicleType
   **/
-  @Schema(description = "Provide a call-off quantity of the goods.")
-  public Integer getQuantity() {
-    return quantity;
+  @Schema(description = "The vehicle type of the vehicle. Possible values are TRUCK, CAR, SMALL_TRUCK")
+  public String getVehicleType() {
+    return vehicleType;
   }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+  public void setVehicleType(String vehicleType) {
+    this.vehicleType = vehicleType;
   }
 
-  public Calloff description(String description) {
+  public Vehicle description(String description) {
     this.description = description;
     return this;
   }
 
    /**
-   * Provide a reference of the goods.
+   * The description of the vehicle.
    * @return description
   **/
-  @Schema(description = "Provide a reference of the goods.")
+  @Schema(description = "The description of the vehicle.")
   public String getDescription() {
     return description;
   }
@@ -100,25 +100,25 @@ public class Calloff {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Calloff calloff = (Calloff) o;
-    return Objects.equals(this.callOffDate, calloff.callOffDate) &&
-        Objects.equals(this.quantity, calloff.quantity) &&
-        Objects.equals(this.description, calloff.description);
+    Vehicle vehicle = (Vehicle) o;
+    return Objects.equals(this.licenseplate, vehicle.licenseplate) &&
+        Objects.equals(this.vehicleType, vehicle.vehicleType) &&
+        Objects.equals(this.description, vehicle.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callOffDate, quantity, description);
+    return Objects.hash(licenseplate, vehicleType, description);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Calloff {\n");
+    sb.append("class Vehicle {\n");
     
-    sb.append("    callOffDate: ").append(toIndentedString(callOffDate)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    licenseplate: ").append(toIndentedString(licenseplate)).append("\n");
+    sb.append("    vehicleType: ").append(toIndentedString(vehicleType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();

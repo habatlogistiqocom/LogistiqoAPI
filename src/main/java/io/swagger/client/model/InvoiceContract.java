@@ -19,16 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ContractDetail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * InvoiceContract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
 
 public class InvoiceContract {
   @SerializedName("id")
@@ -40,8 +37,8 @@ public class InvoiceContract {
   @SerializedName("description")
   private String description = null;
 
-  @SerializedName("contractDetails")
-  private List<ContractDetail> contractDetails = null;
+  @SerializedName("contractDetail")
+  private AllOfInvoiceContractContractDetail contractDetail = null;
 
   @SerializedName("startDate")
   private String startDate = null;
@@ -94,10 +91,10 @@ public class InvoiceContract {
   }
 
    /**
-   * TDescription of the contract.
+   * Description of the contract.
    * @return description
   **/
-  @Schema(description = "TDescription of the contract.")
+  @Schema(description = "Description of the contract.")
   public String getDescription() {
     return description;
   }
@@ -106,30 +103,22 @@ public class InvoiceContract {
     this.description = description;
   }
 
-  public InvoiceContract contractDetails(List<ContractDetail> contractDetails) {
-    this.contractDetails = contractDetails;
-    return this;
-  }
-
-  public InvoiceContract addContractDetailsItem(ContractDetail contractDetailsItem) {
-    if (this.contractDetails == null) {
-      this.contractDetails = new ArrayList<ContractDetail>();
-    }
-    this.contractDetails.add(contractDetailsItem);
+  public InvoiceContract contractDetail(AllOfInvoiceContractContractDetail contractDetail) {
+    this.contractDetail = contractDetail;
     return this;
   }
 
    /**
-   * Get contractDetails
-   * @return contractDetails
+   * Get contractDetail
+   * @return contractDetail
   **/
   @Schema(description = "")
-  public List<ContractDetail> getContractDetails() {
-    return contractDetails;
+  public AllOfInvoiceContractContractDetail getContractDetail() {
+    return contractDetail;
   }
 
-  public void setContractDetails(List<ContractDetail> contractDetails) {
-    this.contractDetails = contractDetails;
+  public void setContractDetail(AllOfInvoiceContractContractDetail contractDetail) {
+    this.contractDetail = contractDetail;
   }
 
   public InvoiceContract startDate(String startDate) {
@@ -199,7 +188,7 @@ public class InvoiceContract {
     return Objects.equals(this.id, invoiceContract.id) &&
         Objects.equals(this.name, invoiceContract.name) &&
         Objects.equals(this.description, invoiceContract.description) &&
-        Objects.equals(this.contractDetails, invoiceContract.contractDetails) &&
+        Objects.equals(this.contractDetail, invoiceContract.contractDetail) &&
         Objects.equals(this.startDate, invoiceContract.startDate) &&
         Objects.equals(this.endDate, invoiceContract.endDate) &&
         Objects.equals(this.position, invoiceContract.position);
@@ -207,7 +196,7 @@ public class InvoiceContract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, contractDetails, startDate, endDate, position);
+    return Objects.hash(id, name, description, contractDetail, startDate, endDate, position);
   }
 
 
@@ -219,7 +208,7 @@ public class InvoiceContract {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    contractDetails: ").append(toIndentedString(contractDetails)).append("\n");
+    sb.append("    contractDetail: ").append(toIndentedString(contractDetail)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");

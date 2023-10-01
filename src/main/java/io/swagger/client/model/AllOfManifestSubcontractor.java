@@ -17,10 +17,10 @@ import java.util.Arrays;
 import io.swagger.client.model.CompanyObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.
+ * In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.
  */
-@Schema(description = "If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
+@Schema(description = "In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
 
 public class AllOfManifestSubcontractor extends CompanyObject {
 

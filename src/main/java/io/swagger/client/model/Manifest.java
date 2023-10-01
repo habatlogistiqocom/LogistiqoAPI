@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-09-27T20:32:41.655864578Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:34:24.261524839Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -36,6 +36,9 @@ public class Manifest {
 
   @SerializedName("consolidate")
   private Boolean consolidate = false;
+
+  @SerializedName("manifestNumber")
+  private String manifestNumber = null;
 
   @SerializedName("reference")
   private String reference = null;
@@ -53,22 +56,37 @@ public class Manifest {
   private String airline = null;
 
   @SerializedName("date")
-  private String date = "current date";
+  private String date = null;
 
   @SerializedName("dateto")
-  private String dateto = "date";
+  private String dateto = null;
 
   @SerializedName("depot")
   private String depot = "DEPOT";
 
+  @SerializedName("customerNumber")
+  private String customerNumber = null;
+
+  @SerializedName("customer")
+  private AllOfManifestCustomer customer = null;
+
   @SerializedName("subcontractor")
   private AllOfManifestSubcontractor subcontractor = null;
+
+  @SerializedName("vehicle")
+  private AllOfManifestVehicle vehicle = null;
 
   @SerializedName("action")
   private String action = null;
 
   @SerializedName("flightNo")
   private String flightNo = null;
+
+  @SerializedName("subcontractorInfo")
+  private String subcontractorInfo = null;
+
+  @SerializedName("subcontractorVehicleInfo")
+  private String subcontractorVehicleInfo = null;
 
   @SerializedName("shipper")
   private AllOfManifestShipper shipper = null;
@@ -116,6 +134,24 @@ public class Manifest {
 
   public void setConsolidate(Boolean consolidate) {
     this.consolidate = consolidate;
+  }
+
+  public Manifest manifestNumber(String manifestNumber) {
+    this.manifestNumber = manifestNumber;
+    return this;
+  }
+
+   /**
+   * This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         
+   * @return manifestNumber
+  **/
+  @Schema(description = "This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         ")
+  public String getManifestNumber() {
+    return manifestNumber;
+  }
+
+  public void setManifestNumber(String manifestNumber) {
+    this.manifestNumber = manifestNumber;
   }
 
   public Manifest reference(String reference) {
@@ -262,22 +298,76 @@ public class Manifest {
     this.depot = depot;
   }
 
+  public Manifest customerNumber(String customerNumber) {
+    this.customerNumber = customerNumber;
+    return this;
+  }
+
+   /**
+   * This requirement specifically pertains to MAWB and HAWB manifest types. If the customerNumber field is left blank, it is imperative to ensure that all essential company and address information is provided within the &#x27;customer&#x27; object.
+   * @return customerNumber
+  **/
+  @Schema(example = "10002", description = "This requirement specifically pertains to MAWB and HAWB manifest types. If the customerNumber field is left blank, it is imperative to ensure that all essential company and address information is provided within the 'customer' object.")
+  public String getCustomerNumber() {
+    return customerNumber;
+  }
+
+  public void setCustomerNumber(String customerNumber) {
+    this.customerNumber = customerNumber;
+  }
+
+  public Manifest customer(AllOfManifestCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * In this section, you have the option to furnish comprehensive customer details tailored for MAWB and HAWB manifest types. This is only required when no companyNumber is provided.
+   * @return customer
+  **/
+  @Schema(description = "In this section, you have the option to furnish comprehensive customer details tailored for MAWB and HAWB manifest types. This is only required when no companyNumber is provided.")
+  public AllOfManifestCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(AllOfManifestCustomer customer) {
+    this.customer = customer;
+  }
+
   public Manifest subcontractor(AllOfManifestSubcontractor subcontractor) {
     this.subcontractor = subcontractor;
     return this;
   }
 
    /**
-   * If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.
+   * In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.
    * @return subcontractor
   **/
-  @Schema(description = "If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.")
+  @Schema(description = "In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.")
   public AllOfManifestSubcontractor getSubcontractor() {
     return subcontractor;
   }
 
   public void setSubcontractor(AllOfManifestSubcontractor subcontractor) {
     this.subcontractor = subcontractor;
+  }
+
+  public Manifest vehicle(AllOfManifestVehicle vehicle) {
+    this.vehicle = vehicle;
+    return this;
+  }
+
+   /**
+   * In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.
+   * @return vehicle
+  **/
+  @Schema(description = "In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.")
+  public AllOfManifestVehicle getVehicle() {
+    return vehicle;
+  }
+
+  public void setVehicle(AllOfManifestVehicle vehicle) {
+    this.vehicle = vehicle;
   }
 
   public Manifest action(String action) {
@@ -314,6 +404,42 @@ public class Manifest {
 
   public void setFlightNo(String flightNo) {
     this.flightNo = flightNo;
+  }
+
+  public Manifest subcontractorInfo(String subcontractorInfo) {
+    this.subcontractorInfo = subcontractorInfo;
+    return this;
+  }
+
+   /**
+   * If the manifest pertains to a trucking operation and you find that you don&#x27;t require all the details of the subcontractor, such as the address, contact information, and company details, you can simply utilize this field to input the subcontractor&#x27;s name. Alternatively, you can opt to generate all the necessary information related to the subcontractor as outlined in the \&quot;subcontractor\&quot; field.
+   * @return subcontractorInfo
+  **/
+  @Schema(example = "Bigfoot Express", description = "If the manifest pertains to a trucking operation and you find that you don't require all the details of the subcontractor, such as the address, contact information, and company details, you can simply utilize this field to input the subcontractor's name. Alternatively, you can opt to generate all the necessary information related to the subcontractor as outlined in the \"subcontractor\" field.")
+  public String getSubcontractorInfo() {
+    return subcontractorInfo;
+  }
+
+  public void setSubcontractorInfo(String subcontractorInfo) {
+    this.subcontractorInfo = subcontractorInfo;
+  }
+
+  public Manifest subcontractorVehicleInfo(String subcontractorVehicleInfo) {
+    this.subcontractorVehicleInfo = subcontractorVehicleInfo;
+    return this;
+  }
+
+   /**
+   * If the manifest pertains to a trucking operation and you find that you don&#x27;t require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the \&quot;vehicle\&quot; field.
+   * @return subcontractorVehicleInfo
+  **/
+  @Schema(example = "RO IQ 123", description = "If the manifest pertains to a trucking operation and you find that you don't require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the \"vehicle\" field.")
+  public String getSubcontractorVehicleInfo() {
+    return subcontractorVehicleInfo;
+  }
+
+  public void setSubcontractorVehicleInfo(String subcontractorVehicleInfo) {
+    this.subcontractorVehicleInfo = subcontractorVehicleInfo;
   }
 
   public Manifest shipper(AllOfManifestShipper shipper) {
@@ -408,6 +534,7 @@ public class Manifest {
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.createManifest, manifest.createManifest) &&
         Objects.equals(this.consolidate, manifest.consolidate) &&
+        Objects.equals(this.manifestNumber, manifest.manifestNumber) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.description, manifest.description) &&
         Objects.equals(this.mrn, manifest.mrn) &&
@@ -416,9 +543,14 @@ public class Manifest {
         Objects.equals(this.date, manifest.date) &&
         Objects.equals(this.dateto, manifest.dateto) &&
         Objects.equals(this.depot, manifest.depot) &&
+        Objects.equals(this.customerNumber, manifest.customerNumber) &&
+        Objects.equals(this.customer, manifest.customer) &&
         Objects.equals(this.subcontractor, manifest.subcontractor) &&
+        Objects.equals(this.vehicle, manifest.vehicle) &&
         Objects.equals(this.action, manifest.action) &&
         Objects.equals(this.flightNo, manifest.flightNo) &&
+        Objects.equals(this.subcontractorInfo, manifest.subcontractorInfo) &&
+        Objects.equals(this.subcontractorVehicleInfo, manifest.subcontractorVehicleInfo) &&
         Objects.equals(this.shipper, manifest.shipper) &&
         Objects.equals(this.consignee, manifest.consignee) &&
         Objects.equals(this.error, manifest.error) &&
@@ -427,7 +559,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, consolidate, reference, description, mrn, mawb, airline, date, dateto, depot, subcontractor, action, flightNo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, consolidate, manifestNumber, reference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
   }
 
 
@@ -438,6 +570,7 @@ public class Manifest {
     
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
     sb.append("    consolidate: ").append(toIndentedString(consolidate)).append("\n");
+    sb.append("    manifestNumber: ").append(toIndentedString(manifestNumber)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
@@ -446,9 +579,14 @@ public class Manifest {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    dateto: ").append(toIndentedString(dateto)).append("\n");
     sb.append("    depot: ").append(toIndentedString(depot)).append("\n");
+    sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    subcontractor: ").append(toIndentedString(subcontractor)).append("\n");
+    sb.append("    vehicle: ").append(toIndentedString(vehicle)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    flightNo: ").append(toIndentedString(flightNo)).append("\n");
+    sb.append("    subcontractorInfo: ").append(toIndentedString(subcontractorInfo)).append("\n");
+    sb.append("    subcontractorVehicleInfo: ").append(toIndentedString(subcontractorVehicleInfo)).append("\n");
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
