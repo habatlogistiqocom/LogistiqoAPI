@@ -25,7 +25,7 @@ import java.io.IOException;
  * CompanyObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-09T10:01:07.112410758Z[GMT]")
 
 public class CompanyObject {
   @SerializedName("id")
@@ -48,6 +48,9 @@ public class CompanyObject {
 
   @SerializedName("vatId")
   private String vatId = null;
+
+  @SerializedName("stripeCustomerId")
+  private String stripeCustomerId = null;
 
   @SerializedName("address")
   private AllOfCompanyObjectAddress address = null;
@@ -178,6 +181,24 @@ public class CompanyObject {
     this.vatId = vatId;
   }
 
+  public CompanyObject stripeCustomerId(String stripeCustomerId) {
+    this.stripeCustomerId = stripeCustomerId;
+    return this;
+  }
+
+   /**
+   * Get stripeCustomerId
+   * @return stripeCustomerId
+  **/
+  @Schema(description = "")
+  public String getStripeCustomerId() {
+    return stripeCustomerId;
+  }
+
+  public void setStripeCustomerId(String stripeCustomerId) {
+    this.stripeCustomerId = stripeCustomerId;
+  }
+
   public CompanyObject address(AllOfCompanyObjectAddress address) {
     this.address = address;
     return this;
@@ -213,12 +234,13 @@ public class CompanyObject {
         Objects.equals(this.edifactId, companyObject.edifactId) &&
         Objects.equals(this.networkId, companyObject.networkId) &&
         Objects.equals(this.vatId, companyObject.vatId) &&
+        Objects.equals(this.stripeCustomerId, companyObject.stripeCustomerId) &&
         Objects.equals(this.address, companyObject.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, address);
+    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, stripeCustomerId, address);
   }
 
 
@@ -234,6 +256,7 @@ public class CompanyObject {
     sb.append("    edifactId: ").append(toIndentedString(edifactId)).append("\n");
     sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
     sb.append("    vatId: ").append(toIndentedString(vatId)).append("\n");
+    sb.append("    stripeCustomerId: ").append(toIndentedString(stripeCustomerId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
