@@ -71,7 +71,7 @@ public class ShipmentTableApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/api/shipment-list";
+        String localVarPath = "/logistiqo/rest/api/v-1/shipment-list";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -135,7 +135,7 @@ public class ShipmentTableApi {
     }
 
     /**
-     * GetShipmentListEndpoint
+     * Retrieve shipment information from this endpoint. You can filter the shipments based on various criteria such as shipment number, customer reference, creation date, modification date, and status modification date.
      *  # Shipment 
      * @param shipment select one single shipment no, if not used all shipments will be returned (optional)
      * @param reference select one single customer reference, if not used all shipments will be returned (optional)
@@ -153,7 +153,7 @@ public class ShipmentTableApi {
     }
 
     /**
-     * GetShipmentListEndpoint
+     * Retrieve shipment information from this endpoint. You can filter the shipments based on various criteria such as shipment number, customer reference, creation date, modification date, and status modification date.
      *  # Shipment 
      * @param shipment select one single shipment no, if not used all shipments will be returned (optional)
      * @param reference select one single customer reference, if not used all shipments will be returned (optional)
@@ -172,7 +172,7 @@ public class ShipmentTableApi {
     }
 
     /**
-     * GetShipmentListEndpoint (asynchronously)
+     * Retrieve shipment information from this endpoint. You can filter the shipments based on various criteria such as shipment number, customer reference, creation date, modification date, and status modification date. (asynchronously)
      *  # Shipment 
      * @param shipment select one single shipment no, if not used all shipments will be returned (optional)
      * @param reference select one single customer reference, if not used all shipments will be returned (optional)

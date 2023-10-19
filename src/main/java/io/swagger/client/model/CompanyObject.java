@@ -25,7 +25,7 @@ import java.io.IOException;
  * CompanyObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-09T10:01:07.112410758Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
 
 public class CompanyObject {
   @SerializedName("id")

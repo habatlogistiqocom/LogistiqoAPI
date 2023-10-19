@@ -55,19 +55,22 @@ public class ContractApi {
 
     /**
      * Build call for getContract
+     * @param status select contracts by status active, inactive, all  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getContractCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getContractCall(String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/contract";
+        String localVarPath = "/logistiqo/rest/api/v-1/contract";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (status != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("status", status));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -102,9 +105,13 @@ public class ContractApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getContractValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getContractValidateBeforeCall(String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'status' is set
+        if (status == null) {
+            throw new ApiException("Missing the required parameter 'status' when calling getContract(Async)");
+        }
         
-        com.squareup.okhttp.Call call = getContractCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getContractCall(status, progressListener, progressRequestListener);
         return call;
 
         
@@ -114,36 +121,39 @@ public class ContractApi {
     }
 
     /**
-     * GetContractEndpoint
+     * Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts.
      *  #Contract 
+     * @param status select contracts by status active, inactive, all  (required)
      * @return List&lt;Contract&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Contract> getContract() throws ApiException {
-        ApiResponse<List<Contract>> resp = getContractWithHttpInfo();
+    public List<Contract> getContract(String status) throws ApiException {
+        ApiResponse<List<Contract>> resp = getContractWithHttpInfo(status);
         return resp.getData();
     }
 
     /**
-     * GetContractEndpoint
+     * Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts.
      *  #Contract 
+     * @param status select contracts by status active, inactive, all  (required)
      * @return ApiResponse&lt;List&lt;Contract&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Contract>> getContractWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getContractValidateBeforeCall(null, null);
+    public ApiResponse<List<Contract>> getContractWithHttpInfo(String status) throws ApiException {
+        com.squareup.okhttp.Call call = getContractValidateBeforeCall(status, null, null);
         Type localVarReturnType = new TypeToken<List<Contract>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * GetContractEndpoint (asynchronously)
+     * Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts. (asynchronously)
      *  #Contract 
+     * @param status select contracts by status active, inactive, all  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContractAsync(final ApiCallback<List<Contract>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContractAsync(String status, final ApiCallback<List<Contract>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -164,7 +174,7 @@ public class ContractApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getContractValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getContractValidateBeforeCall(status, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Contract>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

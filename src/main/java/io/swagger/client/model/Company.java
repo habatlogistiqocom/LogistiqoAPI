@@ -18,12 +18,12 @@ import io.swagger.client.model.CompanyObject;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Companies
+ * Company
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
 
-public class Companies extends ArrayList<CompanyObject> {
+public class Company extends ArrayList<CompanyObject> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -45,7 +45,7 @@ public class Companies extends ArrayList<CompanyObject> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Companies {\n");
+    sb.append("class Company {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

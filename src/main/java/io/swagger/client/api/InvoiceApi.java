@@ -34,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class InvoicesApi {
+public class InvoiceApi {
     private ApiClient apiClient;
 
-    public InvoicesApi() {
+    public InvoiceApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public InvoicesApi(ApiClient apiClient) {
+    public InvoiceApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -54,20 +54,32 @@ public class InvoicesApi {
     }
 
     /**
-     * Build call for getInvoices
+     * Build call for getInvoice
+     * @param month select invoices by month  (optional)
+     * @param year select invoices by year  (optional)
+     * @param date select invoices by date (optional)
+     * @param number select invoices by number (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getInvoicesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getInvoiceCall(String month, String year, String date, String number, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/invoices";
+        String localVarPath = "/logistiqo/rest/api/v-1/invoice";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (month != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("month", month));
+        if (year != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("year", year));
+        if (date != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("date", date));
+        if (number != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("number", number));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -102,9 +114,9 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getInvoicesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getInvoiceValidateBeforeCall(String month, String year, String date, String number, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = getInvoicesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getInvoiceCall(month, year, date, number, progressListener, progressRequestListener);
         return call;
 
         
@@ -114,36 +126,48 @@ public class InvoicesApi {
     }
 
     /**
-     * GetInvoicesEndpoint
+     * From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number.
      *  #Invoice 
+     * @param month select invoices by month  (optional)
+     * @param year select invoices by year  (optional)
+     * @param date select invoices by date (optional)
+     * @param number select invoices by number (optional)
      * @return List&lt;Invoice&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Invoice> getInvoices() throws ApiException {
-        ApiResponse<List<Invoice>> resp = getInvoicesWithHttpInfo();
+    public List<Invoice> getInvoice(String month, String year, String date, String number) throws ApiException {
+        ApiResponse<List<Invoice>> resp = getInvoiceWithHttpInfo(month, year, date, number);
         return resp.getData();
     }
 
     /**
-     * GetInvoicesEndpoint
+     * From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number.
      *  #Invoice 
+     * @param month select invoices by month  (optional)
+     * @param year select invoices by year  (optional)
+     * @param date select invoices by date (optional)
+     * @param number select invoices by number (optional)
      * @return ApiResponse&lt;List&lt;Invoice&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Invoice>> getInvoicesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getInvoicesValidateBeforeCall(null, null);
+    public ApiResponse<List<Invoice>> getInvoiceWithHttpInfo(String month, String year, String date, String number) throws ApiException {
+        com.squareup.okhttp.Call call = getInvoiceValidateBeforeCall(month, year, date, number, null, null);
         Type localVarReturnType = new TypeToken<List<Invoice>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * GetInvoicesEndpoint (asynchronously)
+     * From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number. (asynchronously)
      *  #Invoice 
+     * @param month select invoices by month  (optional)
+     * @param year select invoices by year  (optional)
+     * @param date select invoices by date (optional)
+     * @param number select invoices by number (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getInvoicesAsync(final ApiCallback<List<Invoice>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getInvoiceAsync(String month, String year, String date, String number, final ApiCallback<List<Invoice>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -164,7 +188,7 @@ public class InvoicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getInvoicesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getInvoiceValidateBeforeCall(month, year, date, number, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Invoice>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

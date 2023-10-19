@@ -31,7 +31,7 @@ import java.util.List;
  * Invoice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
 
 public class Invoice {
   @SerializedName("id")

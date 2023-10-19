@@ -65,7 +65,7 @@ public class WarehouseApi {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/scanIn";
+        String localVarPath = "/logistiqo/rest/api/v-1/scanIn";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -119,7 +119,7 @@ public class WarehouseApi {
     }
 
     /**
-     * postWarehouseEndpoint
+     * This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
      *  # Warehouse     
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -129,7 +129,7 @@ public class WarehouseApi {
     }
 
     /**
-     * postWarehouseEndpoint
+     * This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
      *  # Warehouse     
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -141,7 +141,7 @@ public class WarehouseApi {
     }
 
     /**
-     * postWarehouseEndpoint (asynchronously)
+     * This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information. (asynchronously)
      *  # Warehouse     
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes

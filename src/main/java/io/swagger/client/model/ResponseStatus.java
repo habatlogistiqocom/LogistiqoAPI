@@ -27,7 +27,7 @@ import java.util.List;
  * ResponseStatus
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-17T14:43:36.682193593Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
 
 public class ResponseStatus {
   @SerializedName("status")
