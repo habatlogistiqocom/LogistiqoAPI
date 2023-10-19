@@ -21,18 +21,26 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * ResponseStatus
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-01T13:29:13.109750286Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-17T14:43:36.682193593Z[GMT]")
 
 public class ResponseStatus {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("error")
+  private Boolean error = null;
+
   @SerializedName("message")
   private String message = null;
+
+  @SerializedName("details")
+  private List<String> details = null;
 
   public ResponseStatus status(String status) {
     this.status = status;
@@ -50,6 +58,24 @@ public class ResponseStatus {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public ResponseStatus error(Boolean error) {
+    this.error = error;
+    return this;
+  }
+
+   /**
+   * :&gt;- Indicates an error if true.
+   * @return error
+  **/
+  @Schema(example = "true", description = ":>- Indicates an error if true.")
+  public Boolean isError() {
+    return error;
+  }
+
+  public void setError(Boolean error) {
+    this.error = error;
   }
 
   public ResponseStatus message(String message) {
@@ -70,6 +96,32 @@ public class ResponseStatus {
     this.message = message;
   }
 
+  public ResponseStatus details(List<String> details) {
+    this.details = details;
+    return this;
+  }
+
+  public ResponseStatus addDetailsItem(String detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<String>();
+    }
+    this.details.add(detailsItem);
+    return this;
+  }
+
+   /**
+   * :&gt;- List of details, including incorrect shipments, missing required fields, and other validation errors.
+   * @return details
+  **/
+  @Schema(description = ":>- List of details, including incorrect shipments, missing required fields, and other validation errors.")
+  public List<String> getDetails() {
+    return details;
+  }
+
+  public void setDetails(List<String> details) {
+    this.details = details;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +133,14 @@ public class ResponseStatus {
     }
     ResponseStatus responseStatus = (ResponseStatus) o;
     return Objects.equals(this.status, responseStatus.status) &&
-        Objects.equals(this.message, responseStatus.message);
+        Objects.equals(this.error, responseStatus.error) &&
+        Objects.equals(this.message, responseStatus.message) &&
+        Objects.equals(this.details, responseStatus.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message);
+    return Objects.hash(status, error, message, details);
   }
 
 
@@ -96,7 +150,9 @@ public class ResponseStatus {
     sb.append("class ResponseStatus {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
