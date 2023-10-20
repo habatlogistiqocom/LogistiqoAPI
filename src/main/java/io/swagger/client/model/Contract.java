@@ -28,7 +28,7 @@ import java.util.List;
  * Contract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-20T09:56:57.862814065Z[GMT]")
 
 public class Contract {
   @SerializedName("id")
@@ -62,7 +62,10 @@ public class Contract {
   private String note = null;
 
   @SerializedName("clientId")
-  private String clientId = null;
+  private Integer clientId = null;
+
+  @SerializedName("companyId")
+  private Integer companyId = null;
 
   @SerializedName("contractStartOn")
   private String contractStartOn = null;
@@ -75,9 +78,6 @@ public class Contract {
 
   @SerializedName("contractDetails")
   private List<ContractDetail> contractDetails = null;
-
-  @SerializedName("customer")
-  private AllOfContractCustomer customer = null;
 
   public Contract id(Integer id) {
     this.id = id;
@@ -259,7 +259,7 @@ public class Contract {
     this.note = note;
   }
 
-  public Contract clientId(String clientId) {
+  public Contract clientId(Integer clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -269,12 +269,30 @@ public class Contract {
    * @return clientId
   **/
   @Schema(description = "")
-  public String getClientId() {
+  public Integer getClientId() {
     return clientId;
   }
 
-  public void setClientId(String clientId) {
+  public void setClientId(Integer clientId) {
     this.clientId = clientId;
+  }
+
+  public Contract companyId(Integer companyId) {
+    this.companyId = companyId;
+    return this;
+  }
+
+   /**
+   * Get companyId
+   * @return companyId
+  **/
+  @Schema(description = "")
+  public Integer getCompanyId() {
+    return companyId;
+  }
+
+  public void setCompanyId(Integer companyId) {
+    this.companyId = companyId;
   }
 
   public Contract contractStartOn(String contractStartOn) {
@@ -357,24 +375,6 @@ public class Contract {
     this.contractDetails = contractDetails;
   }
 
-  public Contract customer(AllOfContractCustomer customer) {
-    this.customer = customer;
-    return this;
-  }
-
-   /**
-   * Get customer
-   * @return customer
-  **/
-  @Schema(description = "")
-  public AllOfContractCustomer getCustomer() {
-    return customer;
-  }
-
-  public void setCustomer(AllOfContractCustomer customer) {
-    this.customer = customer;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -396,16 +396,16 @@ public class Contract {
         Objects.equals(this.logistiqoSubdomain, contract.logistiqoSubdomain) &&
         Objects.equals(this.note, contract.note) &&
         Objects.equals(this.clientId, contract.clientId) &&
+        Objects.equals(this.companyId, contract.companyId) &&
         Objects.equals(this.contractStartOn, contract.contractStartOn) &&
         Objects.equals(this.contractEndOn, contract.contractEndOn) &&
         Objects.equals(this.terminationOn, contract.terminationOn) &&
-        Objects.equals(this.contractDetails, contract.contractDetails) &&
-        Objects.equals(this.customer, contract.customer);
+        Objects.equals(this.contractDetails, contract.contractDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, active, partnerContract, remove, code, name, description, logistiqoDatabase, logistiqoSubdomain, note, clientId, contractStartOn, contractEndOn, terminationOn, contractDetails, customer);
+    return Objects.hash(id, active, partnerContract, remove, code, name, description, logistiqoDatabase, logistiqoSubdomain, note, clientId, companyId, contractStartOn, contractEndOn, terminationOn, contractDetails);
   }
 
 
@@ -425,11 +425,11 @@ public class Contract {
     sb.append("    logistiqoSubdomain: ").append(toIndentedString(logistiqoSubdomain)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    contractStartOn: ").append(toIndentedString(contractStartOn)).append("\n");
     sb.append("    contractEndOn: ").append(toIndentedString(contractEndOn)).append("\n");
     sb.append("    terminationOn: ").append(toIndentedString(terminationOn)).append("\n");
     sb.append("    contractDetails: ").append(toIndentedString(contractDetails)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
