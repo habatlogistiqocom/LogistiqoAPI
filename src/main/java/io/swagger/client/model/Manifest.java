@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-10T10:28:04.672777040Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -42,6 +42,9 @@ public class Manifest {
 
   @SerializedName("reference")
   private String reference = null;
+
+  @SerializedName("manifestReference")
+  private String manifestReference = null;
 
   @SerializedName("description")
   private String description = null;
@@ -163,13 +166,31 @@ public class Manifest {
    * This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \&quot;consolidate\&quot; field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
    * @return reference
   **/
-  @Schema(example = "23672", description = "This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \"consolidate\" field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.")
+  @Schema(example = "aliwhefn405lkj47hbsjgabjbkgxd213", description = "This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the \"consolidate\" field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.")
   public String getReference() {
     return reference;
   }
 
   public void setReference(String reference) {
     this.reference = reference;
+  }
+
+  public Manifest manifestReference(String manifestReference) {
+    this.manifestReference = manifestReference;
+    return this;
+  }
+
+   /**
+   * This field serves as a pointer to the corresponding manifest. In the event that a manifest with this specified value is detected in Logistiqo, shipments will seamlessly integrate into the pre-existing manifest. Conversely, if no manifest is identified with this particular value, a new manifest will be generated.
+   * @return manifestReference
+  **/
+  @Schema(example = "C023672", description = "This field serves as a pointer to the corresponding manifest. In the event that a manifest with this specified value is detected in Logistiqo, shipments will seamlessly integrate into the pre-existing manifest. Conversely, if no manifest is identified with this particular value, a new manifest will be generated.")
+  public String getManifestReference() {
+    return manifestReference;
+  }
+
+  public void setManifestReference(String manifestReference) {
+    this.manifestReference = manifestReference;
   }
 
   public Manifest description(String description) {
@@ -536,6 +557,7 @@ public class Manifest {
         Objects.equals(this.consolidate, manifest.consolidate) &&
         Objects.equals(this.manifestNumber, manifest.manifestNumber) &&
         Objects.equals(this.reference, manifest.reference) &&
+        Objects.equals(this.manifestReference, manifest.manifestReference) &&
         Objects.equals(this.description, manifest.description) &&
         Objects.equals(this.mrn, manifest.mrn) &&
         Objects.equals(this.mawb, manifest.mawb) &&
@@ -559,7 +581,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, consolidate, manifestNumber, reference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, consolidate, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
   }
 
 
@@ -572,6 +594,7 @@ public class Manifest {
     sb.append("    consolidate: ").append(toIndentedString(consolidate)).append("\n");
     sb.append("    manifestNumber: ").append(toIndentedString(manifestNumber)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+    sb.append("    manifestReference: ").append(toIndentedString(manifestReference)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
     sb.append("    mawb: ").append(toIndentedString(mawb)).append("\n");
