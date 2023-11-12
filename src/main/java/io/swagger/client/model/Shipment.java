@@ -33,7 +33,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-10T14:15:40.418601503Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -53,6 +53,9 @@ public class Shipment {
 
   @SerializedName("customerReference")
   private String customerReference = null;
+
+  @SerializedName("additionalReference")
+  private String additionalReference = null;
 
   @SerializedName("internalReference")
   private String internalReference = null;
@@ -259,6 +262,24 @@ public class Shipment {
 
   public void setCustomerReference(String customerReference) {
     this.customerReference = customerReference;
+  }
+
+  public Shipment additionalReference(String additionalReference) {
+    this.additionalReference = additionalReference;
+    return this;
+  }
+
+   /**
+   * This field, which lacks uniqueness, includes an additional customer reference.
+   * @return additionalReference
+  **/
+  @Schema(description = "This field, which lacks uniqueness, includes an additional customer reference.")
+  public String getAdditionalReference() {
+    return additionalReference;
+  }
+
+  public void setAdditionalReference(String additionalReference) {
+    this.additionalReference = additionalReference;
   }
 
   public Shipment internalReference(String internalReference) {
@@ -913,6 +934,7 @@ public class Shipment {
         Objects.equals(this.customerNumber, shipment.customerNumber) &&
         Objects.equals(this.shipmentNumber, shipment.shipmentNumber) &&
         Objects.equals(this.customerReference, shipment.customerReference) &&
+        Objects.equals(this.additionalReference, shipment.additionalReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
         Objects.equals(this.hawb, shipment.hawb) &&
         Objects.equals(this.shipmentType, shipment.shipmentType) &&
@@ -950,7 +972,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, additionalReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
   }
 
 
@@ -965,6 +987,7 @@ public class Shipment {
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
+    sb.append("    additionalReference: ").append(toIndentedString(additionalReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");

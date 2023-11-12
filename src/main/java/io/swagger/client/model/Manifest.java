@@ -28,11 +28,14 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-10T10:28:04.672777040Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-11T18:06:53.754091461Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
   private Boolean createManifest = false;
+
+  @SerializedName("createHawb")
+  private Boolean createHawb = false;
 
   @SerializedName("consolidate")
   private Boolean consolidate = false;
@@ -119,6 +122,24 @@ public class Manifest {
 
   public void setCreateManifest(Boolean createManifest) {
     this.createManifest = createManifest;
+  }
+
+  public Manifest createHawb(Boolean createHawb) {
+    this.createHawb = createHawb;
+    return this;
+  }
+
+   /**
+   * To facilitate the creation of a non-existing House Air Waybill (HAWB), kindly designate the relevant field as \&quot;true.\&quot; Conversely, if the shipment corresponds directly to the HAWB, set this field to \&quot;false.\&quot; Enabling this option will result in the generation of a manifest aligning with the specified HAWB details within the shipment.
+   * @return createHawb
+  **/
+  @Schema(description = "To facilitate the creation of a non-existing House Air Waybill (HAWB), kindly designate the relevant field as \"true.\" Conversely, if the shipment corresponds directly to the HAWB, set this field to \"false.\" Enabling this option will result in the generation of a manifest aligning with the specified HAWB details within the shipment.")
+  public Boolean isCreateHawb() {
+    return createHawb;
+  }
+
+  public void setCreateHawb(Boolean createHawb) {
+    this.createHawb = createHawb;
   }
 
   public Manifest consolidate(Boolean consolidate) {
@@ -554,6 +575,7 @@ public class Manifest {
     }
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.createManifest, manifest.createManifest) &&
+        Objects.equals(this.createHawb, manifest.createHawb) &&
         Objects.equals(this.consolidate, manifest.consolidate) &&
         Objects.equals(this.manifestNumber, manifest.manifestNumber) &&
         Objects.equals(this.reference, manifest.reference) &&
@@ -581,7 +603,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, consolidate, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, createHawb, consolidate, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
   }
 
 
@@ -591,6 +613,7 @@ public class Manifest {
     sb.append("class Manifest {\n");
     
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
+    sb.append("    createHawb: ").append(toIndentedString(createHawb)).append("\n");
     sb.append("    consolidate: ").append(toIndentedString(consolidate)).append("\n");
     sb.append("    manifestNumber: ").append(toIndentedString(manifestNumber)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
