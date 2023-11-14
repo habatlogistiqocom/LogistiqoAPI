@@ -25,7 +25,7 @@ import java.io.IOException;
  * CompanyObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-14T10:43:45.294340657Z[GMT]")
 
 public class CompanyObject {
   @SerializedName("id")
@@ -51,6 +51,12 @@ public class CompanyObject {
 
   @SerializedName("stripeCustomerId")
   private String stripeCustomerId = null;
+
+  @SerializedName("iban")
+  private String iban = null;
+
+  @SerializedName("bic")
+  private String bic = null;
 
   @SerializedName("address")
   private AllOfCompanyObjectAddress address = null;
@@ -199,6 +205,42 @@ public class CompanyObject {
     this.stripeCustomerId = stripeCustomerId;
   }
 
+  public CompanyObject iban(String iban) {
+    this.iban = iban;
+    return this;
+  }
+
+   /**
+   * Get iban
+   * @return iban
+  **/
+  @Schema(description = "")
+  public String getIban() {
+    return iban;
+  }
+
+  public void setIban(String iban) {
+    this.iban = iban;
+  }
+
+  public CompanyObject bic(String bic) {
+    this.bic = bic;
+    return this;
+  }
+
+   /**
+   * Get bic
+   * @return bic
+  **/
+  @Schema(description = "")
+  public String getBic() {
+    return bic;
+  }
+
+  public void setBic(String bic) {
+    this.bic = bic;
+  }
+
   public CompanyObject address(AllOfCompanyObjectAddress address) {
     this.address = address;
     return this;
@@ -235,12 +277,14 @@ public class CompanyObject {
         Objects.equals(this.networkId, companyObject.networkId) &&
         Objects.equals(this.vatId, companyObject.vatId) &&
         Objects.equals(this.stripeCustomerId, companyObject.stripeCustomerId) &&
+        Objects.equals(this.iban, companyObject.iban) &&
+        Objects.equals(this.bic, companyObject.bic) &&
         Objects.equals(this.address, companyObject.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, stripeCustomerId, address);
+    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, stripeCustomerId, iban, bic, address);
   }
 
 
@@ -257,6 +301,8 @@ public class CompanyObject {
     sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
     sb.append("    vatId: ").append(toIndentedString(vatId)).append("\n");
     sb.append("    stripeCustomerId: ").append(toIndentedString(stripeCustomerId)).append("\n");
+    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    sb.append("    bic: ").append(toIndentedString(bic)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
