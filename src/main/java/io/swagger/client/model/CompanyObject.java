@@ -25,7 +25,7 @@ import java.io.IOException;
  * CompanyObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-14T10:43:45.294340657Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-15T15:12:12.004877704Z[GMT]")
 
 public class CompanyObject {
   @SerializedName("id")
@@ -57,6 +57,9 @@ public class CompanyObject {
 
   @SerializedName("bic")
   private String bic = null;
+
+  @SerializedName("paymentMethod")
+  private String paymentMethod = null;
 
   @SerializedName("address")
   private AllOfCompanyObjectAddress address = null;
@@ -241,6 +244,24 @@ public class CompanyObject {
     this.bic = bic;
   }
 
+  public CompanyObject paymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+    return this;
+  }
+
+   /**
+   * Get paymentMethod
+   * @return paymentMethod
+  **/
+  @Schema(example = "sepa", description = "")
+  public String getPaymentMethod() {
+    return paymentMethod;
+  }
+
+  public void setPaymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
+
   public CompanyObject address(AllOfCompanyObjectAddress address) {
     this.address = address;
     return this;
@@ -279,12 +300,13 @@ public class CompanyObject {
         Objects.equals(this.stripeCustomerId, companyObject.stripeCustomerId) &&
         Objects.equals(this.iban, companyObject.iban) &&
         Objects.equals(this.bic, companyObject.bic) &&
+        Objects.equals(this.paymentMethod, companyObject.paymentMethod) &&
         Objects.equals(this.address, companyObject.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, stripeCustomerId, iban, bic, address);
+    return Objects.hash(id, number, companyType, code, edifactId, networkId, vatId, stripeCustomerId, iban, bic, paymentMethod, address);
   }
 
 
@@ -303,6 +325,7 @@ public class CompanyObject {
     sb.append("    stripeCustomerId: ").append(toIndentedString(stripeCustomerId)).append("\n");
     sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("    bic: ").append(toIndentedString(bic)).append("\n");
+    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
