@@ -65,7 +65,7 @@ public class ShipmentApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/api/v-1/shipment/{id}"
+        String localVarPath = "/logistiqo/rest/api/v-1/shipment/get/{id}"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -26,7 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.Company;
 import io.swagger.client.model.CompanyObject;
 
 import java.lang.reflect.Type;
@@ -55,17 +54,17 @@ public class CompanyApi {
     }
 
     /**
-     * Build call for getCompany
+     * Build call for getCompanies
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getCompanyCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCompaniesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/api/v-1/company";
+        String localVarPath = "/logistiqo/rest/api/v-1/company/get";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -103,9 +102,9 @@ public class CompanyApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCompanyValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCompaniesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = getCompanyCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCompaniesCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -115,36 +114,36 @@ public class CompanyApi {
     }
 
     /**
-     * Retrieve a Logistiqo companies from this endpoint. The response will be an array of JSON objects representing the companies.
+     * Retrieve an array of Logistiqo companies by accessing this endpoint. The server will respond with an array of JSON objects that represent the respective companies.
      * 
-     * @return List&lt;Company&gt;
+     * @return List&lt;CompanyObject&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Company> getCompany() throws ApiException {
-        ApiResponse<List<Company>> resp = getCompanyWithHttpInfo();
+    public List<CompanyObject> getCompanies() throws ApiException {
+        ApiResponse<List<CompanyObject>> resp = getCompaniesWithHttpInfo();
         return resp.getData();
     }
 
     /**
-     * Retrieve a Logistiqo companies from this endpoint. The response will be an array of JSON objects representing the companies.
+     * Retrieve an array of Logistiqo companies by accessing this endpoint. The server will respond with an array of JSON objects that represent the respective companies.
      * 
-     * @return ApiResponse&lt;List&lt;Company&gt;&gt;
+     * @return ApiResponse&lt;List&lt;CompanyObject&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Company>> getCompanyWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getCompanyValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<Company>>(){}.getType();
+    public ApiResponse<List<CompanyObject>> getCompaniesWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getCompaniesValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<List<CompanyObject>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Retrieve a Logistiqo companies from this endpoint. The response will be an array of JSON objects representing the companies. (asynchronously)
+     * Retrieve an array of Logistiqo companies by accessing this endpoint. The server will respond with an array of JSON objects that represent the respective companies. (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCompanyAsync(final ApiCallback<List<Company>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCompaniesAsync(final ApiCallback<List<CompanyObject>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -165,24 +164,24 @@ public class CompanyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCompanyValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<Company>>(){}.getType();
+        com.squareup.okhttp.Call call = getCompaniesValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<CompanyObject>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for postCompanies
+     * Build call for postCompany
      * @param body  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postCompaniesCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postCompanyCall(CompanyObject body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/logistiqo/rest/api/v-1/company";
+        String localVarPath = "/logistiqo/rest/api/v-1/company/add";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -220,13 +219,13 @@ public class CompanyApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postCompaniesValidateBeforeCall(List<CompanyObject> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postCompanyValidateBeforeCall(CompanyObject body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling postCompanies(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling postCompany(Async)");
         }
         
-        com.squareup.okhttp.Call call = postCompaniesCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postCompanyCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -236,36 +235,36 @@ public class CompanyApi {
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information.
-     *  # Company     
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject.
+     *  # Company    
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void postCompanies(List<CompanyObject> body) throws ApiException {
-        postCompaniesWithHttpInfo(body);
+    public void postCompany(CompanyObject body) throws ApiException {
+        postCompanyWithHttpInfo(body);
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information.
-     *  # Company     
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject.
+     *  # Company    
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> postCompaniesWithHttpInfo(List<CompanyObject> body) throws ApiException {
-        com.squareup.okhttp.Call call = postCompaniesValidateBeforeCall(body, null, null);
+    public ApiResponse<Void> postCompanyWithHttpInfo(CompanyObject body) throws ApiException {
+        com.squareup.okhttp.Call call = postCompanyValidateBeforeCall(body, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information. (asynchronously)
-     *  # Company     
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject. (asynchronously)
+     *  # Company    
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postCompaniesAsync(List<CompanyObject> body, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postCompanyAsync(CompanyObject body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -286,7 +285,7 @@ public class CompanyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postCompaniesValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postCompanyValidateBeforeCall(body, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

@@ -33,7 +33,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-10T14:15:40.418601503Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")

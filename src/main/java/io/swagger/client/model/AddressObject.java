@@ -25,7 +25,7 @@ import java.io.IOException;
  * AddressObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
 
 public class AddressObject {
   @SerializedName("id")
@@ -42,6 +42,9 @@ public class AddressObject {
 
   @SerializedName("countryCode")
   private String countryCode = null;
+
+  @SerializedName("country")
+  private String country = null;
 
   @SerializedName("email")
   private String email = null;
@@ -193,16 +196,34 @@ public class AddressObject {
   }
 
    /**
-   * Please enter the two-letter country code according to the ISO  3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
+   * Please enter the two-letter country code according to the ISO 3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
    * @return countryCode
   **/
-  @Schema(example = "GB", description = "Please enter the two-letter country code according to the ISO  3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.")
+  @Schema(example = "GB", description = "Please enter the two-letter country code according to the ISO 3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.")
   public String getCountryCode() {
     return countryCode;
   }
 
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
+  }
+
+  public AddressObject country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * Please input the country name in English using capital letters.
+   * @return country
+  **/
+  @Schema(example = "UNITED KINGDOM", description = "Please input the country name in English using capital letters.")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
   }
 
   public AddressObject email(String email) {
@@ -652,6 +673,7 @@ public class AddressObject {
         Objects.equals(this.idAddress, addressObject.idAddress) &&
         Objects.equals(this.city, addressObject.city) &&
         Objects.equals(this.countryCode, addressObject.countryCode) &&
+        Objects.equals(this.country, addressObject.country) &&
         Objects.equals(this.email, addressObject.email) &&
         Objects.equals(this.greeting, addressObject.greeting) &&
         Objects.equals(this.title, addressObject.title) &&
@@ -680,7 +702,7 @@ public class AddressObject {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, number, idAddress, city, countryCode, email, greeting, title, firstName, houseNo, lastName, name, name2, phone, mobile, street, addressrow, zipcode, state, plantNumber, instructions, openingHoursMonToThuFrom, openingHoursMonToThuTo, openingHoursFriFrom, openingHoursFriTo, idTimeslot, withDurationGrid, idDuration, temporary);
+    return Objects.hash(id, number, idAddress, city, countryCode, country, email, greeting, title, firstName, houseNo, lastName, name, name2, phone, mobile, street, addressrow, zipcode, state, plantNumber, instructions, openingHoursMonToThuFrom, openingHoursMonToThuTo, openingHoursFriFrom, openingHoursFriTo, idTimeslot, withDurationGrid, idDuration, temporary);
   }
 
 
@@ -694,6 +716,7 @@ public class AddressObject {
     sb.append("    idAddress: ").append(toIndentedString(idAddress)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    greeting: ").append(toIndentedString(greeting)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");

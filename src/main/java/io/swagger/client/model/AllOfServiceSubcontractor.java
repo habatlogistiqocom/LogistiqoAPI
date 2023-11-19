@@ -19,7 +19,7 @@ import io.swagger.client.model.CompanyObject;
  * AllOfServiceSubcontractor
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
 
 public class AllOfServiceSubcontractor extends CompanyObject {
 

@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * In this section, you have the option to furnish comprehensive customer details tailored for MAWB and HAWB manifest types. This is only required when no companyNumber is provided.
  */
 @Schema(description = "In this section, you have the option to furnish comprehensive customer details tailored for MAWB and HAWB manifest types. This is only required when no companyNumber is provided.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
 
 public class AllOfManifestCustomer extends CompanyObject {
 

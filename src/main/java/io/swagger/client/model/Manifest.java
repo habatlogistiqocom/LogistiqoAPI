@@ -28,7 +28,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-11T18:06:53.754091461Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -37,8 +37,8 @@ public class Manifest {
   @SerializedName("createHawb")
   private Boolean createHawb = false;
 
-  @SerializedName("consolidate")
-  private Boolean consolidate = false;
+  @SerializedName("synchronizeShipments")
+  private Boolean synchronizeShipments = false;
 
   @SerializedName("manifestNumber")
   private String manifestNumber = null;
@@ -60,6 +60,15 @@ public class Manifest {
 
   @SerializedName("airline")
   private String airline = null;
+
+  @SerializedName("airportOfDeparture")
+  private String airportOfDeparture = null;
+
+  @SerializedName("finalDestination")
+  private String finalDestination = null;
+
+  @SerializedName("deadline")
+  private String deadline = null;
 
   @SerializedName("date")
   private String date = null;
@@ -142,22 +151,22 @@ public class Manifest {
     this.createHawb = createHawb;
   }
 
-  public Manifest consolidate(Boolean consolidate) {
-    this.consolidate = consolidate;
+  public Manifest synchronizeShipments(Boolean synchronizeShipments) {
+    this.synchronizeShipments = synchronizeShipments;
     return this;
   }
 
    /**
-   * If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.
-   * @return consolidate
+   * If this field is set to true, the API will exclude and remove shipments that exist in the corresponding Logistiqo manifest but are not included here, ensuring synchronization and making the Logistiqo manifest equal to the current one. When this field is set to false, you can conveniently add individual shipments to an existing manifest that already includes shipments.
+   * @return synchronizeShipments
   **/
-  @Schema(description = "If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.")
-  public Boolean isConsolidate() {
-    return consolidate;
+  @Schema(description = "If this field is set to true, the API will exclude and remove shipments that exist in the corresponding Logistiqo manifest but are not included here, ensuring synchronization and making the Logistiqo manifest equal to the current one. When this field is set to false, you can conveniently add individual shipments to an existing manifest that already includes shipments.")
+  public Boolean isSynchronizeShipments() {
+    return synchronizeShipments;
   }
 
-  public void setConsolidate(Boolean consolidate) {
-    this.consolidate = consolidate;
+  public void setSynchronizeShipments(Boolean synchronizeShipments) {
+    this.synchronizeShipments = synchronizeShipments;
   }
 
   public Manifest manifestNumber(String manifestNumber) {
@@ -284,6 +293,60 @@ public class Manifest {
 
   public void setAirline(String airline) {
     this.airline = airline;
+  }
+
+  public Manifest airportOfDeparture(String airportOfDeparture) {
+    this.airportOfDeparture = airportOfDeparture;
+    return this;
+  }
+
+   /**
+   * Enter the IATA code corresponding to the Airport of Departure.
+   * @return airportOfDeparture
+  **/
+  @Schema(example = "FRA", description = "Enter the IATA code corresponding to the Airport of Departure.")
+  public String getAirportOfDeparture() {
+    return airportOfDeparture;
+  }
+
+  public void setAirportOfDeparture(String airportOfDeparture) {
+    this.airportOfDeparture = airportOfDeparture;
+  }
+
+  public Manifest finalDestination(String finalDestination) {
+    this.finalDestination = finalDestination;
+    return this;
+  }
+
+   /**
+   * Enter the IATA code corresponding to the Final Destination Airport.
+   * @return finalDestination
+  **/
+  @Schema(example = "ORD", description = "Enter the IATA code corresponding to the Final Destination Airport.")
+  public String getFinalDestination() {
+    return finalDestination;
+  }
+
+  public void setFinalDestination(String finalDestination) {
+    this.finalDestination = finalDestination;
+  }
+
+  public Manifest deadline(String deadline) {
+    this.deadline = deadline;
+    return this;
+  }
+
+   /**
+   * Please specify the deadline date and time for delivering this manifest (MAWB) to the airport in the format dd.MM.yyyy HH:mm.
+   * @return deadline
+  **/
+  @Schema(example = "12.06.2023 12:00", description = "Please specify the deadline date and time for delivering this manifest (MAWB) to the airport in the format dd.MM.yyyy HH:mm.")
+  public String getDeadline() {
+    return deadline;
+  }
+
+  public void setDeadline(String deadline) {
+    this.deadline = deadline;
   }
 
   public Manifest date(String date) {
@@ -576,7 +639,7 @@ public class Manifest {
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.createManifest, manifest.createManifest) &&
         Objects.equals(this.createHawb, manifest.createHawb) &&
-        Objects.equals(this.consolidate, manifest.consolidate) &&
+        Objects.equals(this.synchronizeShipments, manifest.synchronizeShipments) &&
         Objects.equals(this.manifestNumber, manifest.manifestNumber) &&
         Objects.equals(this.reference, manifest.reference) &&
         Objects.equals(this.manifestReference, manifest.manifestReference) &&
@@ -584,6 +647,9 @@ public class Manifest {
         Objects.equals(this.mrn, manifest.mrn) &&
         Objects.equals(this.mawb, manifest.mawb) &&
         Objects.equals(this.airline, manifest.airline) &&
+        Objects.equals(this.airportOfDeparture, manifest.airportOfDeparture) &&
+        Objects.equals(this.finalDestination, manifest.finalDestination) &&
+        Objects.equals(this.deadline, manifest.deadline) &&
         Objects.equals(this.date, manifest.date) &&
         Objects.equals(this.dateto, manifest.dateto) &&
         Objects.equals(this.depot, manifest.depot) &&
@@ -603,7 +669,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, consolidate, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
   }
 
 
@@ -614,7 +680,7 @@ public class Manifest {
     
     sb.append("    createManifest: ").append(toIndentedString(createManifest)).append("\n");
     sb.append("    createHawb: ").append(toIndentedString(createHawb)).append("\n");
-    sb.append("    consolidate: ").append(toIndentedString(consolidate)).append("\n");
+    sb.append("    synchronizeShipments: ").append(toIndentedString(synchronizeShipments)).append("\n");
     sb.append("    manifestNumber: ").append(toIndentedString(manifestNumber)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    manifestReference: ").append(toIndentedString(manifestReference)).append("\n");
@@ -622,6 +688,9 @@ public class Manifest {
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
     sb.append("    mawb: ").append(toIndentedString(mawb)).append("\n");
     sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
+    sb.append("    airportOfDeparture: ").append(toIndentedString(airportOfDeparture)).append("\n");
+    sb.append("    finalDestination: ").append(toIndentedString(finalDestination)).append("\n");
+    sb.append("    deadline: ").append(toIndentedString(deadline)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    dateto: ").append(toIndentedString(dateto)).append("\n");
     sb.append("    depot: ").append(toIndentedString(depot)).append("\n");

@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- * An API, or Application Programming Interface, is a set of protocols, routines, and tools that enable different software applications to communicate and exchange data with each other. It defines how software components should interact and helps to simplify software development by abstracting the underlying implementation. APIs are essential for building complex and interconnected software systems.
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -50,111 +50,6 @@ public class JSON {
 
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
-          .registerTypeSelector(AddressObject.class, new TypeSelector<AddressObject>() {
-            @Override
-            public Class<? extends AddressObject> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends AddressObject>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("AllOfCompanyObjectAddress".toUpperCase(), AllOfCompanyObjectAddress.class);
-                    classByDiscriminatorValue.put("AllOfDetailAddress".toUpperCase(), AllOfDetailAddress.class);
-                    classByDiscriminatorValue.put("AllOfManifestConsignee".toUpperCase(), AllOfManifestConsignee.class);
-                    classByDiscriminatorValue.put("AllOfManifestShipper".toUpperCase(), AllOfManifestShipper.class);
-                    classByDiscriminatorValue.put("AddressObject".toUpperCase(), AddressObject.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
-          .registerPostProcessor(AddressObject.class, new PostProcessor<AddressObject>() {
-              @Override
-              public void postDeserialize(AddressObject result, JsonElement src, Gson gson) {
-
-              }
-
-              @Override
-              public void postSerialize(JsonElement result, AddressObject src, Gson gson) {
-                  Map<Class<? extends AddressObject>, String> discriminatorValueByClass = new HashMap<>();
-                      discriminatorValueByClass.put(AllOfCompanyObjectAddress.class, "AllOfCompanyObjectAddress");
-                      discriminatorValueByClass.put(AllOfDetailAddress.class, "AllOfDetailAddress");
-                      discriminatorValueByClass.put(AllOfManifestConsignee.class, "AllOfManifestConsignee");
-                      discriminatorValueByClass.put(AllOfManifestShipper.class, "AllOfManifestShipper");
-                      discriminatorValueByClass.put(AddressObject.class, "AddressObject");
-                  if(result instanceof JsonObject)
-                  {
-                      if(!((JsonObject) result).has(""))
-                      {
-                          ((JsonObject) result).addProperty("", discriminatorValueByClass.get(src.getClass()));
-                      }
-                  }
-              }
-          })
-          .registerTypeSelector(CompanyObject.class, new TypeSelector<CompanyObject>() {
-            @Override
-            public Class<? extends CompanyObject> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends CompanyObject>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("AllOfManifestSubcontractor".toUpperCase(), AllOfManifestSubcontractor.class);
-                    classByDiscriminatorValue.put("AllOfServiceSubcontractor".toUpperCase(), AllOfServiceSubcontractor.class);
-                    classByDiscriminatorValue.put("AllOfShipmentCustomer".toUpperCase(), AllOfShipmentCustomer.class);
-                    classByDiscriminatorValue.put("AllOfShipmentInvoiceReceiver".toUpperCase(), AllOfShipmentInvoiceReceiver.class);
-                    classByDiscriminatorValue.put("CompanyObject".toUpperCase(), CompanyObject.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
-          .registerPostProcessor(CompanyObject.class, new PostProcessor<CompanyObject>() {
-              @Override
-              public void postDeserialize(CompanyObject result, JsonElement src, Gson gson) {
-
-              }
-
-              @Override
-              public void postSerialize(JsonElement result, CompanyObject src, Gson gson) {
-                  Map<Class<? extends CompanyObject>, String> discriminatorValueByClass = new HashMap<>();
-                      discriminatorValueByClass.put(AllOfManifestSubcontractor.class, "AllOfManifestSubcontractor");
-                      discriminatorValueByClass.put(AllOfServiceSubcontractor.class, "AllOfServiceSubcontractor");
-                      discriminatorValueByClass.put(AllOfShipmentCustomer.class, "AllOfShipmentCustomer");
-                      discriminatorValueByClass.put(AllOfShipmentInvoiceReceiver.class, "AllOfShipmentInvoiceReceiver");
-                      discriminatorValueByClass.put(CompanyObject.class, "CompanyObject");
-                  if(result instanceof JsonObject)
-                  {
-                      if(!((JsonObject) result).has(""))
-                      {
-                          ((JsonObject) result).addProperty("", discriminatorValueByClass.get(src.getClass()));
-                      }
-                  }
-              }
-          })
-          .registerTypeSelector(PaymentTerms.class, new TypeSelector<PaymentTerms>() {
-            @Override
-            public Class<? extends PaymentTerms> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends PaymentTerms>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("AllOfShipmentPaymentTerms".toUpperCase(), AllOfShipmentPaymentTerms.class);
-                    classByDiscriminatorValue.put("PaymentTerms".toUpperCase(), PaymentTerms.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
-          .registerPostProcessor(PaymentTerms.class, new PostProcessor<PaymentTerms>() {
-              @Override
-              public void postDeserialize(PaymentTerms result, JsonElement src, Gson gson) {
-
-              }
-
-              @Override
-              public void postSerialize(JsonElement result, PaymentTerms src, Gson gson) {
-                  Map<Class<? extends PaymentTerms>, String> discriminatorValueByClass = new HashMap<>();
-                      discriminatorValueByClass.put(AllOfShipmentPaymentTerms.class, "AllOfShipmentPaymentTerms");
-                      discriminatorValueByClass.put(PaymentTerms.class, "PaymentTerms");
-                  if(result instanceof JsonObject)
-                  {
-                      if(!((JsonObject) result).has(""))
-                      {
-                          ((JsonObject) result).addProperty("", discriminatorValueByClass.get(src.getClass()));
-                      }
-                  }
-              }
-          })
         ;
         return fireBuilder.createGsonBuilder();
     }
