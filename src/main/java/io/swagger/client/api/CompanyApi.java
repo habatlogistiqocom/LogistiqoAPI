@@ -235,8 +235,8 @@ public class CompanyApi {
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject.
-     *  # Company    
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information.
+     *  # Company     
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -245,8 +245,8 @@ public class CompanyApi {
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject.
-     *  # Company    
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information.
+     *  # Company     
      * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -257,8 +257,8 @@ public class CompanyApi {
     }
 
     /**
-     * This API allows you to add companies. You need to provide a valid JSON request body with the company information, use the schema CompanyObject. (asynchronously)
-     *  # Company    
+     * This API allows you to add companies. You need to provide a valid JSON request body with the company information. (asynchronously)
+     *  # Company     
      * @param body  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

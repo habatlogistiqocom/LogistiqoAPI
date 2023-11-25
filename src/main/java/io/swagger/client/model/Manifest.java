@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.Shipment;
+import io.swagger.client.model.UnitLoadDevice;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-21T15:20:32.339519807Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -66,6 +67,9 @@ public class Manifest {
 
   @SerializedName("finalDestination")
   private String finalDestination = null;
+
+  @SerializedName("containerMode")
+  private String containerMode = null;
 
   @SerializedName("deadline")
   private String deadline = null;
@@ -108,6 +112,9 @@ public class Manifest {
 
   @SerializedName("consignee")
   private AllOfManifestConsignee consignee = null;
+
+  @SerializedName("unitLoadDevices")
+  private List<UnitLoadDevice> unitLoadDevices = null;
 
   @SerializedName("error")
   private Boolean error = null;
@@ -329,6 +336,24 @@ public class Manifest {
 
   public void setFinalDestination(String finalDestination) {
     this.finalDestination = finalDestination;
+  }
+
+  public Manifest containerMode(String containerMode) {
+    this.containerMode = containerMode;
+    return this;
+  }
+
+   /**
+   * Indicate the container mode for ULD (Unit Load Device) Buildup. Valid entries include LSE (Loose), ULD, BCH (Buyers consolidation), and OTH (Other).
+   * @return containerMode
+  **/
+  @Schema(example = "LSE", description = "Indicate the container mode for ULD (Unit Load Device) Buildup. Valid entries include LSE (Loose), ULD, BCH (Buyers consolidation), and OTH (Other).")
+  public String getContainerMode() {
+    return containerMode;
+  }
+
+  public void setContainerMode(String containerMode) {
+    this.containerMode = containerMode;
   }
 
   public Manifest deadline(String deadline) {
@@ -583,6 +608,32 @@ public class Manifest {
     this.consignee = consignee;
   }
 
+  public Manifest unitLoadDevices(List<UnitLoadDevice> unitLoadDevices) {
+    this.unitLoadDevices = unitLoadDevices;
+    return this;
+  }
+
+  public Manifest addUnitLoadDevicesItem(UnitLoadDevice unitLoadDevicesItem) {
+    if (this.unitLoadDevices == null) {
+      this.unitLoadDevices = new ArrayList<UnitLoadDevice>();
+    }
+    this.unitLoadDevices.add(unitLoadDevicesItem);
+    return this;
+  }
+
+   /**
+   * Get unitLoadDevices
+   * @return unitLoadDevices
+  **/
+  @Schema(description = "")
+  public List<UnitLoadDevice> getUnitLoadDevices() {
+    return unitLoadDevices;
+  }
+
+  public void setUnitLoadDevices(List<UnitLoadDevice> unitLoadDevices) {
+    this.unitLoadDevices = unitLoadDevices;
+  }
+
   public Manifest error(Boolean error) {
     this.error = error;
     return this;
@@ -649,6 +700,7 @@ public class Manifest {
         Objects.equals(this.airline, manifest.airline) &&
         Objects.equals(this.airportOfDeparture, manifest.airportOfDeparture) &&
         Objects.equals(this.finalDestination, manifest.finalDestination) &&
+        Objects.equals(this.containerMode, manifest.containerMode) &&
         Objects.equals(this.deadline, manifest.deadline) &&
         Objects.equals(this.date, manifest.date) &&
         Objects.equals(this.dateto, manifest.dateto) &&
@@ -663,13 +715,14 @@ public class Manifest {
         Objects.equals(this.subcontractorVehicleInfo, manifest.subcontractorVehicleInfo) &&
         Objects.equals(this.shipper, manifest.shipper) &&
         Objects.equals(this.consignee, manifest.consignee) &&
+        Objects.equals(this.unitLoadDevices, manifest.unitLoadDevices) &&
         Objects.equals(this.error, manifest.error) &&
         Objects.equals(this.shipments, manifest.shipments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, error, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, unitLoadDevices, error, shipments);
   }
 
 
@@ -690,6 +743,7 @@ public class Manifest {
     sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
     sb.append("    airportOfDeparture: ").append(toIndentedString(airportOfDeparture)).append("\n");
     sb.append("    finalDestination: ").append(toIndentedString(finalDestination)).append("\n");
+    sb.append("    containerMode: ").append(toIndentedString(containerMode)).append("\n");
     sb.append("    deadline: ").append(toIndentedString(deadline)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    dateto: ").append(toIndentedString(dateto)).append("\n");
@@ -704,6 +758,7 @@ public class Manifest {
     sb.append("    subcontractorVehicleInfo: ").append(toIndentedString(subcontractorVehicleInfo)).append("\n");
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
+    sb.append("    unitLoadDevices: ").append(toIndentedString(unitLoadDevices)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    shipments: ").append(toIndentedString(shipments)).append("\n");
     sb.append("}");

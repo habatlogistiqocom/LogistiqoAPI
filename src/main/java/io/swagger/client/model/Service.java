@@ -25,7 +25,7 @@ import java.io.IOException;
  * Service
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-18T15:15:04.411696455Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-21T15:20:32.339519807Z[GMT]")
 
 public class Service {
   @SerializedName("pos")
