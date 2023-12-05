@@ -25,14 +25,35 @@ import java.io.IOException;
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-21T15:20:32.339519807Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-04T09:19:59.134638260Z[GMT]")
 
 public class UnitLoadDevice {
+  @SerializedName("uniqueNumber")
+  private String uniqueNumber = null;
+
   @SerializedName("number")
   private String number = null;
 
   @SerializedName("contour")
   private String contour = null;
+
+  public UnitLoadDevice uniqueNumber(String uniqueNumber) {
+    this.uniqueNumber = uniqueNumber;
+    return this;
+  }
+
+   /**
+   * Get uniqueNumber
+   * @return uniqueNumber
+  **/
+  @Schema(example = "654165141", description = "")
+  public String getUniqueNumber() {
+    return uniqueNumber;
+  }
+
+  public void setUniqueNumber(String uniqueNumber) {
+    this.uniqueNumber = uniqueNumber;
+  }
 
   public UnitLoadDevice number(String number) {
     this.number = number;
@@ -80,13 +101,14 @@ public class UnitLoadDevice {
       return false;
     }
     UnitLoadDevice unitLoadDevice = (UnitLoadDevice) o;
-    return Objects.equals(this.number, unitLoadDevice.number) &&
+    return Objects.equals(this.uniqueNumber, unitLoadDevice.uniqueNumber) &&
+        Objects.equals(this.number, unitLoadDevice.number) &&
         Objects.equals(this.contour, unitLoadDevice.contour);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, contour);
+    return Objects.hash(uniqueNumber, number, contour);
   }
 
 
@@ -95,6 +117,7 @@ public class UnitLoadDevice {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnitLoadDevice {\n");
     
+    sb.append("    uniqueNumber: ").append(toIndentedString(uniqueNumber)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    contour: ").append(toIndentedString(contour)).append("\n");
     sb.append("}");

@@ -25,7 +25,7 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-21T15:20:32.339519807Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-29T10:46:26.034094227Z[GMT]")
 
 public class Goods {
   @SerializedName("pos")
@@ -111,6 +111,9 @@ public class Goods {
 
   @SerializedName("minTemp")
   private Double minTemp = null;
+
+  @SerializedName("dangerousGoods")
+  private Boolean dangerousGoods = false;
 
   @SerializedName("xray")
   private Boolean xray = false;
@@ -634,6 +637,24 @@ public class Goods {
     this.minTemp = minTemp;
   }
 
+  public Goods dangerousGoods(Boolean dangerousGoods) {
+    this.dangerousGoods = dangerousGoods;
+    return this;
+  }
+
+   /**
+   * This field denotes that the specified items are categorized as hazardous goods according to the regulations outlined in the European Agreement concerning the International Carriage of Dangerous Goods by Road (ADR)..
+   * @return dangerousGoods
+  **/
+  @Schema(description = "This field denotes that the specified items are categorized as hazardous goods according to the regulations outlined in the European Agreement concerning the International Carriage of Dangerous Goods by Road (ADR)..")
+  public Boolean isDangerousGoods() {
+    return dangerousGoods;
+  }
+
+  public void setDangerousGoods(Boolean dangerousGoods) {
+    this.dangerousGoods = dangerousGoods;
+  }
+
   public Goods xray(Boolean xray) {
     this.xray = xray;
     return this;
@@ -780,6 +801,7 @@ public class Goods {
         Objects.equals(this.temperatureRange, goods.temperatureRange) &&
         Objects.equals(this.maxTemp, goods.maxTemp) &&
         Objects.equals(this.minTemp, goods.minTemp) &&
+        Objects.equals(this.dangerousGoods, goods.dangerousGoods) &&
         Objects.equals(this.xray, goods.xray) &&
         Objects.equals(this.stackable, goods.stackable) &&
         Objects.equals(this.shockwatch, goods.shockwatch) &&
@@ -790,7 +812,7 @@ public class Goods {
 
   @Override
   public int hashCode() {
-    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, setpoint, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, maxTemp, minTemp, xray, stackable, shockwatch, addPieces, receiptId, importId);
+    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, setpoint, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, maxTemp, minTemp, dangerousGoods, xray, stackable, shockwatch, addPieces, receiptId, importId);
   }
 
 
@@ -827,6 +849,7 @@ public class Goods {
     sb.append("    temperatureRange: ").append(toIndentedString(temperatureRange)).append("\n");
     sb.append("    maxTemp: ").append(toIndentedString(maxTemp)).append("\n");
     sb.append("    minTemp: ").append(toIndentedString(minTemp)).append("\n");
+    sb.append("    dangerousGoods: ").append(toIndentedString(dangerousGoods)).append("\n");
     sb.append("    xray: ").append(toIndentedString(xray)).append("\n");
     sb.append("    stackable: ").append(toIndentedString(stackable)).append("\n");
     sb.append("    shockwatch: ").append(toIndentedString(shockwatch)).append("\n");

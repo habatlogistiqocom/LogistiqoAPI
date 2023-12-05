@@ -29,7 +29,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-21T15:20:32.339519807Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-29T10:46:26.034094227Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -106,6 +106,9 @@ public class Manifest {
 
   @SerializedName("subcontractorVehicleInfo")
   private String subcontractorVehicleInfo = null;
+
+  @SerializedName("groundHandler")
+  private AllOfManifestGroundHandler groundHandler = null;
 
   @SerializedName("shipper")
   private AllOfManifestShipper shipper = null;
@@ -572,6 +575,24 @@ public class Manifest {
     this.subcontractorVehicleInfo = subcontractorVehicleInfo;
   }
 
+  public Manifest groundHandler(AllOfManifestGroundHandler groundHandler) {
+    this.groundHandler = groundHandler;
+    return this;
+  }
+
+   /**
+   * Get groundHandler
+   * @return groundHandler
+  **/
+  @Schema(description = "")
+  public AllOfManifestGroundHandler getGroundHandler() {
+    return groundHandler;
+  }
+
+  public void setGroundHandler(AllOfManifestGroundHandler groundHandler) {
+    this.groundHandler = groundHandler;
+  }
+
   public Manifest shipper(AllOfManifestShipper shipper) {
     this.shipper = shipper;
     return this;
@@ -713,6 +734,7 @@ public class Manifest {
         Objects.equals(this.flightNo, manifest.flightNo) &&
         Objects.equals(this.subcontractorInfo, manifest.subcontractorInfo) &&
         Objects.equals(this.subcontractorVehicleInfo, manifest.subcontractorVehicleInfo) &&
+        Objects.equals(this.groundHandler, manifest.groundHandler) &&
         Objects.equals(this.shipper, manifest.shipper) &&
         Objects.equals(this.consignee, manifest.consignee) &&
         Objects.equals(this.unitLoadDevices, manifest.unitLoadDevices) &&
@@ -722,7 +744,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, shipper, consignee, unitLoadDevices, error, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, shipments);
   }
 
 
@@ -756,6 +778,7 @@ public class Manifest {
     sb.append("    flightNo: ").append(toIndentedString(flightNo)).append("\n");
     sb.append("    subcontractorInfo: ").append(toIndentedString(subcontractorInfo)).append("\n");
     sb.append("    subcontractorVehicleInfo: ").append(toIndentedString(subcontractorVehicleInfo)).append("\n");
+    sb.append("    groundHandler: ").append(toIndentedString(groundHandler)).append("\n");
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
     sb.append("    unitLoadDevices: ").append(toIndentedString(unitLoadDevices)).append("\n");

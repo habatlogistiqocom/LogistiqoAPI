@@ -14,16 +14,14 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.CompanyObject;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.client.model.AddressObject;
 /**
- * Company
+ * AllOfManifestGroundHandler
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-19T13:45:14.600795045Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-29T10:46:26.034094227Z[GMT]")
 
-public class Company extends ArrayList<CompanyObject> {
+public class AllOfManifestGroundHandler extends AddressObject {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -45,7 +43,7 @@ public class Company extends ArrayList<CompanyObject> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Company {\n");
+    sb.append("class AllOfManifestGroundHandler {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
