@@ -25,7 +25,7 @@ import java.io.IOException;
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-04T09:19:59.134638260Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
 
 public class UnitLoadDevice {
   @SerializedName("uniqueNumber")

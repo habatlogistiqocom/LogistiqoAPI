@@ -24,6 +24,7 @@ import io.swagger.client.model.Detail;
 import io.swagger.client.model.Goods;
 import io.swagger.client.model.NotifiedGoods;
 import io.swagger.client.model.Service;
+import io.swagger.client.model.Status;
 import io.swagger.client.model.UploadedFile;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -33,7 +34,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-03T11:29:21.292440354Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -56,7 +57,7 @@ public class Shipment {
 
   @SerializedName("customerReferenceUnique")
   private Boolean customerReferenceUnique = true;
-
+    
   @SerializedName("additionalReference")
   private String additionalReference = null;
 
@@ -159,6 +160,9 @@ public class Shipment {
   @SerializedName("services")
   private List<Service> services = null;
 
+  @SerializedName("statusnodes")
+  private List<Status> statusnodes = null;
+
   public Shipment idCustomer(Integer idCustomer) {
     this.idCustomer = idCustomer;
     return this;
@@ -258,7 +262,7 @@ public class Shipment {
    * Please ensure that this required field contains a unique customer reference, which is typically the customer&#x27;s order number. This information is crucial for proper order processing and fulfillment.
    * @return customerReference
   **/
-  @Schema(example = "CF123456", required = true, description = "Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.")
+  @Schema(required = true, description = "Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.")
   public String getCustomerReference() {
     return customerReference;
   }
@@ -271,7 +275,6 @@ public class Shipment {
     this.customerReferenceUnique = customerReferenceUnique;
     return this;
   }
-
    /**
    * This field indicates that the API can search for an existing shipment using the customerReference and customer fields. If the field is set to false, the API will search for existing shipments using all of the fields customerReference, internalReference, and customer.
    * @return customerReferenceUnique
@@ -939,6 +942,29 @@ public class Shipment {
     this.services = services;
   }
 
+  }
+
+  public Shipment addStatusnodesItem(Status statusnodesItem) {
+    if (this.statusnodes == null) {
+      this.statusnodes = new ArrayList<Status>();
+    }
+    this.statusnodes.add(statusnodesItem);
+    return this;
+  }
+
+   /**
+   * Get statusnodes
+   * @return statusnodes
+  **/
+  @Schema(description = "")
+  public List<Status> getStatusnodes() {
+    return statusnodes;
+  }
+
+  public void setStatusnodes(List<Status> statusnodes) {
+    this.statusnodes = statusnodes;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -955,7 +981,6 @@ public class Shipment {
         Objects.equals(this.customerNumber, shipment.customerNumber) &&
         Objects.equals(this.shipmentNumber, shipment.shipmentNumber) &&
         Objects.equals(this.customerReference, shipment.customerReference) &&
-        Objects.equals(this.customerReferenceUnique, shipment.customerReferenceUnique) &&
         Objects.equals(this.additionalReference, shipment.additionalReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
         Objects.equals(this.hawb, shipment.hawb) &&
@@ -989,12 +1014,13 @@ public class Shipment {
         Objects.equals(this.notifiedGoodss, shipment.notifiedGoodss) &&
         Objects.equals(this.calloffs, shipment.calloffs) &&
         Objects.equals(this.uploadedFiles, shipment.uploadedFiles) &&
-        Objects.equals(this.services, shipment.services);
+        Objects.equals(this.services, shipment.services) &&
+        Objects.equals(this.statusnodes, shipment.statusnodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, additionalReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, additionalReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1009,7 +1035,6 @@ public class Shipment {
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
-    sb.append("    customerReferenceUnique: ").append(toIndentedString(customerReferenceUnique)).append("\n");
     sb.append("    additionalReference: ").append(toIndentedString(additionalReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
@@ -1044,6 +1069,7 @@ public class Shipment {
     sb.append("    calloffs: ").append(toIndentedString(calloffs)).append("\n");
     sb.append("    uploadedFiles: ").append(toIndentedString(uploadedFiles)).append("\n");
     sb.append("    services: ").append(toIndentedString(services)).append("\n");
+    sb.append("    statusnodes: ").append(toIndentedString(statusnodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
