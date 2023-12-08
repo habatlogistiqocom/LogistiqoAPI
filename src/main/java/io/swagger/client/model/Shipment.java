@@ -283,7 +283,6 @@ public class Shipment {
   public Boolean isCustomerReferenceUnique() {
     return customerReferenceUnique;
   }
-
   public void setCustomerReferenceUnique(Boolean customerReferenceUnique) {
     this.customerReferenceUnique = customerReferenceUnique;
   }
@@ -942,6 +941,9 @@ public class Shipment {
     this.services = services;
   }
 
+  public Shipment statusnodes(List<Status> statusnodes) {
+    this.statusnodes = statusnodes;
+    return this;
   }
 
   public Shipment addStatusnodesItem(Status statusnodesItem) {
