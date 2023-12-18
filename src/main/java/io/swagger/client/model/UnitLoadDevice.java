@@ -19,40 +19,52 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.UnitLoadDeviceContent;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-18T09:21:30.518618078Z[GMT]")
 
 public class UnitLoadDevice {
-  @SerializedName("uniqueNumber")
-  private String uniqueNumber = null;
+  @SerializedName("jobId")
+  private String jobId = null;
 
   @SerializedName("number")
   private String number = null;
 
-  @SerializedName("contour")
-  private String contour = null;
+  @SerializedName("type")
+  private String type = null;
 
-  public UnitLoadDevice uniqueNumber(String uniqueNumber) {
-    this.uniqueNumber = uniqueNumber;
+  @SerializedName("description")
+  private String description = null;
+
+  @SerializedName("mode")
+  private String mode = null;
+
+  @SerializedName("content")
+  private List<UnitLoadDeviceContent> content = null;
+
+  public UnitLoadDevice jobId(String jobId) {
+    this.jobId = jobId;
     return this;
   }
 
    /**
-   * Get uniqueNumber
-   * @return uniqueNumber
+   * Get jobId
+   * @return jobId
   **/
   @Schema(example = "654165141", description = "")
-  public String getUniqueNumber() {
-    return uniqueNumber;
+  public String getJobId() {
+    return jobId;
   }
 
-  public void setUniqueNumber(String uniqueNumber) {
-    this.uniqueNumber = uniqueNumber;
+  public void setJobId(String jobId) {
+    this.jobId = jobId;
   }
 
   public UnitLoadDevice number(String number) {
@@ -73,22 +85,84 @@ public class UnitLoadDevice {
     this.number = number;
   }
 
-  public UnitLoadDevice contour(String contour) {
-    this.contour = contour;
+  public UnitLoadDevice type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get contour
-   * @return contour
+   * Get type
+   * @return type
   **/
   @Schema(example = "PMC-Q5", description = "")
-  public String getContour() {
-    return contour;
+  public String getType() {
+    return type;
   }
 
-  public void setContour(String contour) {
-    this.contour = contour;
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public UnitLoadDevice description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @Schema(example = "PMC-Q5", description = "")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public UnitLoadDevice mode(String mode) {
+    this.mode = mode;
+    return this;
+  }
+
+   /**
+   * Get mode
+   * @return mode
+  **/
+  @Schema(example = "ULD", description = "")
+  public String getMode() {
+    return mode;
+  }
+
+  public void setMode(String mode) {
+    this.mode = mode;
+  }
+
+  public UnitLoadDevice content(List<UnitLoadDeviceContent> content) {
+    this.content = content;
+    return this;
+  }
+
+  public UnitLoadDevice addContentItem(UnitLoadDeviceContent contentItem) {
+    if (this.content == null) {
+      this.content = new ArrayList<UnitLoadDeviceContent>();
+    }
+    this.content.add(contentItem);
+    return this;
+  }
+
+   /**
+   * Get content
+   * @return content
+  **/
+  @Schema(description = "")
+  public List<UnitLoadDeviceContent> getContent() {
+    return content;
+  }
+
+  public void setContent(List<UnitLoadDeviceContent> content) {
+    this.content = content;
   }
 
 
@@ -101,14 +175,17 @@ public class UnitLoadDevice {
       return false;
     }
     UnitLoadDevice unitLoadDevice = (UnitLoadDevice) o;
-    return Objects.equals(this.uniqueNumber, unitLoadDevice.uniqueNumber) &&
+    return Objects.equals(this.jobId, unitLoadDevice.jobId) &&
         Objects.equals(this.number, unitLoadDevice.number) &&
-        Objects.equals(this.contour, unitLoadDevice.contour);
+        Objects.equals(this.type, unitLoadDevice.type) &&
+        Objects.equals(this.description, unitLoadDevice.description) &&
+        Objects.equals(this.mode, unitLoadDevice.mode) &&
+        Objects.equals(this.content, unitLoadDevice.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uniqueNumber, number, contour);
+    return Objects.hash(jobId, number, type, description, mode, content);
   }
 
 
@@ -117,9 +194,12 @@ public class UnitLoadDevice {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnitLoadDevice {\n");
     
-    sb.append("    uniqueNumber: ").append(toIndentedString(uniqueNumber)).append("\n");
+    sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    contour: ").append(toIndentedString(contour)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }
