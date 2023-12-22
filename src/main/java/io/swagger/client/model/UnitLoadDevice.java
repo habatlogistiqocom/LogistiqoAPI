@@ -28,7 +28,7 @@ import java.util.List;
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-18T09:21:30.518618078Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-21T16:41:44.170656590Z[GMT]")
 
 public class UnitLoadDevice {
   @SerializedName("jobId")

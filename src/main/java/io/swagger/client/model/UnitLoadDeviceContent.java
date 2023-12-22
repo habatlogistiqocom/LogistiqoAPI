@@ -21,11 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.math.BigDecimal;
 /**
  * UnitLoadDeviceContent
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-18T09:21:30.518618078Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-21T16:41:44.170656590Z[GMT]")
 
 public class UnitLoadDeviceContent {
   @SerializedName("shipmentNumber")
@@ -33,6 +34,12 @@ public class UnitLoadDeviceContent {
 
   @SerializedName("customerReference")
   private String customerReference = null;
+
+  @SerializedName("quantity")
+  private BigDecimal quantity = null;
+
+  @SerializedName("packlineId")
+  private String packlineId = null;
 
   public UnitLoadDeviceContent shipmentNumber(String shipmentNumber) {
     this.shipmentNumber = shipmentNumber;
@@ -70,6 +77,42 @@ public class UnitLoadDeviceContent {
     this.customerReference = customerReference;
   }
 
+  public UnitLoadDeviceContent quantity(BigDecimal quantity) {
+    this.quantity = quantity;
+    return this;
+  }
+
+   /**
+   * :&gt;- The quantity specifies the number of identical goods items (with the same packlineId) consolidated on a specific Unit Load Device (ULD).
+   * @return quantity
+  **/
+  @Schema(example = "2", description = ":>- The quantity specifies the number of identical goods items (with the same packlineId) consolidated on a specific Unit Load Device (ULD).")
+  public BigDecimal getQuantity() {
+    return quantity;
+  }
+
+  public void setQuantity(BigDecimal quantity) {
+    this.quantity = quantity;
+  }
+
+  public UnitLoadDeviceContent packlineId(String packlineId) {
+    this.packlineId = packlineId;
+    return this;
+  }
+
+   /**
+   * :&gt;- The packlineId functions as a distinctive identifier for delineating particular sets of goods or items consolidated on a single Unit Load Device (ULD).
+   * @return packlineId
+  **/
+  @Schema(example = "23 00567", description = ":>- The packlineId functions as a distinctive identifier for delineating particular sets of goods or items consolidated on a single Unit Load Device (ULD).")
+  public String getPacklineId() {
+    return packlineId;
+  }
+
+  public void setPacklineId(String packlineId) {
+    this.packlineId = packlineId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +124,14 @@ public class UnitLoadDeviceContent {
     }
     UnitLoadDeviceContent unitLoadDeviceContent = (UnitLoadDeviceContent) o;
     return Objects.equals(this.shipmentNumber, unitLoadDeviceContent.shipmentNumber) &&
-        Objects.equals(this.customerReference, unitLoadDeviceContent.customerReference);
+        Objects.equals(this.customerReference, unitLoadDeviceContent.customerReference) &&
+        Objects.equals(this.quantity, unitLoadDeviceContent.quantity) &&
+        Objects.equals(this.packlineId, unitLoadDeviceContent.packlineId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shipmentNumber, customerReference);
+    return Objects.hash(shipmentNumber, customerReference, quantity, packlineId);
   }
 
 
@@ -97,6 +142,8 @@ public class UnitLoadDeviceContent {
     
     sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    packlineId: ").append(toIndentedString(packlineId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

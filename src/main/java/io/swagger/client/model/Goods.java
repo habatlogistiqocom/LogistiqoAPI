@@ -25,7 +25,7 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-22T14:40:27.649690250Z[GMT]")
 
 public class Goods {
   @SerializedName("pos")
@@ -85,9 +85,6 @@ public class Goods {
   @SerializedName("height")
   private Integer height = null;
 
-  @SerializedName("setpoint")
-  private Boolean setpoint = false;
-
   @SerializedName("codAmount")
   private Double codAmount = 0d;
 
@@ -105,6 +102,57 @@ public class Goods {
 
   @SerializedName("temperatureRange")
   private String temperatureRange = null;
+
+  @SerializedName("setpoint")
+  private Boolean setpoint = false;
+
+  /**
+   * The &#x60;temperatureType&#x60; field in Logistiqo will automatically be adjusted based on the following conditions: - 0: If &#x60;setpoint&#x60; is false and either &#x60;maxTemp&#x60; equals &#x60;minTemp&#x60;, or maxTemp is null, or &#x60;minTemp&#x60; is null, then &#x60;temperatureType&#x60; will be set to 0 (None). - 1: If &#x60;setpoint&#x60; is false and &#x60;maxTemp&#x60; is greater than &#x60;minTemp&#x60;, then &#x60;temperatureType&#x60; will be set to 1 (From-To). - 2: If &#x60;setpoint&#x60; is true, then &#x60;temperatureType&#x60; will be set to 2 (setpoint). 
+   */
+  @JsonAdapter(TemperatureTypeEnum.Adapter.class)
+  public enum TemperatureTypeEnum {
+    @SerializedName("0")
+    NUMBER_0(0),
+    @SerializedName("1")
+    NUMBER_1(1),
+    @SerializedName("2")
+    NUMBER_2(2);
+
+    private Integer value;
+
+    TemperatureTypeEnum(Integer value) {
+      this.value = value;
+    }
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static TemperatureTypeEnum fromValue(Integer input) {
+      for (TemperatureTypeEnum b : TemperatureTypeEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<TemperatureTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TemperatureTypeEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public TemperatureTypeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextInt();
+        return TemperatureTypeEnum.fromValue((Integer)(value));
+      }
+    }
+  }  @SerializedName("temperatureType")
+  private TemperatureTypeEnum temperatureType = TemperatureTypeEnum.NUMBER_0;
 
   @SerializedName("maxTemp")
   private Double maxTemp = null;
@@ -129,6 +177,9 @@ public class Goods {
 
   @SerializedName("receiptId")
   private Integer receiptId = 0;
+
+  @SerializedName("packlineId")
+  private String packlineId = "";
 
   @SerializedName("importId")
   private String importId = null;
@@ -475,24 +526,6 @@ public class Goods {
     this.height = height;
   }
 
-  public Goods setpoint(Boolean setpoint) {
-    this.setpoint = setpoint;
-    return this;
-  }
-
-   /**
-   * This indicates whether the goods item requires a setpoint temperature or not.
-   * @return setpoint
-  **/
-  @Schema(example = "true", description = "This indicates whether the goods item requires a setpoint temperature or not.")
-  public Boolean isSetpoint() {
-    return setpoint;
-  }
-
-  public void setSetpoint(Boolean setpoint) {
-    this.setpoint = setpoint;
-  }
-
   public Goods codAmount(Double codAmount) {
     this.codAmount = codAmount;
     return this;
@@ -599,6 +632,45 @@ public class Goods {
 
   public void setTemperatureRange(String temperatureRange) {
     this.temperatureRange = temperatureRange;
+  }
+
+  public Goods setpoint(Boolean setpoint) {
+    this.setpoint = setpoint;
+    return this;
+  }
+
+   /**
+   * This indicates whether the goods item requires a setpoint temperature or not. 
+   * @return setpoint
+  **/
+  @Schema(example = "true", description = "This indicates whether the goods item requires a setpoint temperature or not. ")
+  public Boolean isSetpoint() {
+    return setpoint;
+  }
+
+  public void setSetpoint(Boolean setpoint) {
+    this.setpoint = setpoint;
+  }
+
+  public Goods temperatureType(TemperatureTypeEnum temperatureType) {
+    this.temperatureType = temperatureType;
+    return this;
+  }
+
+   /**
+   * The &#x60;temperatureType&#x60; field in Logistiqo will automatically be adjusted based on the following conditions: - 
+   * - 0: If &#x60;setpoint&#x60; is false and either &#x60;maxTemp&#x60; equals &#x60;minTemp&#x60;, or maxTemp is null, or &#x60;minTemp&#x60; is null, then &#x60;temperatureType&#x60; will be set to 0 (None). 
+   * - 1: If &#x60;setpoint&#x60; is false and &#x60;maxTemp&#x60; is greater than &#x60;minTemp&#x60;, then &#x60;temperatureType&#x60; will be set to 1 (From-To).
+   * - 2: If &#x60;setpoint&#x60; is true, then &#x60;temperatureType&#x60; will be set to 2 (setpoint). 
+   * @return temperatureType
+  **/
+  @Schema(example = "1", description = "The `temperatureType` field in Logistiqo will automatically be adjusted based on the following conditions: - 0: If `setpoint` is false and either `maxTemp` equals `minTemp`, or maxTemp is null, or `minTemp` is null, then `temperatureType` will be set to 0 (None). - 1: If `setpoint` is false and `maxTemp` is greater than `minTemp`, then `temperatureType` will be set to 1 (From-To). - 2: If `setpoint` is true, then `temperatureType` will be set to 2 (setpoint). ")
+  public TemperatureTypeEnum getTemperatureType() {
+    return temperatureType;
+  }
+
+  public void setTemperatureType(TemperatureTypeEnum temperatureType) {
+    this.temperatureType = temperatureType;
   }
 
   public Goods maxTemp(Double maxTemp) {
@@ -745,16 +817,34 @@ public class Goods {
     this.receiptId = receiptId;
   }
 
+  public Goods packlineId(String packlineId) {
+    this.packlineId = packlineId;
+    return this;
+  }
+
+   /**
+   * The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
+   * @return packlineId
+  **/
+  @Schema(description = "The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.")
+  public String getPacklineId() {
+    return packlineId;
+  }
+
+  public void setPacklineId(String packlineId) {
+    this.packlineId = packlineId;
+  }
+
   public Goods importId(String importId) {
     this.importId = importId;
     return this;
   }
 
    /**
-   * The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
+   * Like packlineId the importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
    * @return importId
   **/
-  @Schema(example = "12345678", description = "The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.")
+  @Schema(example = "12345678", description = "Like packlineId the importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.")
   public String getImportId() {
     return importId;
   }
@@ -792,13 +882,14 @@ public class Goods {
         Objects.equals(this.length, goods.length) &&
         Objects.equals(this.width, goods.width) &&
         Objects.equals(this.height, goods.height) &&
-        Objects.equals(this.setpoint, goods.setpoint) &&
         Objects.equals(this.codAmount, goods.codAmount) &&
         Objects.equals(this.goodsValue, goods.goodsValue) &&
         Objects.equals(this.supplier, goods.supplier) &&
         Objects.equals(this.largeLoadCarriers, goods.largeLoadCarriers) &&
         Objects.equals(this.smallLoadCarriers, goods.smallLoadCarriers) &&
         Objects.equals(this.temperatureRange, goods.temperatureRange) &&
+        Objects.equals(this.setpoint, goods.setpoint) &&
+        Objects.equals(this.temperatureType, goods.temperatureType) &&
         Objects.equals(this.maxTemp, goods.maxTemp) &&
         Objects.equals(this.minTemp, goods.minTemp) &&
         Objects.equals(this.dangerousGoods, goods.dangerousGoods) &&
@@ -807,12 +898,13 @@ public class Goods {
         Objects.equals(this.shockwatch, goods.shockwatch) &&
         Objects.equals(this.addPieces, goods.addPieces) &&
         Objects.equals(this.receiptId, goods.receiptId) &&
+        Objects.equals(this.packlineId, goods.packlineId) &&
         Objects.equals(this.importId, goods.importId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, setpoint, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, maxTemp, minTemp, dangerousGoods, xray, stackable, shockwatch, addPieces, receiptId, importId);
+    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, stackable, shockwatch, addPieces, receiptId, packlineId, importId);
   }
 
 
@@ -840,13 +932,14 @@ public class Goods {
     sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    width: ").append(toIndentedString(width)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    setpoint: ").append(toIndentedString(setpoint)).append("\n");
     sb.append("    codAmount: ").append(toIndentedString(codAmount)).append("\n");
     sb.append("    goodsValue: ").append(toIndentedString(goodsValue)).append("\n");
     sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
     sb.append("    largeLoadCarriers: ").append(toIndentedString(largeLoadCarriers)).append("\n");
     sb.append("    smallLoadCarriers: ").append(toIndentedString(smallLoadCarriers)).append("\n");
     sb.append("    temperatureRange: ").append(toIndentedString(temperatureRange)).append("\n");
+    sb.append("    setpoint: ").append(toIndentedString(setpoint)).append("\n");
+    sb.append("    temperatureType: ").append(toIndentedString(temperatureType)).append("\n");
     sb.append("    maxTemp: ").append(toIndentedString(maxTemp)).append("\n");
     sb.append("    minTemp: ").append(toIndentedString(minTemp)).append("\n");
     sb.append("    dangerousGoods: ").append(toIndentedString(dangerousGoods)).append("\n");
@@ -855,6 +948,7 @@ public class Goods {
     sb.append("    shockwatch: ").append(toIndentedString(shockwatch)).append("\n");
     sb.append("    addPieces: ").append(toIndentedString(addPieces)).append("\n");
     sb.append("    receiptId: ").append(toIndentedString(receiptId)).append("\n");
+    sb.append("    packlineId: ").append(toIndentedString(packlineId)).append("\n");
     sb.append("    importId: ").append(toIndentedString(importId)).append("\n");
     sb.append("}");
     return sb.toString();
