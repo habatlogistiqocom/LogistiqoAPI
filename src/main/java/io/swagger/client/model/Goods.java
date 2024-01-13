@@ -25,7 +25,7 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-22T14:40:27.649690250Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-10T12:02:52.961901127Z[GMT]")
 
 public class Goods {
   @SerializedName("pos")
@@ -165,6 +165,9 @@ public class Goods {
 
   @SerializedName("xray")
   private Boolean xray = false;
+
+  @SerializedName("secured")
+  private Boolean secured = false;
 
   @SerializedName("stackable")
   private Boolean stackable = false;
@@ -658,10 +661,7 @@ public class Goods {
   }
 
    /**
-   * The &#x60;temperatureType&#x60; field in Logistiqo will automatically be adjusted based on the following conditions: - 
-   * - 0: If &#x60;setpoint&#x60; is false and either &#x60;maxTemp&#x60; equals &#x60;minTemp&#x60;, or maxTemp is null, or &#x60;minTemp&#x60; is null, then &#x60;temperatureType&#x60; will be set to 0 (None). 
-   * - 1: If &#x60;setpoint&#x60; is false and &#x60;maxTemp&#x60; is greater than &#x60;minTemp&#x60;, then &#x60;temperatureType&#x60; will be set to 1 (From-To).
-   * - 2: If &#x60;setpoint&#x60; is true, then &#x60;temperatureType&#x60; will be set to 2 (setpoint). 
+   * The &#x60;temperatureType&#x60; field in Logistiqo will automatically be adjusted based on the following conditions: - 0: If &#x60;setpoint&#x60; is false and either &#x60;maxTemp&#x60; equals &#x60;minTemp&#x60;, or maxTemp is null, or &#x60;minTemp&#x60; is null, then &#x60;temperatureType&#x60; will be set to 0 (None). - 1: If &#x60;setpoint&#x60; is false and &#x60;maxTemp&#x60; is greater than &#x60;minTemp&#x60;, then &#x60;temperatureType&#x60; will be set to 1 (From-To). - 2: If &#x60;setpoint&#x60; is true, then &#x60;temperatureType&#x60; will be set to 2 (setpoint). 
    * @return temperatureType
   **/
   @Schema(example = "1", description = "The `temperatureType` field in Logistiqo will automatically be adjusted based on the following conditions: - 0: If `setpoint` is false and either `maxTemp` equals `minTemp`, or maxTemp is null, or `minTemp` is null, then `temperatureType` will be set to 0 (None). - 1: If `setpoint` is false and `maxTemp` is greater than `minTemp`, then `temperatureType` will be set to 1 (From-To). - 2: If `setpoint` is true, then `temperatureType` will be set to 2 (setpoint). ")
@@ -743,6 +743,24 @@ public class Goods {
 
   public void setXray(Boolean xray) {
     this.xray = xray;
+  }
+
+  public Goods secured(Boolean secured) {
+    this.secured = secured;
+    return this;
+  }
+
+   /**
+   * This field denotes that the specified goods have undergone security screening, either by the primary customer of the shipment or the secondary customer of the initial customer.
+   * @return secured
+  **/
+  @Schema(description = "This field denotes that the specified goods have undergone security screening, either by the primary customer of the shipment or the secondary customer of the initial customer.")
+  public Boolean isSecured() {
+    return secured;
+  }
+
+  public void setSecured(Boolean secured) {
+    this.secured = secured;
   }
 
   public Goods stackable(Boolean stackable) {
@@ -894,6 +912,7 @@ public class Goods {
         Objects.equals(this.minTemp, goods.minTemp) &&
         Objects.equals(this.dangerousGoods, goods.dangerousGoods) &&
         Objects.equals(this.xray, goods.xray) &&
+        Objects.equals(this.secured, goods.secured) &&
         Objects.equals(this.stackable, goods.stackable) &&
         Objects.equals(this.shockwatch, goods.shockwatch) &&
         Objects.equals(this.addPieces, goods.addPieces) &&
@@ -904,7 +923,7 @@ public class Goods {
 
   @Override
   public int hashCode() {
-    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, stackable, shockwatch, addPieces, receiptId, packlineId, importId);
+    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, secured, stackable, shockwatch, addPieces, receiptId, packlineId, importId);
   }
 
 
@@ -944,6 +963,7 @@ public class Goods {
     sb.append("    minTemp: ").append(toIndentedString(minTemp)).append("\n");
     sb.append("    dangerousGoods: ").append(toIndentedString(dangerousGoods)).append("\n");
     sb.append("    xray: ").append(toIndentedString(xray)).append("\n");
+    sb.append("    secured: ").append(toIndentedString(secured)).append("\n");
     sb.append("    stackable: ").append(toIndentedString(stackable)).append("\n");
     sb.append("    shockwatch: ").append(toIndentedString(shockwatch)).append("\n");
     sb.append("    addPieces: ").append(toIndentedString(addPieces)).append("\n");

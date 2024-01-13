@@ -28,9 +28,12 @@ import java.util.List;
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-21T16:41:44.170656590Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-13T13:09:48.813645795Z[GMT]")
 
 public class UnitLoadDevice {
+  @SerializedName("consolNumber")
+  private String consolNumber = null;
+
   @SerializedName("jobId")
   private String jobId = null;
 
@@ -49,16 +52,34 @@ public class UnitLoadDevice {
   @SerializedName("content")
   private List<UnitLoadDeviceContent> content = null;
 
+  public UnitLoadDevice consolNumber(String consolNumber) {
+    this.consolNumber = consolNumber;
+    return this;
+  }
+
+   /**
+   * :&gt;- The consolnumber serves as a direct reference to the Master Air Waybill (MAWB), housing the comprehensive list of Unit Load Devices (ULDs) associated with this particular MAWB.
+   * @return consolNumber
+  **/
+  @Schema(example = "C403022564", description = ":>- The consolnumber serves as a direct reference to the Master Air Waybill (MAWB), housing the comprehensive list of Unit Load Devices (ULDs) associated with this particular MAWB.")
+  public String getConsolNumber() {
+    return consolNumber;
+  }
+
+  public void setConsolNumber(String consolNumber) {
+    this.consolNumber = consolNumber;
+  }
+
   public UnitLoadDevice jobId(String jobId) {
     this.jobId = jobId;
     return this;
   }
 
    /**
-   * Get jobId
+   * :&gt;- The JobId is an unique reference to a specific ULD
    * @return jobId
   **/
-  @Schema(example = "654165141", description = "")
+  @Schema(example = "D654165141", description = ":>- The JobId is an unique reference to a specific ULD")
   public String getJobId() {
     return jobId;
   }
@@ -73,10 +94,10 @@ public class UnitLoadDevice {
   }
 
    /**
-   * Get number
+   * :&gt;- The identification number assigned to a specific Unit Load Device (ULD) may not necessarily be unique, as ULDs are often reused multiple times.
    * @return number
   **/
-  @Schema(example = "PMC1234", description = "")
+  @Schema(example = "ULD1234", description = ":>- The identification number assigned to a specific Unit Load Device (ULD) may not necessarily be unique, as ULDs are often reused multiple times.")
   public String getNumber() {
     return number;
   }
@@ -91,10 +112,10 @@ public class UnitLoadDevice {
   }
 
    /**
-   * Get type
+   * This field denotes a subtype within the mode category, akin to a specialized classification of the mode ULD. 
    * @return type
   **/
-  @Schema(example = "PMC-Q5", description = "")
+  @Schema(example = "PMC-Q5", description = "This field denotes a subtype within the mode category, akin to a specialized classification of the mode ULD. ")
   public String getType() {
     return type;
   }
@@ -127,10 +148,10 @@ public class UnitLoadDevice {
   }
 
    /**
-   * Get mode
+   * Type of ULD could be for example:      - ULD (Generic term for any Unit Load Device) - LSE (Loose) - BCH (Bulk Cargo Hold) - OTH (Other, which can refer to miscellaneous or specific ULD types not covered by standard codes) 
    * @return mode
   **/
-  @Schema(example = "ULD", description = "")
+  @Schema(example = "ULD", description = "Type of ULD could be for example:      - ULD (Generic term for any Unit Load Device) - LSE (Loose) - BCH (Bulk Cargo Hold) - OTH (Other, which can refer to miscellaneous or specific ULD types not covered by standard codes) ")
   public String getMode() {
     return mode;
   }
@@ -175,7 +196,8 @@ public class UnitLoadDevice {
       return false;
     }
     UnitLoadDevice unitLoadDevice = (UnitLoadDevice) o;
-    return Objects.equals(this.jobId, unitLoadDevice.jobId) &&
+    return Objects.equals(this.consolNumber, unitLoadDevice.consolNumber) &&
+        Objects.equals(this.jobId, unitLoadDevice.jobId) &&
         Objects.equals(this.number, unitLoadDevice.number) &&
         Objects.equals(this.type, unitLoadDevice.type) &&
         Objects.equals(this.description, unitLoadDevice.description) &&
@@ -185,7 +207,7 @@ public class UnitLoadDevice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(jobId, number, type, description, mode, content);
+    return Objects.hash(consolNumber, jobId, number, type, description, mode, content);
   }
 
 
@@ -194,6 +216,7 @@ public class UnitLoadDevice {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnitLoadDevice {\n");
     
+    sb.append("    consolNumber: ").append(toIndentedString(consolNumber)).append("\n");
     sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
