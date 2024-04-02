@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ManifestGoods;
 import io.swagger.client.model.Shipment;
 import io.swagger.client.model.UnitLoadDevice;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -29,7 +30,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -121,6 +122,9 @@ public class Manifest {
 
   @SerializedName("error")
   private Boolean error = null;
+
+  @SerializedName("manifestGoods")
+  private List<ManifestGoods> manifestGoods = null;
 
   @SerializedName("shipments")
   private List<Shipment> shipments = null;
@@ -673,6 +677,32 @@ public class Manifest {
     this.error = error;
   }
 
+  public Manifest manifestGoods(List<ManifestGoods> manifestGoods) {
+    this.manifestGoods = manifestGoods;
+    return this;
+  }
+
+  public Manifest addManifestGoodsItem(ManifestGoods manifestGoodsItem) {
+    if (this.manifestGoods == null) {
+      this.manifestGoods = new ArrayList<ManifestGoods>();
+    }
+    this.manifestGoods.add(manifestGoodsItem);
+    return this;
+  }
+
+   /**
+   * Get manifestGoods
+   * @return manifestGoods
+  **/
+  @Schema(description = "")
+  public List<ManifestGoods> getManifestGoods() {
+    return manifestGoods;
+  }
+
+  public void setManifestGoods(List<ManifestGoods> manifestGoods) {
+    this.manifestGoods = manifestGoods;
+  }
+
   public Manifest shipments(List<Shipment> shipments) {
     this.shipments = shipments;
     return this;
@@ -739,12 +769,13 @@ public class Manifest {
         Objects.equals(this.consignee, manifest.consignee) &&
         Objects.equals(this.unitLoadDevices, manifest.unitLoadDevices) &&
         Objects.equals(this.error, manifest.error) &&
+        Objects.equals(this.manifestGoods, manifest.manifestGoods) &&
         Objects.equals(this.shipments, manifest.shipments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, manifestGoods, shipments);
   }
 
 
@@ -783,6 +814,7 @@ public class Manifest {
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
     sb.append("    unitLoadDevices: ").append(toIndentedString(unitLoadDevices)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    manifestGoods: ").append(toIndentedString(manifestGoods)).append("\n");
     sb.append("    shipments: ").append(toIndentedString(shipments)).append("\n");
     sb.append("}");
     return sb.toString();

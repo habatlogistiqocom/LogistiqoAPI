@@ -25,7 +25,7 @@ import java.io.IOException;
  * InvoiceContract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
 
 public class InvoiceContract {
   @SerializedName("id")

@@ -26,7 +26,7 @@ import java.math.BigDecimal;
  * UnitLoadDeviceContent
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-21T16:41:44.170656590Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
 
 public class UnitLoadDeviceContent {
   @SerializedName("shipmentNumber")

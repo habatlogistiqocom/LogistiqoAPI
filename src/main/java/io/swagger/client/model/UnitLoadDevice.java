@@ -28,7 +28,7 @@ import java.util.List;
  * UnitLoadDevice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-13T13:09:48.813645795Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
 
 public class UnitLoadDevice {
   @SerializedName("consolNumber")

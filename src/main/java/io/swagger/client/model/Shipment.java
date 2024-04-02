@@ -34,7 +34,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-12-08T15:23:34.163430093Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -56,8 +56,11 @@ public class Shipment {
   private String customerReference = null;
 
   @SerializedName("customerReferenceUnique")
-  private Boolean customerReferenceUnique = true;
-    
+  private Boolean customerReferenceUnique = null;
+
+  @SerializedName("customerBarcode")
+  private String customerBarcode = null;
+
   @SerializedName("additionalReference")
   private String additionalReference = null;
 
@@ -72,6 +75,9 @@ public class Shipment {
 
   @SerializedName("paymentTerms")
   private AllOfShipmentPaymentTerms paymentTerms = null;
+
+  @SerializedName("securedStatus")
+  private String securedStatus = null;
 
   @SerializedName("branch")
   private String branch = null;
@@ -275,16 +281,36 @@ public class Shipment {
     this.customerReferenceUnique = customerReferenceUnique;
     return this;
   }
+
    /**
-   * This field indicates that the API can search for an existing shipment using the customerReference and customer fields. If the field is set to false, the API will search for existing shipments using all of the fields customerReference, internalReference, and customer.
+   * This field denotes the uniqueness of the CustomerReference, making it a reliable identifier for locating shipments within the database.
    * @return customerReferenceUnique
   **/
-  @Schema(example = "true", description = "This field indicates that the API can search for an existing shipment using the customerReference and customer fields. If the field is set to false, the API will search for existing shipments using all of the fields customerReference, internalReference, and customer.")
+  @Schema(description = "This field denotes the uniqueness of the CustomerReference, making it a reliable identifier for locating shipments within the database.")
   public Boolean isCustomerReferenceUnique() {
     return customerReferenceUnique;
   }
+
   public void setCustomerReferenceUnique(Boolean customerReferenceUnique) {
     this.customerReferenceUnique = customerReferenceUnique;
+  }
+
+  public Shipment customerBarcode(String customerBarcode) {
+    this.customerBarcode = customerBarcode;
+    return this;
+  }
+
+   /**
+   * This field can serve as an alternative to the CustomerReference field for the scanning process of shipments.
+   * @return customerBarcode
+  **/
+  @Schema(description = "This field can serve as an alternative to the CustomerReference field for the scanning process of shipments.")
+  public String getCustomerBarcode() {
+    return customerBarcode;
+  }
+
+  public void setCustomerBarcode(String customerBarcode) {
+    this.customerBarcode = customerBarcode;
   }
 
   public Shipment additionalReference(String additionalReference) {
@@ -375,6 +401,24 @@ public class Shipment {
 
   public void setPaymentTerms(AllOfShipmentPaymentTerms paymentTerms) {
     this.paymentTerms = paymentTerms;
+  }
+
+  public Shipment securedStatus(String securedStatus) {
+    this.securedStatus = securedStatus;
+    return this;
+  }
+
+   /**
+   * A three-letter code serves as an indicator of the secured status for shipments posted within the API.
+   * @return securedStatus
+  **/
+  @Schema(description = "A three-letter code serves as an indicator of the secured status for shipments posted within the API.")
+  public String getSecuredStatus() {
+    return securedStatus;
+  }
+
+  public void setSecuredStatus(String securedStatus) {
+    this.securedStatus = securedStatus;
   }
 
   public Shipment branch(String branch) {
@@ -983,11 +1027,14 @@ public class Shipment {
         Objects.equals(this.customerNumber, shipment.customerNumber) &&
         Objects.equals(this.shipmentNumber, shipment.shipmentNumber) &&
         Objects.equals(this.customerReference, shipment.customerReference) &&
+        Objects.equals(this.customerReferenceUnique, shipment.customerReferenceUnique) &&
+        Objects.equals(this.customerBarcode, shipment.customerBarcode) &&
         Objects.equals(this.additionalReference, shipment.additionalReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
         Objects.equals(this.hawb, shipment.hawb) &&
         Objects.equals(this.shipmentType, shipment.shipmentType) &&
         Objects.equals(this.paymentTerms, shipment.paymentTerms) &&
+        Objects.equals(this.securedStatus, shipment.securedStatus) &&
         Objects.equals(this.branch, shipment.branch) &&
         Objects.equals(this.description, shipment.description) &&
         Objects.equals(this.dropofByCompany, shipment.dropofByCompany) &&
@@ -1022,7 +1069,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, additionalReference, internalReference, hawb, shipmentType, paymentTerms, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1037,11 +1084,14 @@ public class Shipment {
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    shipmentNumber: ").append(toIndentedString(shipmentNumber)).append("\n");
     sb.append("    customerReference: ").append(toIndentedString(customerReference)).append("\n");
+    sb.append("    customerReferenceUnique: ").append(toIndentedString(customerReferenceUnique)).append("\n");
+    sb.append("    customerBarcode: ").append(toIndentedString(customerBarcode)).append("\n");
     sb.append("    additionalReference: ").append(toIndentedString(additionalReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
+    sb.append("    securedStatus: ").append(toIndentedString(securedStatus)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    dropofByCompany: ").append(toIndentedString(dropofByCompany)).append("\n");
