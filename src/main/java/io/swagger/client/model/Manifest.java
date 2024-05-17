@@ -30,7 +30,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-13T18:01:28.570388645Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -83,6 +83,9 @@ public class Manifest {
 
   @SerializedName("depot")
   private String depot = "DEPOT";
+
+  @SerializedName("typeTSC")
+  private String typeTSC = "PO";
 
   @SerializedName("customerNumber")
   private String customerNumber = null;
@@ -435,6 +438,24 @@ public class Manifest {
     this.depot = depot;
   }
 
+  public Manifest typeTSC(String typeTSC) {
+    this.typeTSC = typeTSC;
+    return this;
+  }
+
+   /**
+   * Internal field do not use
+   * @return typeTSC
+  **/
+  @Schema(example = "PO", description = "Internal field do not use")
+  public String getTypeTSC() {
+    return typeTSC;
+  }
+
+  public void setTypeTSC(String typeTSC) {
+    this.typeTSC = typeTSC;
+  }
+
   public Manifest customerNumber(String customerNumber) {
     this.customerNumber = customerNumber;
     return this;
@@ -756,6 +777,7 @@ public class Manifest {
         Objects.equals(this.date, manifest.date) &&
         Objects.equals(this.dateto, manifest.dateto) &&
         Objects.equals(this.depot, manifest.depot) &&
+        Objects.equals(this.typeTSC, manifest.typeTSC) &&
         Objects.equals(this.customerNumber, manifest.customerNumber) &&
         Objects.equals(this.customer, manifest.customer) &&
         Objects.equals(this.subcontractor, manifest.subcontractor) &&
@@ -775,7 +797,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, manifestGoods, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, typeTSC, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, manifestGoods, shipments);
   }
 
 
@@ -801,6 +823,7 @@ public class Manifest {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    dateto: ").append(toIndentedString(dateto)).append("\n");
     sb.append("    depot: ").append(toIndentedString(depot)).append("\n");
+    sb.append("    typeTSC: ").append(toIndentedString(typeTSC)).append("\n");
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    subcontractor: ").append(toIndentedString(subcontractor)).append("\n");
