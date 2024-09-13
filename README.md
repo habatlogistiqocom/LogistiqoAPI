@@ -98,7 +98,7 @@ For a full list of available endpoints, visit the [API documentation](https://ap
 
 1. **Transport and Shipment Management**: Easily create, track, and manage shipments using the TMS features.
 2. **Emergency Response**: Integrate personal emergency systems to handle home emergency calls and responses.
-3. **Learning Management**: Handle course management and user interactions with the LMS functionality.
+3. **Warehouse Management**: Handle warehouse management and user interactions with the WMS functionality.
 
 ## Resources
 
