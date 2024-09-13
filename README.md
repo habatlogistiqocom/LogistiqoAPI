@@ -1,10 +1,10 @@
 # Logistiqo API
 
-Welcome to the **Logistiqo API** – a public API designed to interact with the comprehensive **Transport Management System (TMS)** and **Learning Management System (LMS)**. The API also integrates with the **Personal Emergency Response System (PERS)**, providing a powerful and scalable platform for managing logistics, learning, and emergency services.
+Welcome to the **Logistiqo API** – a public API designed to interact with the comprehensive **Transport Management System (TMS)** and **Warehouse Management System (WMS)**. The API also integrates with the **Personal Emergency Response System (PERS)**, providing a powerful and scalable platform for managing logistics, learning, and emergency services.
 
 ## Overview
 
-The **Logistiqo API** allows external applications to seamlessly interact with the core functionalities of **Logistiqo's TMS and LMS**, as well as extensions like **PERS**. Whether you're managing shipments, tracking logistics, handling personal emergency responses, or building custom transport solutions, this API has everything you need to get started.
+The **Logistiqo API** allows external applications to seamlessly interact with the core functionalities of **Logistiqo's TMS and WMS**, as well as extensions like **PERS**. Whether you're managing shipments, tracking logistics, handling personal emergency responses, or building custom transport solutions, this API has everything you need to get started.
 
 ### Key Features
 - **Public Access:** The API is publicly available at [Logistiqo API Swagger UI](https://api.logistiqo.com/swagger/index.html), providing a user-friendly interface with comprehensive documentation.
