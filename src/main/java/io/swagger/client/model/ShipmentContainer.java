@@ -22,73 +22,73 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Calloff
+ * ShipmentContainer
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
-public class Calloff {
-  @SerializedName("callOffDate")
-  private String callOffDate = null;
+public class ShipmentContainer {
+  @SerializedName("containerNumber")
+  private String containerNumber = null;
 
-  @SerializedName("quantity")
-  private Integer quantity = null;
+  @SerializedName("sealNumber")
+  private String sealNumber = null;
 
-  @SerializedName("description")
-  private String description = null;
+  @SerializedName("containerType")
+  private String containerType = null;
 
-  public Calloff callOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public ShipmentContainer containerNumber(String containerNumber) {
+    this.containerNumber = containerNumber;
     return this;
   }
 
    /**
-   * When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item
-   * @return callOffDate
+   * The unique identifier for the container, typically alphanumeric.
+   * @return containerNumber
   **/
-  @Schema(example = "yyMMdd", description = "When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item")
-  public String getCallOffDate() {
-    return callOffDate;
+  @Schema(example = "ABCD1234567", description = "The unique identifier for the container, typically alphanumeric.")
+  public String getContainerNumber() {
+    return containerNumber;
   }
 
-  public void setCallOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public void setContainerNumber(String containerNumber) {
+    this.containerNumber = containerNumber;
   }
 
-  public Calloff quantity(Integer quantity) {
-    this.quantity = quantity;
+  public ShipmentContainer sealNumber(String sealNumber) {
+    this.sealNumber = sealNumber;
     return this;
   }
 
    /**
-   * Provide a call-off quantity of the goods.
-   * @return quantity
+   * The seal number used to secure the container, provided by the carrier or customs.
+   * @return sealNumber
   **/
-  @Schema(description = "Provide a call-off quantity of the goods.")
-  public Integer getQuantity() {
-    return quantity;
+  @Schema(example = "SEAL78910", description = "The seal number used to secure the container, provided by the carrier or customs.")
+  public String getSealNumber() {
+    return sealNumber;
   }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+  public void setSealNumber(String sealNumber) {
+    this.sealNumber = sealNumber;
   }
 
-  public Calloff description(String description) {
-    this.description = description;
+  public ShipmentContainer containerType(String containerType) {
+    this.containerType = containerType;
     return this;
   }
 
    /**
-   * Provide a reference of the goods.
-   * @return description
+   * The type of container based on ISO standards (e.g., 20GP, 40HC).
+   * @return containerType
   **/
-  @Schema(description = "Provide a reference of the goods.")
-  public String getDescription() {
-    return description;
+  @Schema(example = "20GP", description = "The type of container based on ISO standards (e.g., 20GP, 40HC).")
+  public String getContainerType() {
+    return containerType;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setContainerType(String containerType) {
+    this.containerType = containerType;
   }
 
 
@@ -100,26 +100,26 @@ public class Calloff {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Calloff calloff = (Calloff) o;
-    return Objects.equals(this.callOffDate, calloff.callOffDate) &&
-        Objects.equals(this.quantity, calloff.quantity) &&
-        Objects.equals(this.description, calloff.description);
+    ShipmentContainer shipmentContainer = (ShipmentContainer) o;
+    return Objects.equals(this.containerNumber, shipmentContainer.containerNumber) &&
+        Objects.equals(this.sealNumber, shipmentContainer.sealNumber) &&
+        Objects.equals(this.containerType, shipmentContainer.containerType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callOffDate, quantity, description);
+    return Objects.hash(containerNumber, sealNumber, containerType);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Calloff {\n");
+    sb.append("class ShipmentContainer {\n");
     
-    sb.append("    callOffDate: ").append(toIndentedString(callOffDate)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    containerNumber: ").append(toIndentedString(containerNumber)).append("\n");
+    sb.append("    sealNumber: ").append(toIndentedString(sealNumber)).append("\n");
+    sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

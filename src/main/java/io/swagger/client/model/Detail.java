@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.     ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -25,7 +25,7 @@ import java.io.IOException;
  * Detail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
 public class Detail {
   @SerializedName("type")
@@ -64,10 +64,10 @@ public class Detail {
   }
 
    /**
-   * Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries. 
+   * Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries.
    * @return type
   **/
-  @Schema(example = "SENDER", required = true, description = "Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries. ")
+  @Schema(example = "SENDER", required = true, description = "Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries.")
   public String getType() {
     return type;
   }

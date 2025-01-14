@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.     ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -25,7 +25,7 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-03-30T12:18:39.751063444Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
 public class Goods {
   @SerializedName("pos")
@@ -183,6 +183,9 @@ public class Goods {
 
   @SerializedName("packlineId")
   private String packlineId = "";
+
+  @SerializedName("shipmentContainer")
+  private AllOfGoodsShipmentContainer shipmentContainer = null;
 
   @SerializedName("importId")
   private String importId = null;
@@ -853,6 +856,24 @@ public class Goods {
     this.packlineId = packlineId;
   }
 
+  public Goods shipmentContainer(AllOfGoodsShipmentContainer shipmentContainer) {
+    this.shipmentContainer = shipmentContainer;
+    return this;
+  }
+
+   /**
+   * Get shipmentContainer
+   * @return shipmentContainer
+  **/
+  @Schema(description = "")
+  public AllOfGoodsShipmentContainer getShipmentContainer() {
+    return shipmentContainer;
+  }
+
+  public void setShipmentContainer(AllOfGoodsShipmentContainer shipmentContainer) {
+    this.shipmentContainer = shipmentContainer;
+  }
+
   public Goods importId(String importId) {
     this.importId = importId;
     return this;
@@ -918,12 +939,13 @@ public class Goods {
         Objects.equals(this.addPieces, goods.addPieces) &&
         Objects.equals(this.receiptId, goods.receiptId) &&
         Objects.equals(this.packlineId, goods.packlineId) &&
+        Objects.equals(this.shipmentContainer, goods.shipmentContainer) &&
         Objects.equals(this.importId, goods.importId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, secured, stackable, shockwatch, addPieces, receiptId, packlineId, importId);
+    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, secured, stackable, shockwatch, addPieces, receiptId, packlineId, shipmentContainer, importId);
   }
 
 
@@ -969,6 +991,7 @@ public class Goods {
     sb.append("    addPieces: ").append(toIndentedString(addPieces)).append("\n");
     sb.append("    receiptId: ").append(toIndentedString(receiptId)).append("\n");
     sb.append("    packlineId: ").append(toIndentedString(packlineId)).append("\n");
+    sb.append("    shipmentContainer: ").append(toIndentedString(shipmentContainer)).append("\n");
     sb.append("    importId: ").append(toIndentedString(importId)).append("\n");
     sb.append("}");
     return sb.toString();

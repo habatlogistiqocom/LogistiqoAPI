@@ -14,14 +14,14 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.AddressObject;
+import io.swagger.client.model.BillOfLading;
 /**
- * AllOfManifestShipper
+ * AllOfManifestBillOfLading
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
-public class AllOfManifestShipper extends AddressObject {
+public class AllOfManifestBillOfLading extends BillOfLading {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -43,7 +43,7 @@ public class AllOfManifestShipper extends AddressObject {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfManifestShipper {\n");
+    sb.append("class AllOfManifestBillOfLading {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

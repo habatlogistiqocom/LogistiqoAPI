@@ -22,73 +22,94 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Calloff
+ * Segment
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
-public class Calloff {
-  @SerializedName("callOffDate")
-  private String callOffDate = null;
+public class Segment {
+  @SerializedName("code")
+  private String code = null;
 
-  @SerializedName("quantity")
-  private Integer quantity = null;
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("description")
-  private String description = null;
+  @SerializedName("carrierCode")
+  private String carrierCode = null;
 
-  public Calloff callOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  @SerializedName("carrierName")
+  private String carrierName = null;
+
+  public Segment code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item
-   * @return callOffDate
+   * The code representing the airport in UN/LOCODE format, typically i (e.g., DEFRA, USJFK).
+   * @return code
   **/
-  @Schema(example = "yyMMdd", description = "When entering a new goods item into the goods array, make sure to start with position 1 for the first item and add 1 to the position of the previous item for each subsequent item")
-  public String getCallOffDate() {
-    return callOffDate;
+  @Schema(description = "The code representing the airport in UN/LOCODE format, typically i (e.g., DEFRA, USJFK).")
+  public String getCode() {
+    return code;
   }
 
-  public void setCallOffDate(String callOffDate) {
-    this.callOffDate = callOffDate;
+  public void setCode(String code) {
+    this.code = code;
   }
 
-  public Calloff quantity(Integer quantity) {
-    this.quantity = quantity;
+  public Segment name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Provide a call-off quantity of the goods.
-   * @return quantity
+   * The name of the airport.
+   * @return name
   **/
-  @Schema(description = "Provide a call-off quantity of the goods.")
-  public Integer getQuantity() {
-    return quantity;
+  @Schema(description = "The name of the airport.")
+  public String getName() {
+    return name;
   }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Calloff description(String description) {
-    this.description = description;
+  public Segment carrierCode(String carrierCode) {
+    this.carrierCode = carrierCode;
     return this;
   }
 
    /**
-   * Provide a reference of the goods.
-   * @return description
+   * The code representing the airline, typically in IATA format (e.g., LH for Lufthansa).
+   * @return carrierCode
   **/
-  @Schema(description = "Provide a reference of the goods.")
-  public String getDescription() {
-    return description;
+  @Schema(description = "The code representing the airline, typically in IATA format (e.g., LH for Lufthansa).")
+  public String getCarrierCode() {
+    return carrierCode;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setCarrierCode(String carrierCode) {
+    this.carrierCode = carrierCode;
+  }
+
+  public Segment carrierName(String carrierName) {
+    this.carrierName = carrierName;
+    return this;
+  }
+
+   /**
+   * The name of the airline.
+   * @return carrierName
+  **/
+  @Schema(description = "The name of the airline.")
+  public String getCarrierName() {
+    return carrierName;
+  }
+
+  public void setCarrierName(String carrierName) {
+    this.carrierName = carrierName;
   }
 
 
@@ -100,26 +121,28 @@ public class Calloff {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Calloff calloff = (Calloff) o;
-    return Objects.equals(this.callOffDate, calloff.callOffDate) &&
-        Objects.equals(this.quantity, calloff.quantity) &&
-        Objects.equals(this.description, calloff.description);
+    Segment segment = (Segment) o;
+    return Objects.equals(this.code, segment.code) &&
+        Objects.equals(this.name, segment.name) &&
+        Objects.equals(this.carrierCode, segment.carrierCode) &&
+        Objects.equals(this.carrierName, segment.carrierName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callOffDate, quantity, description);
+    return Objects.hash(code, name, carrierCode, carrierName);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Calloff {\n");
+    sb.append("class Segment {\n");
     
-    sb.append("    callOffDate: ").append(toIndentedString(callOffDate)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
+    sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,6 +1,6 @@
 /*
  * LogistiqoAPI
- *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.       ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
+ *   - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)   An API, or Application Programming Interface, is a set of protocols,   routines, and tools that enable different software applications to   communicate and exchange data with each other. It defines how software   components should interact and helps to simplify software development by   abstracting the underlying implementation. APIs are essential for building   complex and interconnected software systems.     ## Contact Us     If you have problems or questions, please read the following information:     - [FAQ](https://www.logistiqo.com/faq/)    - [Contact us](https://www.logistiqo.com/contact.php)     To stay informed about the latest developments, you can     - Follow us on [Twitter](https://twitter.com/logistiqo/),
  *
  * OpenAPI spec version: 1.0
  * Contact: info@logistiqo.com
@@ -30,7 +30,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-13T18:01:28.570388645Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -123,6 +123,12 @@ public class Manifest {
   @SerializedName("unitLoadDevices")
   private List<UnitLoadDevice> unitLoadDevices = null;
 
+  @SerializedName("airWaybill")
+  private AllOfManifestAirWaybill airWaybill = null;
+
+  @SerializedName("billOfLading")
+  private AllOfManifestBillOfLading billOfLading = null;
+
   @SerializedName("error")
   private Boolean error = null;
 
@@ -192,10 +198,10 @@ public class Manifest {
   }
 
    /**
-   * This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         
+   * This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.
    * @return manifestNumber
   **/
-  @Schema(description = "This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         ")
+  @Schema(description = "This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.")
   public String getManifestNumber() {
     return manifestNumber;
   }
@@ -680,6 +686,42 @@ public class Manifest {
     this.unitLoadDevices = unitLoadDevices;
   }
 
+  public Manifest airWaybill(AllOfManifestAirWaybill airWaybill) {
+    this.airWaybill = airWaybill;
+    return this;
+  }
+
+   /**
+   * Get airWaybill
+   * @return airWaybill
+  **/
+  @Schema(description = "")
+  public AllOfManifestAirWaybill getAirWaybill() {
+    return airWaybill;
+  }
+
+  public void setAirWaybill(AllOfManifestAirWaybill airWaybill) {
+    this.airWaybill = airWaybill;
+  }
+
+  public Manifest billOfLading(AllOfManifestBillOfLading billOfLading) {
+    this.billOfLading = billOfLading;
+    return this;
+  }
+
+   /**
+   * Get billOfLading
+   * @return billOfLading
+  **/
+  @Schema(description = "")
+  public AllOfManifestBillOfLading getBillOfLading() {
+    return billOfLading;
+  }
+
+  public void setBillOfLading(AllOfManifestBillOfLading billOfLading) {
+    this.billOfLading = billOfLading;
+  }
+
   public Manifest error(Boolean error) {
     this.error = error;
     return this;
@@ -790,6 +832,8 @@ public class Manifest {
         Objects.equals(this.shipper, manifest.shipper) &&
         Objects.equals(this.consignee, manifest.consignee) &&
         Objects.equals(this.unitLoadDevices, manifest.unitLoadDevices) &&
+        Objects.equals(this.airWaybill, manifest.airWaybill) &&
+        Objects.equals(this.billOfLading, manifest.billOfLading) &&
         Objects.equals(this.error, manifest.error) &&
         Objects.equals(this.manifestGoods, manifest.manifestGoods) &&
         Objects.equals(this.shipments, manifest.shipments);
@@ -797,7 +841,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, typeTSC, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, error, manifestGoods, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, typeTSC, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, airWaybill, billOfLading, error, manifestGoods, shipments);
   }
 
 
@@ -836,6 +880,8 @@ public class Manifest {
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
     sb.append("    unitLoadDevices: ").append(toIndentedString(unitLoadDevices)).append("\n");
+    sb.append("    airWaybill: ").append(toIndentedString(airWaybill)).append("\n");
+    sb.append("    billOfLading: ").append(toIndentedString(billOfLading)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    manifestGoods: ").append(toIndentedString(manifestGoods)).append("\n");
     sb.append("    shipments: ").append(toIndentedString(shipments)).append("\n");
