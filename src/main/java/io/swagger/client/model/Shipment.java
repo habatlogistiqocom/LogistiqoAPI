@@ -24,6 +24,7 @@ import io.swagger.client.model.Detail;
 import io.swagger.client.model.Goods;
 import io.swagger.client.model.NotifiedGoods;
 import io.swagger.client.model.Service;
+import io.swagger.client.model.ShipmentContainer;
 import io.swagger.client.model.Status;
 import io.swagger.client.model.UploadedFile;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -34,7 +35,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -150,6 +151,9 @@ public class Shipment {
 
   @SerializedName("details")
   private List<Detail> details = new ArrayList<Detail>();
+
+  @SerializedName("shipmentContainers")
+  private List<ShipmentContainer> shipmentContainers = null;
 
   @SerializedName("goodss")
   private List<Goods> goodss = new ArrayList<Goods>();
@@ -858,6 +862,32 @@ public class Shipment {
     this.details = details;
   }
 
+  public Shipment shipmentContainers(List<ShipmentContainer> shipmentContainers) {
+    this.shipmentContainers = shipmentContainers;
+    return this;
+  }
+
+  public Shipment addShipmentContainersItem(ShipmentContainer shipmentContainersItem) {
+    if (this.shipmentContainers == null) {
+      this.shipmentContainers = new ArrayList<ShipmentContainer>();
+    }
+    this.shipmentContainers.add(shipmentContainersItem);
+    return this;
+  }
+
+   /**
+   * Get shipmentContainers
+   * @return shipmentContainers
+  **/
+  @Schema(description = "")
+  public List<ShipmentContainer> getShipmentContainers() {
+    return shipmentContainers;
+  }
+
+  public void setShipmentContainers(List<ShipmentContainer> shipmentContainers) {
+    this.shipmentContainers = shipmentContainers;
+  }
+
   public Shipment goodss(List<Goods> goodss) {
     this.goodss = goodss;
     return this;
@@ -1059,6 +1089,7 @@ public class Shipment {
         Objects.equals(this.customer, shipment.customer) &&
         Objects.equals(this.invoiceReceiver, shipment.invoiceReceiver) &&
         Objects.equals(this.details, shipment.details) &&
+        Objects.equals(this.shipmentContainers, shipment.shipmentContainers) &&
         Objects.equals(this.goodss, shipment.goodss) &&
         Objects.equals(this.notifiedGoodss, shipment.notifiedGoodss) &&
         Objects.equals(this.calloffs, shipment.calloffs) &&
@@ -1069,7 +1100,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1116,6 +1147,7 @@ public class Shipment {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    invoiceReceiver: ").append(toIndentedString(invoiceReceiver)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    shipmentContainers: ").append(toIndentedString(shipmentContainers)).append("\n");
     sb.append("    goodss: ").append(toIndentedString(goodss)).append("\n");
     sb.append("    notifiedGoodss: ").append(toIndentedString(notifiedGoodss)).append("\n");
     sb.append("    calloffs: ").append(toIndentedString(calloffs)).append("\n");

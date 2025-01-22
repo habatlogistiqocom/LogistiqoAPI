@@ -25,7 +25,7 @@ import java.io.IOException;
  * BillOfLading
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T20:10:49.920826874Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class BillOfLading {
   @SerializedName("billOfLadingNumber")

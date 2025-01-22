@@ -28,7 +28,7 @@ import java.util.List;
  * Contract
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class Contract {
   @SerializedName("id")

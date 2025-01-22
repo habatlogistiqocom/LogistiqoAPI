@@ -19,13 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.Goods;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * ShipmentContainer
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class ShipmentContainer {
   @SerializedName("containerNumber")
@@ -36,6 +39,9 @@ public class ShipmentContainer {
 
   @SerializedName("containerType")
   private String containerType = null;
+
+  @SerializedName("goodss")
+  private List<Goods> goodss = null;
 
   public ShipmentContainer containerNumber(String containerNumber) {
     this.containerNumber = containerNumber;
@@ -91,6 +97,32 @@ public class ShipmentContainer {
     this.containerType = containerType;
   }
 
+  public ShipmentContainer goodss(List<Goods> goodss) {
+    this.goodss = goodss;
+    return this;
+  }
+
+  public ShipmentContainer addGoodssItem(Goods goodssItem) {
+    if (this.goodss == null) {
+      this.goodss = new ArrayList<Goods>();
+    }
+    this.goodss.add(goodssItem);
+    return this;
+  }
+
+   /**
+   * Get goodss
+   * @return goodss
+  **/
+  @Schema(description = "")
+  public List<Goods> getGoodss() {
+    return goodss;
+  }
+
+  public void setGoodss(List<Goods> goodss) {
+    this.goodss = goodss;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +135,13 @@ public class ShipmentContainer {
     ShipmentContainer shipmentContainer = (ShipmentContainer) o;
     return Objects.equals(this.containerNumber, shipmentContainer.containerNumber) &&
         Objects.equals(this.sealNumber, shipmentContainer.sealNumber) &&
-        Objects.equals(this.containerType, shipmentContainer.containerType);
+        Objects.equals(this.containerType, shipmentContainer.containerType) &&
+        Objects.equals(this.goodss, shipmentContainer.goodss);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(containerNumber, sealNumber, containerType);
+    return Objects.hash(containerNumber, sealNumber, containerType, goodss);
   }
 
 
@@ -120,6 +153,7 @@ public class ShipmentContainer {
     sb.append("    containerNumber: ").append(toIndentedString(containerNumber)).append("\n");
     sb.append("    sealNumber: ").append(toIndentedString(sealNumber)).append("\n");
     sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
+    sb.append("    goodss: ").append(toIndentedString(goodss)).append("\n");
     sb.append("}");
     return sb.toString();
   }

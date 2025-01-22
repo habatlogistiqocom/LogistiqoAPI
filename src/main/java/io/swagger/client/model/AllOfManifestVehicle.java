@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.
  */
 @Schema(description = "In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class AllOfManifestVehicle extends Vehicle {
 

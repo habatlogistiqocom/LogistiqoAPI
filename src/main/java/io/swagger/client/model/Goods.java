@@ -25,7 +25,7 @@ import java.io.IOException;
  * Goods
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-13T19:30:10.201634130Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
 
 public class Goods {
   @SerializedName("pos")
@@ -184,8 +184,8 @@ public class Goods {
   @SerializedName("packlineId")
   private String packlineId = "";
 
-  @SerializedName("shipmentContainer")
-  private AllOfGoodsShipmentContainer shipmentContainer = null;
+  @SerializedName("containerNumber")
+  private String containerNumber = null;
 
   @SerializedName("importId")
   private String importId = null;
@@ -856,22 +856,22 @@ public class Goods {
     this.packlineId = packlineId;
   }
 
-  public Goods shipmentContainer(AllOfGoodsShipmentContainer shipmentContainer) {
-    this.shipmentContainer = shipmentContainer;
+  public Goods containerNumber(String containerNumber) {
+    this.containerNumber = containerNumber;
     return this;
   }
 
    /**
-   * Get shipmentContainer
-   * @return shipmentContainer
+   * The unique identifier for the container, typically alphanumeric.
+   * @return containerNumber
   **/
-  @Schema(description = "")
-  public AllOfGoodsShipmentContainer getShipmentContainer() {
-    return shipmentContainer;
+  @Schema(example = "ABCD1234567", description = "The unique identifier for the container, typically alphanumeric.")
+  public String getContainerNumber() {
+    return containerNumber;
   }
 
-  public void setShipmentContainer(AllOfGoodsShipmentContainer shipmentContainer) {
-    this.shipmentContainer = shipmentContainer;
+  public void setContainerNumber(String containerNumber) {
+    this.containerNumber = containerNumber;
   }
 
   public Goods importId(String importId) {
@@ -939,13 +939,13 @@ public class Goods {
         Objects.equals(this.addPieces, goods.addPieces) &&
         Objects.equals(this.receiptId, goods.receiptId) &&
         Objects.equals(this.packlineId, goods.packlineId) &&
-        Objects.equals(this.shipmentContainer, goods.shipmentContainer) &&
+        Objects.equals(this.containerNumber, goods.containerNumber) &&
         Objects.equals(this.importId, goods.importId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, secured, stackable, shockwatch, addPieces, receiptId, packlineId, shipmentContainer, importId);
+    return Objects.hash(pos, name, description, articleName, articleNumber, reference, constructionIndex, serialNumber, loadCarrier, lotNumber, warehouseSlot, unit, pieces, weight, volume, ldm, length, width, height, codAmount, goodsValue, supplier, largeLoadCarriers, smallLoadCarriers, temperatureRange, setpoint, temperatureType, maxTemp, minTemp, dangerousGoods, xray, secured, stackable, shockwatch, addPieces, receiptId, packlineId, containerNumber, importId);
   }
 
 
@@ -991,7 +991,7 @@ public class Goods {
     sb.append("    addPieces: ").append(toIndentedString(addPieces)).append("\n");
     sb.append("    receiptId: ").append(toIndentedString(receiptId)).append("\n");
     sb.append("    packlineId: ").append(toIndentedString(packlineId)).append("\n");
-    sb.append("    shipmentContainer: ").append(toIndentedString(shipmentContainer)).append("\n");
+    sb.append("    containerNumber: ").append(toIndentedString(containerNumber)).append("\n");
     sb.append("    importId: ").append(toIndentedString(importId)).append("\n");
     sb.append("}");
     return sb.toString();
