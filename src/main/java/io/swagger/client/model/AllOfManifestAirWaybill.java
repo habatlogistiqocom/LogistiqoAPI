@@ -21,7 +21,7 @@ import java.util.List;
  * AllOfManifestAirWaybill
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
 
 public class AllOfManifestAirWaybill extends AirWaybill {
 

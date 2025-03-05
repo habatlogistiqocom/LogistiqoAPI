@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Carrier
+ * CarrierInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
 
-public class Carrier {
+public class CarrierInfo {
   @SerializedName("name")
   private String name = null;
 
@@ -43,16 +43,16 @@ public class Carrier {
   @SerializedName("vessel")
   private String vessel = null;
 
-  public Carrier name(String name) {
+  public CarrierInfo name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * The name of the carrier or shipping company responsible for transporting  the goods. 
+   * The name of the carrier or shipping company responsible for transporting  the goods.
    * @return name
   **/
-  @Schema(example = "Maersk, DHL, FedEx.", description = "The name of the carrier or shipping company responsible for transporting  the goods. ")
+  @Schema(example = "Maersk, DHL, FedEx.", description = "The name of the carrier or shipping company responsible for transporting  the goods.")
   public String getName() {
     return name;
   }
@@ -61,16 +61,16 @@ public class Carrier {
     this.name = name;
   }
 
-  public Carrier scac(String scac) {
+  public CarrierInfo scac(String scac) {
     this.scac = scac;
     return this;
   }
 
    /**
-   * The Standard Carrier Alpha Code (SCAC) is a unique two to four-letter code  used to identify transportation carriers in the shipping industry. 
+   * The Standard Carrier Alpha Code (SCAC) is a unique two to four-letter code  used to identify transportation carriers in the shipping industry.
    * @return scac
   **/
-  @Schema(example = "MAEU (for Maersk), UPSN (for UPS).", description = "The Standard Carrier Alpha Code (SCAC) is a unique two to four-letter code  used to identify transportation carriers in the shipping industry. ")
+  @Schema(example = "MAEU (for Maersk), UPSN (for UPS).", description = "The Standard Carrier Alpha Code (SCAC) is a unique two to four-letter code  used to identify transportation carriers in the shipping industry.")
   public String getScac() {
     return scac;
   }
@@ -79,7 +79,7 @@ public class Carrier {
     this.scac = scac;
   }
 
-  public Carrier bookingReferenceNumber(String bookingReferenceNumber) {
+  public CarrierInfo bookingReferenceNumber(String bookingReferenceNumber) {
     this.bookingReferenceNumber = bookingReferenceNumber;
     return this;
   }
@@ -97,16 +97,16 @@ public class Carrier {
     this.bookingReferenceNumber = bookingReferenceNumber;
   }
 
-  public Carrier voyageNumber(String voyageNumber) {
+  public CarrierInfo voyageNumber(String voyageNumber) {
     this.voyageNumber = voyageNumber;
     return this;
   }
 
    /**
-   * The unique identifier assigned to a specific voyage of a vessel,  used for tracking and logistics purposes. Typically assigned by the carrier. 
+   * The unique identifier assigned to a specific voyage of a vessel,  used for tracking and logistics purposes. Typically assigned by the carrier.
    * @return voyageNumber
   **/
-  @Schema(example = "1234E or MA12345.", description = "The unique identifier assigned to a specific voyage of a vessel,  used for tracking and logistics purposes. Typically assigned by the carrier. ")
+  @Schema(example = "1234E or MA12345.", description = "The unique identifier assigned to a specific voyage of a vessel,  used for tracking and logistics purposes. Typically assigned by the carrier.")
   public String getVoyageNumber() {
     return voyageNumber;
   }
@@ -115,7 +115,7 @@ public class Carrier {
     this.voyageNumber = voyageNumber;
   }
 
-  public Carrier vessel(String vessel) {
+  public CarrierInfo vessel(String vessel) {
     this.vessel = vessel;
     return this;
   }
@@ -142,12 +142,12 @@ public class Carrier {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Carrier carrier = (Carrier) o;
-    return Objects.equals(this.name, carrier.name) &&
-        Objects.equals(this.scac, carrier.scac) &&
-        Objects.equals(this.bookingReferenceNumber, carrier.bookingReferenceNumber) &&
-        Objects.equals(this.voyageNumber, carrier.voyageNumber) &&
-        Objects.equals(this.vessel, carrier.vessel);
+    CarrierInfo carrierInfo = (CarrierInfo) o;
+    return Objects.equals(this.name, carrierInfo.name) &&
+        Objects.equals(this.scac, carrierInfo.scac) &&
+        Objects.equals(this.bookingReferenceNumber, carrierInfo.bookingReferenceNumber) &&
+        Objects.equals(this.voyageNumber, carrierInfo.voyageNumber) &&
+        Objects.equals(this.vessel, carrierInfo.vessel);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class Carrier {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Carrier {\n");
+    sb.append("class CarrierInfo {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    scac: ").append(toIndentedString(scac)).append("\n");

@@ -25,7 +25,7 @@ import java.io.IOException;
  * BillOfLading
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
 
 public class BillOfLading {
   @SerializedName("billOfLadingNumber")
@@ -36,9 +36,6 @@ public class BillOfLading {
 
   @SerializedName("notifyParty")
   private String notifyParty = null;
-
-  @SerializedName("feederVessel")
-  private String feederVessel = null;
 
   @SerializedName("portOfLoading")
   private String portOfLoading = null;
@@ -88,11 +85,11 @@ public class BillOfLading {
   @SerializedName("agentLetterOfCredit")
   private String agentLetterOfCredit = null;
 
-  @SerializedName("carrier")
-  private AllOfBillOfLadingCarrier carrier = null;
+  @SerializedName("carrierInfo")
+  private AllOfBillOfLadingCarrierInfo carrierInfo = null;
 
-  @SerializedName("carrierFeederVessel")
-  private AllOfBillOfLadingCarrierFeederVessel carrierFeederVessel = null;
+  @SerializedName("carrierInfoFeeder")
+  private AllOfBillOfLadingCarrierInfoFeeder carrierInfoFeeder = null;
 
   @SerializedName("mrn")
   private String mrn = null;
@@ -179,24 +176,6 @@ public class BillOfLading {
 
   public void setNotifyParty(String notifyParty) {
     this.notifyParty = notifyParty;
-  }
-
-  public BillOfLading feederVessel(String feederVessel) {
-    this.feederVessel = feederVessel;
-    return this;
-  }
-
-   /**
-   * The feeder vessel transporting goods to the main shipping vessel. 
-   * @return feederVessel
-  **/
-  @Schema(description = "The feeder vessel transporting goods to the main shipping vessel. ")
-  public String getFeederVessel() {
-    return feederVessel;
-  }
-
-  public void setFeederVessel(String feederVessel) {
-    this.feederVessel = feederVessel;
   }
 
   public BillOfLading portOfLoading(String portOfLoading) {
@@ -487,40 +466,40 @@ public class BillOfLading {
     this.agentLetterOfCredit = agentLetterOfCredit;
   }
 
-  public BillOfLading carrier(AllOfBillOfLadingCarrier carrier) {
-    this.carrier = carrier;
+  public BillOfLading carrierInfo(AllOfBillOfLadingCarrierInfo carrierInfo) {
+    this.carrierInfo = carrierInfo;
     return this;
   }
 
    /**
    * The carrier responsible for transporting the goods. This includes details such as  the carrier&#x27;s name and SCAC code.
-   * @return carrier
+   * @return carrierInfo
   **/
   @Schema(description = "The carrier responsible for transporting the goods. This includes details such as  the carrier's name and SCAC code.")
-  public AllOfBillOfLadingCarrier getCarrier() {
-    return carrier;
+  public AllOfBillOfLadingCarrierInfo getCarrierInfo() {
+    return carrierInfo;
   }
 
-  public void setCarrier(AllOfBillOfLadingCarrier carrier) {
-    this.carrier = carrier;
+  public void setCarrierInfo(AllOfBillOfLadingCarrierInfo carrierInfo) {
+    this.carrierInfo = carrierInfo;
   }
 
-  public BillOfLading carrierFeederVessel(AllOfBillOfLadingCarrierFeederVessel carrierFeederVessel) {
-    this.carrierFeederVessel = carrierFeederVessel;
+  public BillOfLading carrierInfoFeeder(AllOfBillOfLadingCarrierInfoFeeder carrierInfoFeeder) {
+    this.carrierInfoFeeder = carrierInfoFeeder;
     return this;
   }
 
    /**
    * The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier&#x27;s name and SCAC code.
-   * @return carrierFeederVessel
+   * @return carrierInfoFeeder
   **/
   @Schema(description = "The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier's name and SCAC code.")
-  public AllOfBillOfLadingCarrierFeederVessel getCarrierFeederVessel() {
-    return carrierFeederVessel;
+  public AllOfBillOfLadingCarrierInfoFeeder getCarrierInfoFeeder() {
+    return carrierInfoFeeder;
   }
 
-  public void setCarrierFeederVessel(AllOfBillOfLadingCarrierFeederVessel carrierFeederVessel) {
-    this.carrierFeederVessel = carrierFeederVessel;
+  public void setCarrierInfoFeeder(AllOfBillOfLadingCarrierInfoFeeder carrierInfoFeeder) {
+    this.carrierInfoFeeder = carrierInfoFeeder;
   }
 
   public BillOfLading mrn(String mrn) {
@@ -734,7 +713,6 @@ public class BillOfLading {
     return Objects.equals(this.billOfLadingNumber, billOfLading.billOfLadingNumber) &&
         Objects.equals(this.masterBillOfLadingNumber, billOfLading.masterBillOfLadingNumber) &&
         Objects.equals(this.notifyParty, billOfLading.notifyParty) &&
-        Objects.equals(this.feederVessel, billOfLading.feederVessel) &&
         Objects.equals(this.portOfLoading, billOfLading.portOfLoading) &&
         Objects.equals(this.portOfLoadingName, billOfLading.portOfLoadingName) &&
         Objects.equals(this.portOfDischarge, billOfLading.portOfDischarge) &&
@@ -751,8 +729,8 @@ public class BillOfLading {
         Objects.equals(this.shipper, billOfLading.shipper) &&
         Objects.equals(this.consignee, billOfLading.consignee) &&
         Objects.equals(this.agentLetterOfCredit, billOfLading.agentLetterOfCredit) &&
-        Objects.equals(this.carrier, billOfLading.carrier) &&
-        Objects.equals(this.carrierFeederVessel, billOfLading.carrierFeederVessel) &&
+        Objects.equals(this.carrierInfo, billOfLading.carrierInfo) &&
+        Objects.equals(this.carrierInfoFeeder, billOfLading.carrierInfoFeeder) &&
         Objects.equals(this.mrn, billOfLading.mrn) &&
         Objects.equals(this.mrnStorage, billOfLading.mrnStorage) &&
         Objects.equals(this.prePaperType, billOfLading.prePaperType) &&
@@ -768,7 +746,7 @@ public class BillOfLading {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billOfLadingNumber, masterBillOfLadingNumber, notifyParty, feederVessel, portOfLoading, portOfLoadingName, portOfDischarge, portOfDischargeName, placeOfReceipt, placeOfReceiptName, placeOfDelivery, placeOfDeliveryName, typeOfMove, freightPayableAt, billOfLadingCount, notifyParty1, notifyParty2, shipper, consignee, agentLetterOfCredit, carrier, carrierFeederVessel, mrn, mrnStorage, prePaperType, containerized, surrendered, prepaid, letterOfCredit, estimatedTimeOfDeparture, estimatedTimeOfArrival, dateOfIssue, placeOfIssue);
+    return Objects.hash(billOfLadingNumber, masterBillOfLadingNumber, notifyParty, portOfLoading, portOfLoadingName, portOfDischarge, portOfDischargeName, placeOfReceipt, placeOfReceiptName, placeOfDelivery, placeOfDeliveryName, typeOfMove, freightPayableAt, billOfLadingCount, notifyParty1, notifyParty2, shipper, consignee, agentLetterOfCredit, carrierInfo, carrierInfoFeeder, mrn, mrnStorage, prePaperType, containerized, surrendered, prepaid, letterOfCredit, estimatedTimeOfDeparture, estimatedTimeOfArrival, dateOfIssue, placeOfIssue);
   }
 
 
@@ -780,7 +758,6 @@ public class BillOfLading {
     sb.append("    billOfLadingNumber: ").append(toIndentedString(billOfLadingNumber)).append("\n");
     sb.append("    masterBillOfLadingNumber: ").append(toIndentedString(masterBillOfLadingNumber)).append("\n");
     sb.append("    notifyParty: ").append(toIndentedString(notifyParty)).append("\n");
-    sb.append("    feederVessel: ").append(toIndentedString(feederVessel)).append("\n");
     sb.append("    portOfLoading: ").append(toIndentedString(portOfLoading)).append("\n");
     sb.append("    portOfLoadingName: ").append(toIndentedString(portOfLoadingName)).append("\n");
     sb.append("    portOfDischarge: ").append(toIndentedString(portOfDischarge)).append("\n");
@@ -797,8 +774,8 @@ public class BillOfLading {
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
     sb.append("    agentLetterOfCredit: ").append(toIndentedString(agentLetterOfCredit)).append("\n");
-    sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
-    sb.append("    carrierFeederVessel: ").append(toIndentedString(carrierFeederVessel)).append("\n");
+    sb.append("    carrierInfo: ").append(toIndentedString(carrierInfo)).append("\n");
+    sb.append("    carrierInfoFeeder: ").append(toIndentedString(carrierInfoFeeder)).append("\n");
     sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
     sb.append("    mrnStorage: ").append(toIndentedString(mrnStorage)).append("\n");
     sb.append("    prePaperType: ").append(toIndentedString(prePaperType)).append("\n");

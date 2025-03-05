@@ -14,15 +14,15 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.Carrier;
+import io.swagger.client.model.CarrierInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * The carrier responsible for transporting the goods. This includes details such as  the carrier&#x27;s name and SCAC code.
+ * The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier&#x27;s name and SCAC code.
  */
-@Schema(description = "The carrier responsible for transporting the goods. This includes details such as  the carrier's name and SCAC code.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
+@Schema(description = "The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier's name and SCAC code.")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
 
-public class AllOfBillOfLadingCarrier extends Carrier {
+public class AllOfBillOfLadingCarrierInfoFeeder extends CarrierInfo {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -44,7 +44,7 @@ public class AllOfBillOfLadingCarrier extends Carrier {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfBillOfLadingCarrier {\n");
+    sb.append("class AllOfBillOfLadingCarrierInfoFeeder {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
