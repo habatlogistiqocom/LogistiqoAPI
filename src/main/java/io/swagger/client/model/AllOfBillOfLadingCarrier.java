@@ -14,14 +14,15 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.BillOfLading;
+import io.swagger.client.model.Carrier;
+import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * AllOfManifestBillOfLading
+ * The carrier responsible for transporting the goods. This includes details such as  the carrier&#x27;s name and SCAC code.
  */
-
+@Schema(description = "The carrier responsible for transporting the goods. This includes details such as  the carrier's name and SCAC code.")
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
 
-public class AllOfManifestBillOfLading extends BillOfLading {
+public class AllOfBillOfLadingCarrier extends Carrier {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -43,7 +44,7 @@ public class AllOfManifestBillOfLading extends BillOfLading {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfManifestBillOfLading {\n");
+    sb.append("class AllOfBillOfLadingCarrier {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

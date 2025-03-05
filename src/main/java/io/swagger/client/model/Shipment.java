@@ -35,7 +35,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -76,6 +76,9 @@ public class Shipment {
 
   @SerializedName("paymentTerms")
   private AllOfShipmentPaymentTerms paymentTerms = null;
+
+  @SerializedName("incoterm")
+  private String incoterm = null;
 
   @SerializedName("securedStatus")
   private String securedStatus = null;
@@ -405,6 +408,24 @@ public class Shipment {
 
   public void setPaymentTerms(AllOfShipmentPaymentTerms paymentTerms) {
     this.paymentTerms = paymentTerms;
+  }
+
+  public Shipment incoterm(String incoterm) {
+    this.incoterm = incoterm;
+    return this;
+  }
+
+   /**
+   * Please specify the Incoterm, which defines the responsibilities of buyers and sellers  for the delivery of goods, including costs, risks, and logistics arrangements.  Common examples include EXW (Ex Works), FOB (Free on Board), and DAP (Delivered at Place)
+   * @return incoterm
+  **/
+  @Schema(example = "EXW", description = "Please specify the Incoterm, which defines the responsibilities of buyers and sellers  for the delivery of goods, including costs, risks, and logistics arrangements.  Common examples include EXW (Ex Works), FOB (Free on Board), and DAP (Delivered at Place)")
+  public String getIncoterm() {
+    return incoterm;
+  }
+
+  public void setIncoterm(String incoterm) {
+    this.incoterm = incoterm;
   }
 
   public Shipment securedStatus(String securedStatus) {
@@ -1064,6 +1085,7 @@ public class Shipment {
         Objects.equals(this.hawb, shipment.hawb) &&
         Objects.equals(this.shipmentType, shipment.shipmentType) &&
         Objects.equals(this.paymentTerms, shipment.paymentTerms) &&
+        Objects.equals(this.incoterm, shipment.incoterm) &&
         Objects.equals(this.securedStatus, shipment.securedStatus) &&
         Objects.equals(this.branch, shipment.branch) &&
         Objects.equals(this.description, shipment.description) &&
@@ -1100,7 +1122,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, incoterm, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1122,6 +1144,7 @@ public class Shipment {
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
+    sb.append("    incoterm: ").append(toIndentedString(incoterm)).append("\n");
     sb.append("    securedStatus: ").append(toIndentedString(securedStatus)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");

@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.
  */
 @Schema(description = "In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-16T18:31:32.312612713Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-02T23:27:34.365347564Z[GMT]")
 
 public class AllOfManifestSubcontractor extends CompanyObject {
 
