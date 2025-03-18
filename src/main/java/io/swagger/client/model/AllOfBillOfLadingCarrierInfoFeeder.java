@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier&#x27;s name and SCAC code.
  */
 @Schema(description = "The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier's name and SCAC code.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
 
 public class AllOfBillOfLadingCarrierInfoFeeder extends Carrier {
 

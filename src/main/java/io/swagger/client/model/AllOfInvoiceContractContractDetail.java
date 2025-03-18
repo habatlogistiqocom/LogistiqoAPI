@@ -19,7 +19,7 @@ import io.swagger.client.model.ContractDetail;
  * AllOfInvoiceContractContractDetail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
 
 public class AllOfInvoiceContractContractDetail extends ContractDetail {
 

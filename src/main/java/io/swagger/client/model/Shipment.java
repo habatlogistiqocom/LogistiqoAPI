@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.AdditionalReference;
 import io.swagger.client.model.Calloff;
 import io.swagger.client.model.Detail;
 import io.swagger.client.model.Goods;
@@ -36,7 +35,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -146,9 +145,6 @@ public class Shipment {
 
   @SerializedName("idStockStatus")
   private Integer idStockStatus = 0;
-
-  @SerializedName("additionalreferences")
-  private List<AdditionalReference> additionalreferences = null;
 
   @SerializedName("customer")
   private AllOfShipmentCustomer customer = null;
@@ -828,32 +824,6 @@ public class Shipment {
     this.idStockStatus = idStockStatus;
   }
 
-  public Shipment additionalreferences(List<AdditionalReference> additionalreferences) {
-    this.additionalreferences = additionalreferences;
-    return this;
-  }
-
-  public Shipment addAdditionalreferencesItem(AdditionalReference additionalreferencesItem) {
-    if (this.additionalreferences == null) {
-      this.additionalreferences = new ArrayList<AdditionalReference>();
-    }
-    this.additionalreferences.add(additionalreferencesItem);
-    return this;
-  }
-
-   /**
-   * Get additionalreferences
-   * @return additionalreferences
-  **/
-  @Schema(description = "")
-  public List<AdditionalReference> getAdditionalreferences() {
-    return additionalreferences;
-  }
-
-  public void setAdditionalreferences(List<AdditionalReference> additionalreferences) {
-    this.additionalreferences = additionalreferences;
-  }
-
   public Shipment customer(AllOfShipmentCustomer customer) {
     this.customer = customer;
     return this;
@@ -1138,7 +1108,6 @@ public class Shipment {
         Objects.equals(this.idCustomerContact, shipment.idCustomerContact) &&
         Objects.equals(this.idContract, shipment.idContract) &&
         Objects.equals(this.idStockStatus, shipment.idStockStatus) &&
-        Objects.equals(this.additionalreferences, shipment.additionalreferences) &&
         Objects.equals(this.customer, shipment.customer) &&
         Objects.equals(this.invoiceReceiver, shipment.invoiceReceiver) &&
         Objects.equals(this.details, shipment.details) &&
@@ -1153,7 +1122,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, incoterm, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, additionalreferences, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, incoterm, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1198,7 +1167,6 @@ public class Shipment {
     sb.append("    idCustomerContact: ").append(toIndentedString(idCustomerContact)).append("\n");
     sb.append("    idContract: ").append(toIndentedString(idContract)).append("\n");
     sb.append("    idStockStatus: ").append(toIndentedString(idStockStatus)).append("\n");
-    sb.append("    additionalreferences: ").append(toIndentedString(additionalreferences)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    invoiceReceiver: ").append(toIndentedString(invoiceReceiver)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");

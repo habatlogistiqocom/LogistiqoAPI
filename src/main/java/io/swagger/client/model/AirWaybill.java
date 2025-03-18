@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.AdditionalReference;
 import io.swagger.client.model.Segment;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -28,7 +29,7 @@ import java.util.List;
  * AirWaybill
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
 
 public class AirWaybill {
   @SerializedName("masterAirWaybill")
@@ -36,6 +37,9 @@ public class AirWaybill {
 
   @SerializedName("houseAirWaybill")
   private String houseAirWaybill = null;
+
+  @SerializedName("additionalReferences")
+  private List<AdditionalReference> additionalReferences = null;
 
   @SerializedName("airWaybillDate")
   private String airWaybillDate = null;
@@ -128,6 +132,32 @@ public class AirWaybill {
 
   public void setHouseAirWaybill(String houseAirWaybill) {
     this.houseAirWaybill = houseAirWaybill;
+  }
+
+  public AirWaybill additionalReferences(List<AdditionalReference> additionalReferences) {
+    this.additionalReferences = additionalReferences;
+    return this;
+  }
+
+  public AirWaybill addAdditionalReferencesItem(AdditionalReference additionalReferencesItem) {
+    if (this.additionalReferences == null) {
+      this.additionalReferences = new ArrayList<AdditionalReference>();
+    }
+    this.additionalReferences.add(additionalReferencesItem);
+    return this;
+  }
+
+   /**
+   * Get additionalReferences
+   * @return additionalReferences
+  **/
+  @Schema(description = "")
+  public List<AdditionalReference> getAdditionalReferences() {
+    return additionalReferences;
+  }
+
+  public void setAdditionalReferences(List<AdditionalReference> additionalReferences) {
+    this.additionalReferences = additionalReferences;
   }
 
   public AirWaybill airWaybillDate(String airWaybillDate) {
@@ -492,6 +522,7 @@ public class AirWaybill {
     AirWaybill airWaybill = (AirWaybill) o;
     return Objects.equals(this.masterAirWaybill, airWaybill.masterAirWaybill) &&
         Objects.equals(this.houseAirWaybill, airWaybill.houseAirWaybill) &&
+        Objects.equals(this.additionalReferences, airWaybill.additionalReferences) &&
         Objects.equals(this.airWaybillDate, airWaybill.airWaybillDate) &&
         Objects.equals(this.shipper, airWaybill.shipper) &&
         Objects.equals(this.consignee, airWaybill.consignee) &&
@@ -515,7 +546,7 @@ public class AirWaybill {
 
   @Override
   public int hashCode() {
-    return Objects.hash(masterAirWaybill, houseAirWaybill, airWaybillDate, shipper, consignee, issuingCarriersAgent, agentsIataCode, notifyParty, containerMode, chargeCode, referenceNumber, airportDeparture, segments, firstAirlineCarrier, flight, flightDate, declaredValueForCarriage, declaredValueForCustoms, insuranceAmount, accountingInformation, handlingInformation);
+    return Objects.hash(masterAirWaybill, houseAirWaybill, additionalReferences, airWaybillDate, shipper, consignee, issuingCarriersAgent, agentsIataCode, notifyParty, containerMode, chargeCode, referenceNumber, airportDeparture, segments, firstAirlineCarrier, flight, flightDate, declaredValueForCarriage, declaredValueForCustoms, insuranceAmount, accountingInformation, handlingInformation);
   }
 
 
@@ -526,6 +557,7 @@ public class AirWaybill {
     
     sb.append("    masterAirWaybill: ").append(toIndentedString(masterAirWaybill)).append("\n");
     sb.append("    houseAirWaybill: ").append(toIndentedString(houseAirWaybill)).append("\n");
+    sb.append("    additionalReferences: ").append(toIndentedString(additionalReferences)).append("\n");
     sb.append("    airWaybillDate: ").append(toIndentedString(airWaybillDate)).append("\n");
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");

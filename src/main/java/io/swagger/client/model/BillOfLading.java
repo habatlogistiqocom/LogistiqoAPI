@@ -19,13 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.AdditionalReference;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * BillOfLading
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
 
 public class BillOfLading {
   @SerializedName("billOfLadingNumber")
@@ -33,6 +36,9 @@ public class BillOfLading {
 
   @SerializedName("masterBillOfLadingNumber")
   private String masterBillOfLadingNumber = null;
+
+  @SerializedName("additionalReferences")
+  private List<AdditionalReference> additionalReferences = null;
 
   @SerializedName("notifyParty")
   private String notifyParty = null;
@@ -158,6 +164,32 @@ public class BillOfLading {
 
   public void setMasterBillOfLadingNumber(String masterBillOfLadingNumber) {
     this.masterBillOfLadingNumber = masterBillOfLadingNumber;
+  }
+
+  public BillOfLading additionalReferences(List<AdditionalReference> additionalReferences) {
+    this.additionalReferences = additionalReferences;
+    return this;
+  }
+
+  public BillOfLading addAdditionalReferencesItem(AdditionalReference additionalReferencesItem) {
+    if (this.additionalReferences == null) {
+      this.additionalReferences = new ArrayList<AdditionalReference>();
+    }
+    this.additionalReferences.add(additionalReferencesItem);
+    return this;
+  }
+
+   /**
+   * Get additionalReferences
+   * @return additionalReferences
+  **/
+  @Schema(description = "")
+  public List<AdditionalReference> getAdditionalReferences() {
+    return additionalReferences;
+  }
+
+  public void setAdditionalReferences(List<AdditionalReference> additionalReferences) {
+    this.additionalReferences = additionalReferences;
   }
 
   public BillOfLading notifyParty(String notifyParty) {
@@ -712,6 +744,7 @@ public class BillOfLading {
     BillOfLading billOfLading = (BillOfLading) o;
     return Objects.equals(this.billOfLadingNumber, billOfLading.billOfLadingNumber) &&
         Objects.equals(this.masterBillOfLadingNumber, billOfLading.masterBillOfLadingNumber) &&
+        Objects.equals(this.additionalReferences, billOfLading.additionalReferences) &&
         Objects.equals(this.notifyParty, billOfLading.notifyParty) &&
         Objects.equals(this.portOfLoading, billOfLading.portOfLoading) &&
         Objects.equals(this.portOfLoadingName, billOfLading.portOfLoadingName) &&
@@ -746,7 +779,7 @@ public class BillOfLading {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billOfLadingNumber, masterBillOfLadingNumber, notifyParty, portOfLoading, portOfLoadingName, portOfDischarge, portOfDischargeName, placeOfReceipt, placeOfReceiptName, placeOfDelivery, placeOfDeliveryName, typeOfMove, freightPayableAt, billOfLadingCount, notifyParty1, notifyParty2, shipper, consignee, agentLetterOfCredit, carrierInfo, carrierInfoFeeder, mrn, mrnStorage, prePaperType, containerized, surrendered, prepaid, letterOfCredit, estimatedTimeOfDeparture, estimatedTimeOfArrival, dateOfIssue, placeOfIssue);
+    return Objects.hash(billOfLadingNumber, masterBillOfLadingNumber, additionalReferences, notifyParty, portOfLoading, portOfLoadingName, portOfDischarge, portOfDischargeName, placeOfReceipt, placeOfReceiptName, placeOfDelivery, placeOfDeliveryName, typeOfMove, freightPayableAt, billOfLadingCount, notifyParty1, notifyParty2, shipper, consignee, agentLetterOfCredit, carrierInfo, carrierInfoFeeder, mrn, mrnStorage, prePaperType, containerized, surrendered, prepaid, letterOfCredit, estimatedTimeOfDeparture, estimatedTimeOfArrival, dateOfIssue, placeOfIssue);
   }
 
 
@@ -757,6 +790,7 @@ public class BillOfLading {
     
     sb.append("    billOfLadingNumber: ").append(toIndentedString(billOfLadingNumber)).append("\n");
     sb.append("    masterBillOfLadingNumber: ").append(toIndentedString(masterBillOfLadingNumber)).append("\n");
+    sb.append("    additionalReferences: ").append(toIndentedString(additionalReferences)).append("\n");
     sb.append("    notifyParty: ").append(toIndentedString(notifyParty)).append("\n");
     sb.append("    portOfLoading: ").append(toIndentedString(portOfLoading)).append("\n");
     sb.append("    portOfLoadingName: ").append(toIndentedString(portOfLoadingName)).append("\n");
