@@ -14,15 +14,15 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.CarrierInfo;
+import io.swagger.client.model.Carrier;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
  * The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier&#x27;s name and SCAC code.
  */
 @Schema(description = "The feeder vessel carrier responsible for transporting goods to the main shipping vessel.  This includes details such as the carrier's name and SCAC code.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
 
-public class AllOfBillOfLadingCarrierInfoFeeder extends CarrierInfo {
+public class AllOfBillOfLadingCarrierInfoFeeder extends Carrier {
 
   @Override
   public boolean equals(java.lang.Object o) {

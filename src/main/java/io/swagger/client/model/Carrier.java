@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * CarrierInfo
+ * Carrier
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-05T10:39:32.815855713Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
 
-public class CarrierInfo {
+public class Carrier {
   @SerializedName("name")
   private String name = null;
 
@@ -43,7 +43,7 @@ public class CarrierInfo {
   @SerializedName("vessel")
   private String vessel = null;
 
-  public CarrierInfo name(String name) {
+  public Carrier name(String name) {
     this.name = name;
     return this;
   }
@@ -61,7 +61,7 @@ public class CarrierInfo {
     this.name = name;
   }
 
-  public CarrierInfo scac(String scac) {
+  public Carrier scac(String scac) {
     this.scac = scac;
     return this;
   }
@@ -79,7 +79,7 @@ public class CarrierInfo {
     this.scac = scac;
   }
 
-  public CarrierInfo bookingReferenceNumber(String bookingReferenceNumber) {
+  public Carrier bookingReferenceNumber(String bookingReferenceNumber) {
     this.bookingReferenceNumber = bookingReferenceNumber;
     return this;
   }
@@ -97,7 +97,7 @@ public class CarrierInfo {
     this.bookingReferenceNumber = bookingReferenceNumber;
   }
 
-  public CarrierInfo voyageNumber(String voyageNumber) {
+  public Carrier voyageNumber(String voyageNumber) {
     this.voyageNumber = voyageNumber;
     return this;
   }
@@ -115,7 +115,7 @@ public class CarrierInfo {
     this.voyageNumber = voyageNumber;
   }
 
-  public CarrierInfo vessel(String vessel) {
+  public Carrier vessel(String vessel) {
     this.vessel = vessel;
     return this;
   }
@@ -142,12 +142,12 @@ public class CarrierInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CarrierInfo carrierInfo = (CarrierInfo) o;
-    return Objects.equals(this.name, carrierInfo.name) &&
-        Objects.equals(this.scac, carrierInfo.scac) &&
-        Objects.equals(this.bookingReferenceNumber, carrierInfo.bookingReferenceNumber) &&
-        Objects.equals(this.voyageNumber, carrierInfo.voyageNumber) &&
-        Objects.equals(this.vessel, carrierInfo.vessel);
+    Carrier carrier = (Carrier) o;
+    return Objects.equals(this.name, carrier.name) &&
+        Objects.equals(this.scac, carrier.scac) &&
+        Objects.equals(this.bookingReferenceNumber, carrier.bookingReferenceNumber) &&
+        Objects.equals(this.voyageNumber, carrier.voyageNumber) &&
+        Objects.equals(this.vessel, carrier.vessel);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class CarrierInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CarrierInfo {\n");
+    sb.append("class Carrier {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    scac: ").append(toIndentedString(scac)).append("\n");

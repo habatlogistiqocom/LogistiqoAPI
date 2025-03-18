@@ -14,14 +14,62 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.BillOfLading;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.IOException;
 /**
- * AllOfManifestBillOfLading
+ * AdditionalReference
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T10:11:29.184387854Z[GMT]")
 
-public class AllOfManifestBillOfLading extends BillOfLading {
+public class AdditionalReference {
+  @SerializedName("pos")
+  private Integer pos = null;
+
+  @SerializedName("name")
+  private String name = null;
+
+  public AdditionalReference pos(Integer pos) {
+    this.pos = pos;
+    return this;
+  }
+
+   /**
+   * Position of the reference in trhge list
+   * @return pos
+  **/
+  @Schema(example = "1", description = "Position of the reference in trhge list")
+  public Integer getPos() {
+    return pos;
+  }
+
+  public void setPos(Integer pos) {
+    this.pos = pos;
+  }
+
+  public AdditionalReference name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * The additionbal reference
+   * @return name
+  **/
+  @Schema(description = "The additionbal reference")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -31,20 +79,24 @@ public class AllOfManifestBillOfLading extends BillOfLading {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    AdditionalReference additionalReference = (AdditionalReference) o;
+    return Objects.equals(this.pos, additionalReference.pos) &&
+        Objects.equals(this.name, additionalReference.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(pos, name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfManifestBillOfLading {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class AdditionalReference {\n");
+    
+    sb.append("    pos: ").append(toIndentedString(pos)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
