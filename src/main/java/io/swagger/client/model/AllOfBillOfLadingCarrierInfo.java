@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * The carrier responsible for transporting the goods. This includes details such as  the carrier&#x27;s name and SCAC code.
  */
 @Schema(description = "The carrier responsible for transporting the goods. This includes details such as  the carrier's name and SCAC code.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-23T11:35:42.161217352Z[GMT]")
 
 public class AllOfBillOfLadingCarrierInfo extends Carrier {
 

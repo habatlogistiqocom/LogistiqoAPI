@@ -27,7 +27,7 @@ import java.util.List;
  * ResponseStatus
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-23T13:27:21.689400019Z[GMT]")
 
 public class ResponseStatus {
   @SerializedName("status")
@@ -35,6 +35,9 @@ public class ResponseStatus {
 
   @SerializedName("error")
   private Boolean error = null;
+
+  @SerializedName("manifestId")
+  private Integer manifestId = null;
 
   @SerializedName("message")
   private String message = null;
@@ -76,6 +79,24 @@ public class ResponseStatus {
 
   public void setError(Boolean error) {
     this.error = error;
+  }
+
+  public ResponseStatus manifestId(Integer manifestId) {
+    this.manifestId = manifestId;
+    return this;
+  }
+
+   /**
+   * :&gt;- The id of the manifest wich has been created or updated.
+   * @return manifestId
+  **/
+  @Schema(example = "1234", description = ":>- The id of the manifest wich has been created or updated.")
+  public Integer getManifestId() {
+    return manifestId;
+  }
+
+  public void setManifestId(Integer manifestId) {
+    this.manifestId = manifestId;
   }
 
   public ResponseStatus message(String message) {
@@ -134,13 +155,14 @@ public class ResponseStatus {
     ResponseStatus responseStatus = (ResponseStatus) o;
     return Objects.equals(this.status, responseStatus.status) &&
         Objects.equals(this.error, responseStatus.error) &&
+        Objects.equals(this.manifestId, responseStatus.manifestId) &&
         Objects.equals(this.message, responseStatus.message) &&
         Objects.equals(this.details, responseStatus.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, error, message, details);
+    return Objects.hash(status, error, manifestId, message, details);
   }
 
 
@@ -151,6 +173,7 @@ public class ResponseStatus {
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    manifestId: ").append(toIndentedString(manifestId)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");

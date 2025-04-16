@@ -30,7 +30,7 @@ import java.util.List;
  * Manifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-23T11:35:42.161217352Z[GMT]")
 
 public class Manifest {
   @SerializedName("createManifest")
@@ -87,6 +87,9 @@ public class Manifest {
   @SerializedName("typeTSC")
   private String typeTSC = "PO";
 
+  @SerializedName("template")
+  private Boolean template = null;
+
   @SerializedName("customerNumber")
   private String customerNumber = null;
 
@@ -98,6 +101,9 @@ public class Manifest {
 
   @SerializedName("vehicle")
   private AllOfManifestVehicle vehicle = null;
+
+  @SerializedName("driver")
+  private AllOfManifestDriver driver = null;
 
   @SerializedName("action")
   private String action = null;
@@ -462,6 +468,24 @@ public class Manifest {
     this.typeTSC = typeTSC;
   }
 
+  public Manifest template(Boolean template) {
+    this.template = template;
+    return this;
+  }
+
+   /**
+   * Indicates that the shipment is a template and will not be used live
+   * @return template
+  **/
+  @Schema(description = "Indicates that the shipment is a template and will not be used live")
+  public Boolean isTemplate() {
+    return template;
+  }
+
+  public void setTemplate(Boolean template) {
+    this.template = template;
+  }
+
   public Manifest customerNumber(String customerNumber) {
     this.customerNumber = customerNumber;
     return this;
@@ -532,6 +556,24 @@ public class Manifest {
 
   public void setVehicle(AllOfManifestVehicle vehicle) {
     this.vehicle = vehicle;
+  }
+
+  public Manifest driver(AllOfManifestDriver driver) {
+    this.driver = driver;
+    return this;
+  }
+
+   /**
+   * In this section, you have the capability to input comprehensive information regarding the driver which has been assigned to the specific manifest.
+   * @return driver
+  **/
+  @Schema(description = "In this section, you have the capability to input comprehensive information regarding the driver which has been assigned to the specific manifest.")
+  public AllOfManifestDriver getDriver() {
+    return driver;
+  }
+
+  public void setDriver(AllOfManifestDriver driver) {
+    this.driver = driver;
   }
 
   public Manifest action(String action) {
@@ -820,10 +862,12 @@ public class Manifest {
         Objects.equals(this.dateto, manifest.dateto) &&
         Objects.equals(this.depot, manifest.depot) &&
         Objects.equals(this.typeTSC, manifest.typeTSC) &&
+        Objects.equals(this.template, manifest.template) &&
         Objects.equals(this.customerNumber, manifest.customerNumber) &&
         Objects.equals(this.customer, manifest.customer) &&
         Objects.equals(this.subcontractor, manifest.subcontractor) &&
         Objects.equals(this.vehicle, manifest.vehicle) &&
+        Objects.equals(this.driver, manifest.driver) &&
         Objects.equals(this.action, manifest.action) &&
         Objects.equals(this.flightNo, manifest.flightNo) &&
         Objects.equals(this.subcontractorInfo, manifest.subcontractorInfo) &&
@@ -841,7 +885,7 @@ public class Manifest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, typeTSC, customerNumber, customer, subcontractor, vehicle, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, airWaybill, billOfLading, error, manifestGoods, shipments);
+    return Objects.hash(createManifest, createHawb, synchronizeShipments, manifestNumber, reference, manifestReference, description, mrn, mawb, airline, airportOfDeparture, finalDestination, containerMode, deadline, date, dateto, depot, typeTSC, template, customerNumber, customer, subcontractor, vehicle, driver, action, flightNo, subcontractorInfo, subcontractorVehicleInfo, groundHandler, shipper, consignee, unitLoadDevices, airWaybill, billOfLading, error, manifestGoods, shipments);
   }
 
 
@@ -868,10 +912,12 @@ public class Manifest {
     sb.append("    dateto: ").append(toIndentedString(dateto)).append("\n");
     sb.append("    depot: ").append(toIndentedString(depot)).append("\n");
     sb.append("    typeTSC: ").append(toIndentedString(typeTSC)).append("\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    customerNumber: ").append(toIndentedString(customerNumber)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    subcontractor: ").append(toIndentedString(subcontractor)).append("\n");
     sb.append("    vehicle: ").append(toIndentedString(vehicle)).append("\n");
+    sb.append("    driver: ").append(toIndentedString(driver)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    flightNo: ").append(toIndentedString(flightNo)).append("\n");
     sb.append("    subcontractorInfo: ").append(toIndentedString(subcontractorInfo)).append("\n");

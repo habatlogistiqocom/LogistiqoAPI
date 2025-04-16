@@ -14,15 +14,14 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.Vehicle;
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.client.model.AddressObject;
 /**
- * In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.
+ * AllOfPersonObjectAddress
  */
-@Schema(description = "In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.")
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-23T11:35:42.161217352Z[GMT]")
 
-public class AllOfManifestVehicle extends Vehicle {
+public class AllOfPersonObjectAddress extends AddressObject {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -44,7 +43,7 @@ public class AllOfManifestVehicle extends Vehicle {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AllOfManifestVehicle {\n");
+    sb.append("class AllOfPersonObjectAddress {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

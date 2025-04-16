@@ -35,7 +35,7 @@ import java.util.List;
  * Shipment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-18T12:26:41.315152501Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-26T07:45:45.965470873Z[GMT]")
 
 public class Shipment {
   @SerializedName("idCustomer")
@@ -68,6 +68,9 @@ public class Shipment {
   @SerializedName("internalReference")
   private String internalReference = null;
 
+  @SerializedName("mrn")
+  private String mrn = null;
+
   @SerializedName("hawb")
   private String hawb = null;
 
@@ -85,6 +88,21 @@ public class Shipment {
 
   @SerializedName("branch")
   private String branch = null;
+
+  @SerializedName("depot")
+  private String depot = null;
+
+  @SerializedName("deliveryType")
+  private String deliveryType = null;
+
+  @SerializedName("template")
+  private Boolean template = null;
+
+  @SerializedName("accompanyingPerson")
+  private Integer accompanyingPerson = null;
+
+  @SerializedName("anniversaryOn")
+  private String anniversaryOn = null;
 
   @SerializedName("description")
   private String description = null;
@@ -145,6 +163,9 @@ public class Shipment {
 
   @SerializedName("idStockStatus")
   private Integer idStockStatus = 0;
+
+  @SerializedName("mawb")
+  private String mawb = null;
 
   @SerializedName("customer")
   private AllOfShipmentCustomer customer = null;
@@ -356,6 +377,24 @@ public class Shipment {
     this.internalReference = internalReference;
   }
 
+  public Shipment mrn(String mrn) {
+    this.mrn = mrn;
+    return this;
+  }
+
+   /**
+   * The Movement Reference Number (MRN) is a unique identifier assigned to a customs declaration or shipment, particularly in international transport and customs clearance processes. It is used across systems like EMCS (Excise Movement and Control System) and AIS (Automated Import System) in Europe.
+   * @return mrn
+  **/
+  @Schema(example = "24DE9876543210001", description = "The Movement Reference Number (MRN) is a unique identifier assigned to a customs declaration or shipment, particularly in international transport and customs clearance processes. It is used across systems like EMCS (Excise Movement and Control System) and AIS (Automated Import System) in Europe.")
+  public String getMrn() {
+    return mrn;
+  }
+
+  public void setMrn(String mrn) {
+    this.mrn = mrn;
+  }
+
   public Shipment hawb(String hawb) {
     this.hawb = hawb;
     return this;
@@ -462,6 +501,96 @@ public class Shipment {
 
   public void setBranch(String branch) {
     this.branch = branch;
+  }
+
+  public Shipment depot(String depot) {
+    this.depot = depot;
+    return this;
+  }
+
+   /**
+   * Corresponding the depot in Logistiqo
+   * @return depot
+  **/
+  @Schema(description = "Corresponding the depot in Logistiqo")
+  public String getDepot() {
+    return depot;
+  }
+
+  public void setDepot(String depot) {
+    this.depot = depot;
+  }
+
+  public Shipment deliveryType(String deliveryType) {
+    this.deliveryType = deliveryType;
+    return this;
+  }
+
+   /**
+   * Corresponding the deliveryType in Logistiqo
+   * @return deliveryType
+  **/
+  @Schema(example = "Einzeltransport", description = "Corresponding the deliveryType in Logistiqo")
+  public String getDeliveryType() {
+    return deliveryType;
+  }
+
+  public void setDeliveryType(String deliveryType) {
+    this.deliveryType = deliveryType;
+  }
+
+  public Shipment template(Boolean template) {
+    this.template = template;
+    return this;
+  }
+
+   /**
+   * Indicates that the shipment is a template and will not be used live
+   * @return template
+  **/
+  @Schema(description = "Indicates that the shipment is a template and will not be used live")
+  public Boolean isTemplate() {
+    return template;
+  }
+
+  public void setTemplate(Boolean template) {
+    this.template = template;
+  }
+
+  public Shipment accompanyingPerson(Integer accompanyingPerson) {
+    this.accompanyingPerson = accompanyingPerson;
+    return this;
+  }
+
+   /**
+   * Only used by passenger transport
+   * @return accompanyingPerson
+  **/
+  @Schema(description = "Only used by passenger transport")
+  public Integer getAccompanyingPerson() {
+    return accompanyingPerson;
+  }
+
+  public void setAccompanyingPerson(Integer accompanyingPerson) {
+    this.accompanyingPerson = accompanyingPerson;
+  }
+
+  public Shipment anniversaryOn(String anniversaryOn) {
+    this.anniversaryOn = anniversaryOn;
+    return this;
+  }
+
+   /**
+   * Only used by passenger transport
+   * @return anniversaryOn
+  **/
+  @Schema(description = "Only used by passenger transport")
+  public String getAnniversaryOn() {
+    return anniversaryOn;
+  }
+
+  public void setAnniversaryOn(String anniversaryOn) {
+    this.anniversaryOn = anniversaryOn;
   }
 
   public Shipment description(String description) {
@@ -824,6 +953,24 @@ public class Shipment {
     this.idStockStatus = idStockStatus;
   }
 
+  public Shipment mawb(String mawb) {
+    this.mawb = mawb;
+    return this;
+  }
+
+   /**
+   * The Master Air Waybill (MAWB) number associated with this shipment.  Indicates that the shipment is part of a consolidated air freight under the specified MAWB.
+   * @return mawb
+  **/
+  @Schema(example = "020 12345675", description = "The Master Air Waybill (MAWB) number associated with this shipment.  Indicates that the shipment is part of a consolidated air freight under the specified MAWB.")
+  public String getMawb() {
+    return mawb;
+  }
+
+  public void setMawb(String mawb) {
+    this.mawb = mawb;
+  }
+
   public Shipment customer(AllOfShipmentCustomer customer) {
     this.customer = customer;
     return this;
@@ -1082,12 +1229,18 @@ public class Shipment {
         Objects.equals(this.customerBarcode, shipment.customerBarcode) &&
         Objects.equals(this.additionalReference, shipment.additionalReference) &&
         Objects.equals(this.internalReference, shipment.internalReference) &&
+        Objects.equals(this.mrn, shipment.mrn) &&
         Objects.equals(this.hawb, shipment.hawb) &&
         Objects.equals(this.shipmentType, shipment.shipmentType) &&
         Objects.equals(this.paymentTerms, shipment.paymentTerms) &&
         Objects.equals(this.incoterm, shipment.incoterm) &&
         Objects.equals(this.securedStatus, shipment.securedStatus) &&
         Objects.equals(this.branch, shipment.branch) &&
+        Objects.equals(this.depot, shipment.depot) &&
+        Objects.equals(this.deliveryType, shipment.deliveryType) &&
+        Objects.equals(this.template, shipment.template) &&
+        Objects.equals(this.accompanyingPerson, shipment.accompanyingPerson) &&
+        Objects.equals(this.anniversaryOn, shipment.anniversaryOn) &&
         Objects.equals(this.description, shipment.description) &&
         Objects.equals(this.dropofByCompany, shipment.dropofByCompany) &&
         Objects.equals(this.dropofByVehicle, shipment.dropofByVehicle) &&
@@ -1108,6 +1261,7 @@ public class Shipment {
         Objects.equals(this.idCustomerContact, shipment.idCustomerContact) &&
         Objects.equals(this.idContract, shipment.idContract) &&
         Objects.equals(this.idStockStatus, shipment.idStockStatus) &&
+        Objects.equals(this.mawb, shipment.mawb) &&
         Objects.equals(this.customer, shipment.customer) &&
         Objects.equals(this.invoiceReceiver, shipment.invoiceReceiver) &&
         Objects.equals(this.details, shipment.details) &&
@@ -1122,7 +1276,7 @@ public class Shipment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, hawb, shipmentType, paymentTerms, incoterm, securedStatus, branch, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
+    return Objects.hash(idCustomer, networkId, edifactId, customerNumber, shipmentNumber, customerReference, customerReferenceUnique, customerBarcode, additionalReference, internalReference, mrn, hawb, shipmentType, paymentTerms, incoterm, securedStatus, branch, depot, deliveryType, template, accompanyingPerson, anniversaryOn, description, dropofByCompany, dropofByVehicle, ownCompanyCode, idScanningConfig, plantNumber, callOffNumber, callOffDate, callOffArticle, callOffCumulativeQuantity, callOffLastDeliveryDate, callOffLastDeliveryNote, unloadingPoint, customerMark, scannedBy, _return, returnExchange, idCustomerContact, idContract, idStockStatus, mawb, customer, invoiceReceiver, details, shipmentContainers, goodss, notifiedGoodss, calloffs, uploadedFiles, services, statusnodes);
   }
 
 
@@ -1141,12 +1295,18 @@ public class Shipment {
     sb.append("    customerBarcode: ").append(toIndentedString(customerBarcode)).append("\n");
     sb.append("    additionalReference: ").append(toIndentedString(additionalReference)).append("\n");
     sb.append("    internalReference: ").append(toIndentedString(internalReference)).append("\n");
+    sb.append("    mrn: ").append(toIndentedString(mrn)).append("\n");
     sb.append("    hawb: ").append(toIndentedString(hawb)).append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");
     sb.append("    paymentTerms: ").append(toIndentedString(paymentTerms)).append("\n");
     sb.append("    incoterm: ").append(toIndentedString(incoterm)).append("\n");
     sb.append("    securedStatus: ").append(toIndentedString(securedStatus)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    depot: ").append(toIndentedString(depot)).append("\n");
+    sb.append("    deliveryType: ").append(toIndentedString(deliveryType)).append("\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    accompanyingPerson: ").append(toIndentedString(accompanyingPerson)).append("\n");
+    sb.append("    anniversaryOn: ").append(toIndentedString(anniversaryOn)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    dropofByCompany: ").append(toIndentedString(dropofByCompany)).append("\n");
     sb.append("    dropofByVehicle: ").append(toIndentedString(dropofByVehicle)).append("\n");
@@ -1167,6 +1327,7 @@ public class Shipment {
     sb.append("    idCustomerContact: ").append(toIndentedString(idCustomerContact)).append("\n");
     sb.append("    idContract: ").append(toIndentedString(idContract)).append("\n");
     sb.append("    idStockStatus: ").append(toIndentedString(idStockStatus)).append("\n");
+    sb.append("    mawb: ").append(toIndentedString(mawb)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    invoiceReceiver: ").append(toIndentedString(invoiceReceiver)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
