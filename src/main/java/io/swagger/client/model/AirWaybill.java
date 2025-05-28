@@ -29,7 +29,7 @@ import java.util.List;
  * AirWaybill
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-03-23T11:35:42.161217352Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-05-24T09:08:26.989570394Z[GMT]")
 
 public class AirWaybill {
   @SerializedName("masterAirWaybill")
@@ -82,6 +82,12 @@ public class AirWaybill {
 
   @SerializedName("flightDate")
   private String flightDate = null;
+
+  @SerializedName("estimatedTimeOfArrival")
+  private String estimatedTimeOfArrival = null;
+
+  @SerializedName("estimatedTimeOfDeparture")
+  private String estimatedTimeOfDeparture = null;
 
   @SerializedName("declaredValueForCarriage")
   private String declaredValueForCarriage = null;
@@ -420,6 +426,42 @@ public class AirWaybill {
     this.flightDate = flightDate;
   }
 
+  public AirWaybill estimatedTimeOfArrival(String estimatedTimeOfArrival) {
+    this.estimatedTimeOfArrival = estimatedTimeOfArrival;
+    return this;
+  }
+
+   /**
+   * The estimated time of arrival of the flight or transport, formatted as yyyy-MM-dd HH:mm
+   * @return estimatedTimeOfArrival
+  **/
+  @Schema(description = "The estimated time of arrival of the flight or transport, formatted as yyyy-MM-dd HH:mm")
+  public String getEstimatedTimeOfArrival() {
+    return estimatedTimeOfArrival;
+  }
+
+  public void setEstimatedTimeOfArrival(String estimatedTimeOfArrival) {
+    this.estimatedTimeOfArrival = estimatedTimeOfArrival;
+  }
+
+  public AirWaybill estimatedTimeOfDeparture(String estimatedTimeOfDeparture) {
+    this.estimatedTimeOfDeparture = estimatedTimeOfDeparture;
+    return this;
+  }
+
+   /**
+   * The estimated time of departure of the flight or transport, formatted as yyyy-MM-dd HH:mm timestamp.
+   * @return estimatedTimeOfDeparture
+  **/
+  @Schema(description = "The estimated time of departure of the flight or transport, formatted as yyyy-MM-dd HH:mm timestamp.")
+  public String getEstimatedTimeOfDeparture() {
+    return estimatedTimeOfDeparture;
+  }
+
+  public void setEstimatedTimeOfDeparture(String estimatedTimeOfDeparture) {
+    this.estimatedTimeOfDeparture = estimatedTimeOfDeparture;
+  }
+
   public AirWaybill declaredValueForCarriage(String declaredValueForCarriage) {
     this.declaredValueForCarriage = declaredValueForCarriage;
     return this;
@@ -522,7 +564,6 @@ public class AirWaybill {
     AirWaybill airWaybill = (AirWaybill) o;
     return Objects.equals(this.masterAirWaybill, airWaybill.masterAirWaybill) &&
         Objects.equals(this.houseAirWaybill, airWaybill.houseAirWaybill) &&
-        Objects.equals(this.additionalReferences, airWaybill.additionalReferences) &&
         Objects.equals(this.airWaybillDate, airWaybill.airWaybillDate) &&
         Objects.equals(this.shipper, airWaybill.shipper) &&
         Objects.equals(this.consignee, airWaybill.consignee) &&
@@ -537,6 +578,8 @@ public class AirWaybill {
         Objects.equals(this.firstAirlineCarrier, airWaybill.firstAirlineCarrier) &&
         Objects.equals(this.flight, airWaybill.flight) &&
         Objects.equals(this.flightDate, airWaybill.flightDate) &&
+        Objects.equals(this.estimatedTimeOfArrival, airWaybill.estimatedTimeOfArrival) &&
+        Objects.equals(this.estimatedTimeOfDeparture, airWaybill.estimatedTimeOfDeparture) &&
         Objects.equals(this.declaredValueForCarriage, airWaybill.declaredValueForCarriage) &&
         Objects.equals(this.declaredValueForCustoms, airWaybill.declaredValueForCustoms) &&
         Objects.equals(this.insuranceAmount, airWaybill.insuranceAmount) &&
@@ -546,7 +589,7 @@ public class AirWaybill {
 
   @Override
   public int hashCode() {
-    return Objects.hash(masterAirWaybill, houseAirWaybill, additionalReferences, airWaybillDate, shipper, consignee, issuingCarriersAgent, agentsIataCode, notifyParty, containerMode, chargeCode, referenceNumber, airportDeparture, segments, firstAirlineCarrier, flight, flightDate, declaredValueForCarriage, declaredValueForCustoms, insuranceAmount, accountingInformation, handlingInformation);
+    return Objects.hash(masterAirWaybill, houseAirWaybill, airWaybillDate, shipper, consignee, issuingCarriersAgent, agentsIataCode, notifyParty, containerMode, chargeCode, referenceNumber, airportDeparture, segments, firstAirlineCarrier, flight, flightDate, estimatedTimeOfArrival, estimatedTimeOfDeparture, declaredValueForCarriage, declaredValueForCustoms, insuranceAmount, accountingInformation, handlingInformation);
   }
 
 
@@ -557,7 +600,6 @@ public class AirWaybill {
     
     sb.append("    masterAirWaybill: ").append(toIndentedString(masterAirWaybill)).append("\n");
     sb.append("    houseAirWaybill: ").append(toIndentedString(houseAirWaybill)).append("\n");
-    sb.append("    additionalReferences: ").append(toIndentedString(additionalReferences)).append("\n");
     sb.append("    airWaybillDate: ").append(toIndentedString(airWaybillDate)).append("\n");
     sb.append("    shipper: ").append(toIndentedString(shipper)).append("\n");
     sb.append("    consignee: ").append(toIndentedString(consignee)).append("\n");
@@ -572,6 +614,8 @@ public class AirWaybill {
     sb.append("    firstAirlineCarrier: ").append(toIndentedString(firstAirlineCarrier)).append("\n");
     sb.append("    flight: ").append(toIndentedString(flight)).append("\n");
     sb.append("    flightDate: ").append(toIndentedString(flightDate)).append("\n");
+    sb.append("    estimatedTimeOfArrival: ").append(toIndentedString(estimatedTimeOfArrival)).append("\n");
+    sb.append("    estimatedTimeOfDeparture: ").append(toIndentedString(estimatedTimeOfDeparture)).append("\n");
     sb.append("    declaredValueForCarriage: ").append(toIndentedString(declaredValueForCarriage)).append("\n");
     sb.append("    declaredValueForCustoms: ").append(toIndentedString(declaredValueForCustoms)).append("\n");
     sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
